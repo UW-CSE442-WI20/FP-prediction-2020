@@ -1,0 +1,9 @@
+UNF	2/10 - 2/18	725 RV	3.6	49	48	Biden +1
+Florida Atlantic University	1/9 - 1/12	1285 RV	2.6	51	49	Biden +2
+Mason-Dixon	12/11 - 12/16	625 RV	4.0	47	45	Biden +2
+NY Times/Siena	10/13 - 10/26	650 LV	4.4	46	44	Biden +2
+UNF	10/14 - 10/18	644 RV	3.8	48	43	Biden +5
+Florida Atlantic University	9/12 - 9/15	934 RV	3.1	49	50	Trump +1
+St. Pete Polls	6/15 - 6/16	3095 LV	1.8	47	47	Tie
+Quinnipiac	6/12 - 6/17	1279 RV	3.3	50	41	Biden +9
+Florida Atlantic University	5/16 - 5/19	1007 RV	3.0	50	50	Tie 

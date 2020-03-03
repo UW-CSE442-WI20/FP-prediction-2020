@@ -1,0 +1,12 @@
+Univ. of Wis/State Journal	2/11 - 2/20	1249 LV	3.0	47	43	Biden +4
+Quinnipiac	2/12 - 2/18	845 RV	3.4	47	43	Biden +4
+EPIC-MRA	1/9 - 1/12	600 LV	4.0	50	44	Biden +6
+Detroit News/WDIV-TV	1/3 - 1/7	600 LV	4.0	50	43	Biden +7
+NY Times/Siena	10/13 - 10/25	501 LV	5.1	45	44	Biden +1
+Emerson	10/31 - 11/3	1051 RV	3.0	56	44	Biden +12
+EPIC-MRA	8/17 - 8/21	600 LV	4.0	51	41	Biden +10
+EPIC-MRA	6/8 - 6/12	600 LV	4.0	52	41	Biden +11
+Detroit News/WDIV-TV	5/28 - 5/30	600 LV	4.0	53	41	Biden +12
+Emerson	3/7 - 3/10	743 RV	3.5	54	46	Biden +8
+Detroit News/WDIV-TV	1/24 - 1/26	600 LV	4.0	53	40	Biden +13
+EPIC-MRA	4/28 - 4/30	600 RV	4.0	52	39	Biden +13
