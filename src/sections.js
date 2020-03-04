@@ -166,6 +166,8 @@ var scrollVis = function () {
    * @param years - 
    */
   var setupVis = function (stateInfo, stateWinners, countyInfo, countyWinners, years) {
+	var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
+    var path = d3.geoPath().projection(projection);
 	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
       var states = topo.feature(json, json.objects.states);
 	  for (var i = 0; i < years.length; i++) {
