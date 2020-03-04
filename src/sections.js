@@ -107,8 +107,8 @@ var scrollVis = function () {
   // When scrolling to a new section the activation function for that section is called.
   var activateFunctions = [];
   // file paths to data files
-  var county_csv = './data/FP_county_winners.csv';
-  var state_csv = './FP_state_winners.csv';
+  var county_csv = require('./data/FP_county_winners.csv');
+  var state_csv = require('./FP_state_winners.csv');
   // dictionaries to store state and county info
   var stateInfo = {};
   var stateWinners = {};
@@ -165,7 +165,7 @@ var scrollVis = function () {
    * @param years - 
    */
   var setupVis = function (stateInfo, stateWinners, countyInfo, countyWinners, years) {
-	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json", /*).then(*/function(json) {
+	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
       var states = topo.feature(json, json.objects.states);
 	  for (var i = 0; i < years.length; i++) {
 		console.log(years[i]);
@@ -318,7 +318,7 @@ var scrollVis = function () {
    * Used to coerce the data into the formats we need to visualize
    */
   function getStateInfo() {
-    d3.csv(state_csv, /*).then(*/function(data) {
+    d3.csv(state_csv).then(function(data) {
 	  for (var j = 0; j < years.length; j++) {
 		var year = years[j];
         stateInfo[year] = {};
@@ -336,7 +336,7 @@ var scrollVis = function () {
 	})
   }
   function getStateWinners() {
-    d3.csv(state_csv, /*).then(*/function(data) {
+    d3.csv(state_csv).then(function(data) {
 	  for (var j = 0; j < years.length; j++) { 
 	    var year = years[j];
 	    var winner = [];
