@@ -1,731 +1,363 @@
+// JavaScript Document
+var d3 = require('d3')
+var topo = require('topojson');
+/**
+ * scroller - handles the details of figuring out which section the user is currently scrolled to.
+ */
+function scroller() {
+  var container = d3.select('body');
+  var dispatch = d3.dispatch('active', 'progress'); // event dispatcher
+  // d3 selection of all the text sections that will be scrolled through
+  var sections = null;
+  // array that will hold the y coordinate of each section that is scrolled through
+  var sectionPositions = [];
+  var currentIndex = -1;
+  // y coordinate of
+  var containerStart = 0;
+  /**
+   * scroll - constructor function. Sets up scroller to monitor scrolling of els selection.
+   *
+   * @param els - d3 selection of elements that will be scrolled through by user.
+   */
+  function scroll(els) {
+    sections = els;
+    // when window is scrolled call position. When it is resized call resize.
+    d3.select(window)
+      .on('scroll.scroller', position)
+      .on('resize.scroller', resize);
+    // manually call resize initially to setup scroller.
+    resize();
+    // hack to get position to be called once for the scroll position on load.
+    // @v4 timer no longer stops if you return true at the end of the callback function - so here we stop it
+	// explicitly.
+    var timer = d3.timer(function () {
+      position();
+      timer.stop();
+    });
+  }
+  /**
+   * resize - called initially and also when page is resized. Resets the sectionPositions
+   */
+  function resize() {
+    // sectionPositions will be each sections starting position relative to the top of the first section.
+    sectionPositions = [];
+    var startPos;
+    sections.each(function (d, i) {
+      var top = this.getBoundingClientRect().top;
+      if (i === 0) {
+        startPos = top;
+      }
+      sectionPositions.push(top - startPos);
+    });
+    containerStart = container.node().getBoundingClientRect().top + window.pageYOffset;
+  }
+  /**
+   * position - get current users position. if user has scrolled to new section, dispatch active event with 
+   * new section index.
+   */
+  function position() {
+    var pos = window.pageYOffset - 10 - containerStart;
+    var sectionIndex = d3.bisect(sectionPositions, pos);
+    sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+    if (currentIndex !== sectionIndex) {
+      dispatch.call('active', this, sectionIndex);
+      currentIndex = sectionIndex;
+    }
+    var prevIndex = Math.max(sectionIndex - 1, 0);
+    var prevTop = sectionPositions[prevIndex];
+    var progress = (pos - prevTop) / (sectionPositions[sectionIndex] - prevTop);
+    dispatch.call('progress', this, currentIndex, progress);
+  }
+  /**
+   * container - get/set the parent element of the sections. Useful for if the scrolling doesn't start at the 
+   * very top of the page.
+   * @param value - the new container value
+   */
+  scroll.container = function (value) {
+    if (arguments.length === 0) {
+      return container;
+    }
+    container = value;
+    return scroll;
+  };
+  // @v4 There is now no d3.rebind, so this implements a .on method to pass in a callback to the dispatcher.
+  scroll.on = function (action, callback) {
+    dispatch.on(action, callback);
+  };
+  return scroll;
+}
 
 /**
- * scrollVis - encapsulates
- * all the code for the visualization
- * using reusable charts pattern:
+ * scrollVis - encapsulates all the code for the visualization using reusable charts pattern:
  * http://bost.ocks.org/mike/chart/
  */
 var scrollVis = function () {
-  // constants to define the size
-  // and margins of the vis area.
+  // constants to define the size and margins of the vis area.
   var width = 600;
   var height = 520;
   var margin = { top: 0, left: 20, bottom: 40, right: 10 };
-
-  // Keep track of which visualization
-  // we are on and which was the last
-  // index activated. When user scrolls
-  // quickly, we want to call all the
-  // activate functions that they pass.
+  // Keep track of which visualization we are on and which was the last index activated. When user scrolls
+  // quickly, we want to call all the activate functions that they pass.
   var lastIndex = -1;
   var activeIndex = 0;
-
-  // Sizing for the grid visualization
-  var squareSize = 6;
-  var squarePad = 2;
-  var numPerRow = width / (squareSize + squarePad);
-
   // main svg used for visualization
   var svg = null;
-
-  // d3 selection that will be used
-  // for displaying visualizations
+  // d3 selection that will be used for displaying visualizations
   var g = null;
-
-  // We will set the domain when the
-  // data is processed.
-  // @v4 using new scale names
-  var xBarScale = d3.scaleLinear()
-    .range([0, width]);
-
-  // The bar chart display is horizontal
-  // so we can use an ordinal scale
-  // to get width and y locations.
-  // @v4 using new scale type
-  var yBarScale = d3.scaleBand()
-    .paddingInner(0.08)
-    .domain([0, 1, 2])
-    .range([0, height - 50], 0.1, 0.1);
-
-  // Color is determined just by the index of the bars
-  var barColors = { 0: '#008080', 1: '#399785', 2: '#5AAF8C' };
-
-  // The histogram display shows the
-  // first 30 minutes of data
-  // so the range goes from 0 to 30
-  // @v4 using new scale name
-  var xHistScale = d3.scaleLinear()
-    .domain([0, 30])
-    .range([0, width - 20]);
-
-  // @v4 using new scale name
-  var yHistScale = d3.scaleLinear()
-    .range([height, 0]);
-
-  // The color translation uses this
-  // scale to convert the progress
-  // through the section into a
-  // color value.
-  // @v4 using new scale name
-  var coughColorScale = d3.scaleLinear()
-    .domain([0, 1.0])
-    .range(['#008080', 'red']);
-
-  // You could probably get fancy and
-  // use just one axis, modifying the
-  // scale, but I will use two separate
-  // ones to keep things easy.
-  // @v4 using new axis name
-  var xAxisBar = d3.axisBottom()
-    .scale(xBarScale);
-
-  // @v4 using new axis name
-  var xAxisHist = d3.axisBottom()
-    .scale(xHistScale)
-    .tickFormat(function (d) { return d + ' min'; });
-
-  // When scrolling to a new section
-  // the activation function for that
-  // section is called.
+  // When scrolling to a new section the activation function for that section is called.
   var activateFunctions = [];
-  // If a section has an update function
-  // then it is called while scrolling
-  // through the section with the current
-  // progress through the section.
-  var updateFunctions = [];
-
+  // file paths to data files
+  var county_csv = 'data/FP_county_winners.csv';
+  var state_csv = 'data/FP_state_winners.csv';
+  // dictionaries to store state and county info
+  var stateInfo = {};
+  var stateWinners = {};
+  var countyInfo = {};
+  var countyWinners = {};
+  var years = [2000,2004,2008,2012,2016];
   /**
    * chart
    *
-   * @param selection - the current d3 selection(s)
-   *  to draw the visualization in. For this
-   *  example, we will be drawing it in #vis
+   * @param selection - the current d3 selection(s) to draw the visualization in. 
    */
   var chart = function (selection) {
-    selection.each(function (rawData) {
-      // create svg and give it a width and height
-      svg = d3.select(this).selectAll('svg').data([wordData]);
+    selection.each(function () {
+	  var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
+      var path = d3.geoPath().projection(projection);
+      // create svg
+	  svg = d3.select(this).selectAll('svg');
+//      svg = d3.select(this).selectAll('svg').data([wordData]);
       var svgE = svg.enter().append('svg');
       // @v4 use merge to combine enter and existing selection
       svg = svg.merge(svgE);
-
+	  // give svg a width and height
       svg.attr('width', width + margin.left + margin.right);
       svg.attr('height', height + margin.top + margin.bottom);
-
       svg.append('g');
-
-
-      // this group element will be used to contain all
-      // other elements.
+	  // this group element will be used to contain all other elements.
       g = svg.select('g')
-        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-      // perform some preprocessing on raw data
-      var wordData = getWords(rawData);
-      // filter to just include filler words
-      var fillerWords = getFillerWords(wordData);
-
-      // get the counts of filler words for the
-      // bar chart display
-      var fillerCounts = groupByWord(fillerWords);
-      // set the bar scale's domain
-      var countMax = d3.max(fillerCounts, function (d) { return d.value;});
-      xBarScale.domain([0, countMax]);
-
-      // get aggregated histogram data
-
-      var histData = getHistogram(fillerWords);
-      // set histogram's domain
-      var histMax = d3.max(histData, function (d) { return d.length; });
-      yHistScale.domain([0, histMax]);
-
-      setupVis(wordData, fillerCounts, histData);
-
+             .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+	  getStateInfo();
+      getStateWinners();
+      getCountyInfo();
+      getCountyWinners();
+//	  var stateInfo = getStateInfo();
+//      var stateWinners = getStateWinners();
+//      var countyInfo = getCountyInfo();
+//      var countyWinners = getCountyWinners();
+//	  var years = [2000,2004,2008,2012,2016];
+//	  stateInfo = getStateInfo();
+//	  stateWinners = getStateWinners();
+//	  countyInfo = getCountyInfo();
+//	  countyWinners = getCountyWinners();
+	  setupVis(stateInfo, stateWinners, countyInfo, countyWinners, years);
       setupSections();
     });
   };
-
-
+  
   /**
-   * setupVis - creates initial elements for all
-   * sections of the visualization.
+   * setupVis - creates initial elements for all sections of the visualization.
    *
-   * @param wordData - data object for each word.
-   * @param fillerCounts - nested data that includes
-   *  element for each filler word type.
-   * @param histData - binned histogram data
+   * @param stateInfo - 
+   * @param stateWinners - 
+   * @param countyInfo - 
+   * @param countyWinners - 
+   * @param years - 
    */
-  var setupVis = function (wordData, fillerCounts, histData) {
-    // axis
-    g.append('g')
-      .attr('class', 'x axis')
-      .attr('transform', 'translate(0,' + height + ')')
-      .call(xAxisBar);
-    g.select('.x.axis').style('opacity', 0);
-
-    // count openvis title
-    g.append('text')
-      .attr('class', 'title openvis-title')
-      .attr('x', width / 2)
-      .attr('y', height / 3)
-      .text('2013');
-
-    g.append('text')
-      .attr('class', 'sub-title openvis-title')
-      .attr('x', width / 2)
-      .attr('y', (height / 3) + (height / 5))
-      .text('OpenVis Conf');
-
-    g.selectAll('.openvis-title')
-      .attr('opacity', 0);
-
-    // count filler word count title
-    g.append('text')
-      .attr('class', 'title count-title highlight')
-      .attr('x', width / 2)
-      .attr('y', height / 3)
-      .text('180');
-
-    g.append('text')
-      .attr('class', 'sub-title count-title')
-      .attr('x', width / 2)
-      .attr('y', (height / 3) + (height / 5))
-      .text('Filler Words');
-
-    g.selectAll('.count-title')
-      .attr('opacity', 0);
-
-    // square grid
-    // @v4 Using .merge here to ensure
-    // new and old data have same attrs applied
-    var squares = g.selectAll('.square').data(wordData, function (d) { return d.word; });
-    var squaresE = squares.enter()
-      .append('rect')
-      .classed('square', true);
-    squares = squares.merge(squaresE)
-      .attr('width', squareSize)
-      .attr('height', squareSize)
-      .attr('fill', '#fff')
-      .classed('fill-square', function (d) { return d.filler; })
-      .attr('x', function (d) { return d.x;})
-      .attr('y', function (d) { return d.y;})
-      .attr('opacity', 0);
-
-    // barchart
-    // @v4 Using .merge here to ensure
-    // new and old data have same attrs applied
-    var bars = g.selectAll('.bar').data(fillerCounts);
-    var barsE = bars.enter()
-      .append('rect')
-      .attr('class', 'bar');
-    bars = bars.merge(barsE)
-      .attr('x', 0)
-      .attr('y', function (d, i) { return yBarScale(i);})
-      .attr('fill', function (d, i) { return barColors[i]; })
-      .attr('width', 0)
-      .attr('height', yBarScale.bandwidth());
-
-    var barText = g.selectAll('.bar-text').data(fillerCounts);
-    barText.enter()
-      .append('text')
-      .attr('class', 'bar-text')
-      .text(function (d) { return d.key + '…'; })
-      .attr('x', 0)
-      .attr('dx', 15)
-      .attr('y', function (d, i) { return yBarScale(i);})
-      .attr('dy', yBarScale.bandwidth() / 1.2)
-      .style('font-size', '110px')
-      .attr('fill', 'white')
-      .attr('opacity', 0);
-
-    // histogram
-    // @v4 Using .merge here to ensure
-    // new and old data have same attrs applied
-    var hist = g.selectAll('.hist').data(histData);
-    var histE = hist.enter().append('rect')
-      .attr('class', 'hist');
-    hist = hist.merge(histE).attr('x', function (d) { return xHistScale(d.x0); })
-      .attr('y', height)
-      .attr('height', 0)
-      .attr('width', xHistScale(histData[0].x1) - xHistScale(histData[0].x0) - 1)
-      .attr('fill', barColors[0])
-      .attr('opacity', 0);
-
-    // cough title
-    g.append('text')
-      .attr('class', 'sub-title cough cough-title')
-      .attr('x', width / 2)
-      .attr('y', 60)
-      .text('cough')
-      .attr('opacity', 0);
-
-    // arrowhead from
-    // http://logogin.blogspot.com/2013/02/d3js-arrowhead-markers.html
-    svg.append('defs').append('marker')
-      .attr('id', 'arrowhead')
-      .attr('refY', 2)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 4)
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M 0,0 V 4 L6,2 Z');
-
-    g.append('path')
-      .attr('class', 'cough cough-arrow')
-      .attr('marker-end', 'url(#arrowhead)')
-      .attr('d', function () {
-        var line = 'M ' + ((width / 2) - 10) + ' ' + 80;
-        line += ' l 0 ' + 230;
-        return line;
-      })
-      .attr('opacity', 0);
-  };
+  var setupVis = function (stateInfo, stateWinners, countyInfo, countyWinners, years) {
+	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json", /*).then(*/function(json) {
+      var states = topo.feature(json, json.objects.states);
+	  for (var i = 0; i < years.length; i++) {
+		console.log(years[i]);
+		var class_name = years[i].toString() + "map"
+		var winner = state_Winners[years[i]];
+		var state_map = g.selectAll('path').data(states.features);
+		var state_mapE = state_map.enter()
+		  .append('path')
+		  .classed(class_name, true);
+		state_map = state_map.merge(state_mapE)
+		  .attr("id", function (d) { 
+            return  "c" + d.id;})
+          .attr("class",function (d) {
+            var temp = winner.find(x => x.id === d.id);
+            if (temp) {
+              var ret = "states";
+              ret +=  " " + temp.winner_name;
+              return ret;
+            };
+          })
+          .attr('d', path)
+//          .on("click", zoomToState)
+          .append('title')
+          .text(function (d) {
+            var arr = stateInfo[year][d.id];
+            if (arr) {
+              return stateInfo[year][d.id][0] + "\n" + 
+                stateInfo[year][d.id][1] + "\n" + 
+                stateInfo[year][d.id][2] + "%";
+            }  
+          })
+		  .attr('opacity', 0);	
+	  }
+	});
+  }
 
   /**
-   * setupSections - each section is activated
-   * by a separate function. Here we associate
-   * these functions to the sections based on
-   * the section's index.
-   *
+   * setupSections - each section is activated by a separate function. Here we associate these functions to 
+   * the sections based on the section's index.
    */
   var setupSections = function () {
-    // activateFunctions are called each
-    // time the active section changes
-    activateFunctions[0] = showTitle;
-    activateFunctions[1] = showFillerTitle;
-    activateFunctions[2] = showGrid;
-    activateFunctions[3] = highlightGrid;
-    activateFunctions[4] = showBar;
-    activateFunctions[5] = showHistPart;
-    activateFunctions[6] = showHistAll;
-    activateFunctions[7] = showCough;
-    activateFunctions[8] = showHistAll;
-
-    // updateFunctions are called while
-    // in a particular section to update
-    // the scroll progress in that section.
-    // Most sections do not need to be updated
-    // for all scrolling and so are set to
-    // no-op functions.
-    for (var i = 0; i < 9; i++) {
-      updateFunctions[i] = function () {};
-    }
-    updateFunctions[7] = updateCough;
+    // activateFunctions are called each time the active section changes
+    activateFunctions[0] = result_2000;
+    activateFunctions[1] = result_2004;
+    activateFunctions[2] = result_2008;
+    activateFunctions[3] = result_2012;
+    activateFunctions[4] = result_2016;
+    activateFunctions[5] = swing_2016;
+    activateFunctions[6] = florida;
+    activateFunctions[7] = iowa;
+    activateFunctions[8] = michigan;
+	activateFunctions[9] = ohio;
+    activateFunctions[10] = pennsylvania;
+    activateFunctions[11] = wisconsin;
+    activateFunctions[12] = prediction_2020;
   };
-
+	
   /**
    * ACTIVATE FUNCTIONS
    *
-   * These will be called their
-   * section is scrolled to.
-   *
-   * General pattern is to ensure
-   * all content for the current section
-   * is transitioned in, while hiding
-   * the content for the previous section
-   * as well as the next section (as the
-   * user may be scrolling up or down).
-   *
+   * These will be called when their section is scrolled to.
    */
-
-  /**
-   * showTitle - initial title
-   *
-   * hides: count title
-   * (no previous step to hide)
-   * shows: intro title
-   *
-   */
-  function showTitle() {
-    g.selectAll('.count-title')
+  function result_2000() {
+	g.selectAll('.2004map')
       .transition()
       .duration(0)
       .attr('opacity', 0);
 
-    g.selectAll('.openvis-title')
+    g.selectAll('.2000map')
       .transition()
-      .duration(600)
-      .attr('opacity', 1.0);
-  }
-
-  /**
-   * showFillerTitle - filler counts
-   *
-   * hides: intro title
-   * hides: square grid
-   * shows: filler count title
-   *
-   */
-  function showFillerTitle() {
-    g.selectAll('.openvis-title')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.square')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.count-title')
-      .transition()
-      .duration(600)
-      .attr('opacity', 1.0);
-  }
-
-  /**
-   * showGrid - square grid
-   *
-   * hides: filler count title
-   * hides: filler highlight in grid
-   * shows: square grid
-   *
-   */
-  function showGrid() {
-    g.selectAll('.count-title')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.square')
-      .transition()
-      .duration(600)
-      .delay(function (d) {
-        return 5 * d.row;
-      })
-      .attr('opacity', 1.0)
-      .attr('fill', '#ddd');
-  }
-
-  /**
-   * highlightGrid - show fillers in grid
-   *
-   * hides: barchart, text and axis
-   * shows: square grid and highlighted
-   *  filler words. also ensures squares
-   *  are moved back to their place in the grid
-   */
-  function highlightGrid() {
-    hideAxis();
-    g.selectAll('.bar')
-      .transition()
-      .duration(600)
-      .attr('width', 0);
-
-    g.selectAll('.bar-text')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-
-    g.selectAll('.square')
-      .transition()
-      .duration(0)
-      .attr('opacity', 1.0)
-      .attr('fill', '#ddd');
-
-    // use named transition to ensure
-    // move happens even if other
-    // transitions are interrupted.
-    g.selectAll('.fill-square')
-      .transition('move-fills')
-      .duration(800)
-      .attr('x', function (d) {
-        return d.x;
-      })
-      .attr('y', function (d) {
-        return d.y;
-      });
-
-    g.selectAll('.fill-square')
-      .transition()
-      .duration(800)
-      .attr('opacity', 1.0)
-      .attr('fill', function (d) { return d.filler ? '#008080' : '#ddd'; });
-  }
-
-  /**
-   * showBar - barchart
-   *
-   * hides: square grid
-   * hides: histogram
-   * shows: barchart
-   *
-   */
-  function showBar() {
-    // ensure bar axis is set
-    showAxis(xAxisBar);
-
-    g.selectAll('.square')
-      .transition()
-      .duration(800)
-      .attr('opacity', 0);
-
-    g.selectAll('.fill-square')
-      .transition()
-      .duration(800)
-      .attr('x', 0)
-      .attr('y', function (d, i) {
-        return yBarScale(i % 3) + yBarScale.bandwidth() / 2;
-      })
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.hist')
-      .transition()
-      .duration(600)
-      .attr('height', function () { return 0; })
-      .attr('y', function () { return height; })
-      .style('opacity', 0);
-
-    g.selectAll('.bar')
-      .transition()
-      .delay(function (d, i) { return 300 * (i + 1);})
-      .duration(600)
-      .attr('width', function (d) { return xBarScale(d.value); });
-
-    g.selectAll('.bar-text')
-      .transition()
-      .duration(600)
-      .delay(1200)
-      .attr('opacity', 1);
-  }
-
-  /**
-   * showHistPart - shows the first part
-   *  of the histogram of filler words
-   *
-   * hides: barchart
-   * hides: last half of histogram
-   * shows: first half of histogram
-   *
-   */
-  function showHistPart() {
-    // switch the axis to histogram one
-    showAxis(xAxisHist);
-
-    g.selectAll('.bar-text')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.bar')
-      .transition()
-      .duration(600)
-      .attr('width', 0);
-
-    // here we only show a bar if
-    // it is before the 15 minute mark
-    g.selectAll('.hist')
-      .transition()
-      .duration(600)
-      .attr('y', function (d) { return (d.x0 < 15) ? yHistScale(d.length) : height; })
-      .attr('height', function (d) { return (d.x0 < 15) ? height - yHistScale(d.length) : 0; })
-      .style('opacity', function (d) { return (d.x0 < 15) ? 1.0 : 1e-6; });
-  }
-
-  /**
-   * showHistAll - show all histogram
-   *
-   * hides: cough title and color
-   * (previous step is also part of the
-   *  histogram, so we don't have to hide
-   *  that)
-   * shows: all histogram bars
-   *
-   */
-  function showHistAll() {
-    // ensure the axis to histogram one
-    showAxis(xAxisHist);
-
-    g.selectAll('.cough')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    // named transition to ensure
-    // color change is not clobbered
-    g.selectAll('.hist')
-      .transition('color')
       .duration(500)
-      .style('fill', '#008080');
-
-    g.selectAll('.hist')
-      .transition()
-      .duration(1200)
-      .attr('y', function (d) { return yHistScale(d.length); })
-      .attr('height', function (d) { return height - yHistScale(d.length); })
-      .style('opacity', 1.0);
+      .attr('opacity', 1.0)
   }
-
-  /**
-   * showCough
-   *
-   * hides: nothing
-   * (previous and next sections are histograms
-   *  so we don't have to hide much here)
-   * shows: histogram
-   *
-   */
-  function showCough() {
-    // ensure the axis to histogram one
-    showAxis(xAxisHist);
-
-    g.selectAll('.hist')
-      .transition()
-      .duration(600)
-      .attr('y', function (d) { return yHistScale(d.length); })
-      .attr('height', function (d) { return height - yHistScale(d.length); })
-      .style('opacity', 1.0);
-  }
-
-  /**
-   * showAxis - helper function to
-   * display particular xAxis
-   *
-   * @param axis - the axis to show
-   *  (xAxisHist or xAxisBar)
-   */
-  function showAxis(axis) {
-    g.select('.x.axis')
-      .call(axis)
-      .transition().duration(500)
-      .style('opacity', 1);
-  }
-
-  /**
-   * hideAxis - helper function
-   * to hide the axis
-   *
-   */
-  function hideAxis() {
-    g.select('.x.axis')
-      .transition().duration(500)
-      .style('opacity', 0);
-  }
-
-  /**
-   * UPDATE FUNCTIONS
-   *
-   * These will be called within a section
-   * as the user scrolls through it.
-   *
-   * We use an immediate transition to
-   * update visual elements based on
-   * how far the user has scrolled
-   *
-   */
-
-  /**
-   * updateCough - increase/decrease
-   * cough text and color
-   *
-   * @param progress - 0.0 - 1.0 -
-   *  how far user has scrolled in section
-   */
-  function updateCough(progress) {
-    g.selectAll('.cough')
+  function result_2004() {
+	g.selectAll('.2000map')
       .transition()
       .duration(0)
-      .attr('opacity', progress);
+      .attr('opacity', 0);
 
-    g.selectAll('.hist')
-      .transition('cough')
+    g.selectAll('.2004map')
+      .transition()
+      .duration(500)
+      .attr('opacity', 1.0)
+	  
+	g.selectAll('.2008map')
+      .transition()
       .duration(0)
-      .style('fill', function (d) {
-        return (d.x0 >= 14) ? coughColorScale(progress) : '#008080';
-      });
+      .attr('opacity', 0);
   }
+  function result_2008() {
+	g.selectAll('.2004map')
+      .transition()
+      .duration(0)
+      .attr('opacity', 0);
 
+    g.selectAll('.2008map')
+      .transition()
+      .duration(500)
+      .attr('opacity', 1.0)
+	  
+	g.selectAll('.2012map')
+      .transition()
+      .duration(0)
+      .attr('opacity', 0);
+  }
+  function result_2012() {
+	g.selectAll('.2008map')
+      .transition()
+      .duration(0)
+      .attr('opacity', 0);
+
+    g.selectAll('.2012map')
+      .transition()
+      .duration(500)
+      .attr('opacity', 1.0)
+	  
+	g.selectAll('.2016map')
+      .transition()
+      .duration(0)
+      .attr('opacity', 0);
+  }
+  function result_2016() {
+	g.selectAll('.2012map')
+      .transition()
+      .duration(0)
+      .attr('opacity', 0);
+
+    g.selectAll('.2016map')
+      .transition()
+      .duration(500)
+      .attr('opacity', 1.0)
+	  
+//	g.selectAll('.2008map')
+//      .transition()
+//      .duration(0)
+//      .attr('opacity', 0);
+  }
+  function swing_2016() {}
+  function florida() {}
+  function iowa() {}
+  function michigan() {}
+  function ohio() {}
+  function pennsylvania() {}
+  function wisconsin() {}
+  function prediction_2020() {}
+	
   /**
    * DATA FUNCTIONS
    *
-   * Used to coerce the data into the
-   * formats we need to visualize
-   *
+   * Used to coerce the data into the formats we need to visualize
    */
-
-  /**
-   * getWords - maps raw data to
-   * array of data objects. There is
-   * one data object for each word in the speach
-   * data.
-   *
-   * This function converts some attributes into
-   * numbers and adds attributes used in the visualization
-   *
-   * @param rawData - data read in from file
-   */
-  function getWords(rawData) {
-    return rawData.map(function (d, i) {
-      // is this word a filler word?
-      d.filler = (d.filler === '1') ? true : false;
-      // time in seconds word was spoken
-      d.time = +d.time;
-      // time in minutes word was spoken
-      d.min = Math.floor(d.time / 60);
-
-      // positioning for square visual
-      // stored here to make it easier
-      // to keep track of.
-      d.col = i % numPerRow;
-      d.x = d.col * (squareSize + squarePad);
-      d.row = Math.floor(i / numPerRow);
-      d.y = d.row * (squareSize + squarePad);
-      return d;
-    });
+  function getStateInfo() {
+    d3.csv(state_csv, /*).then(*/function(data) {
+	  for (var j = 0; j < years.length; j++) {
+		var year = years[j];
+        stateInfo[year] = {};
+        for (var i = 0; i < data.length; i++) {
+          var temp_id = Math.trunc(data[i].FIPS).toString(); 
+          if (temp_id.length == 1) {
+            temp_id = "0".concat(temp_id);
+          }
+		  var yper = year.toString() + "_percent"
+		  var ycan = year.toString() + "_cand"
+          var percent = (parseFloat(data[i][yper]) * 100).toPrecision(3);
+	   	  stateInfo[year][temp_id] = [data[i]["state_po"],data[i][ycan],percent];
+        }	
+	  }
+	})
   }
-
-  /**
-   * getFillerWords - returns array of
-   * only filler words
-   *
-   * @param data - word data from getWords
-   */
-  function getFillerWords(data) {
-    return data.filter(function (d) {return d.filler; });
+  function getStateWinners() {
+    d3.csv(state_csv, /*).then(*/function(data) {
+	  for (var j = 0; j < years.length; j++) { 
+	    var year = years[j];
+	    var winner = [];
+        for (var i = 0; i < data.length; i++) {
+          var temp_id = Math.trunc(data[i].FIPS).toString(); 
+          if (temp_id.length == 1) {
+            temp_id = "0".concat(temp_id);
+          }
+		  var ypar = "party" + year.toString();
+		  var yswi = "Switch_" + (year - 4).toString() + "_" + year.toString();
+          winner.push({id:temp_id,winner_name:data[i][ypar] + " " + data[i][yswi]}); 
+        } 
+	    stateWinners[year] = winner;
+	  }
+    })
   }
-
+  function getCountyInfo() {}
+  function getCountyWinners() {}
+	
   /**
-   * getHistogram - use d3's histogram layout
-   * to generate histogram bins for our word data
-   *
-   * @param data - word data. we use filler words
-   *  from getFillerWords
-   */
-  function getHistogram(data) {
-    // only get words from the first 30 minutes
-    var thirtyMins = data.filter(function (d) { return d.min < 30; });
-    // bin data into 2 minutes chuncks
-    // from 0 - 31 minutes
-    // @v4 The d3.histogram() produces a significantly different
-    // data structure then the old d3.layout.histogram().
-    // Take a look at this block:
-    // https://bl.ocks.org/mbostock/3048450
-    // to inform how you use it. Its different!
-    return d3.histogram()
-      .thresholds(xHistScale.ticks(10))
-      .value(function (d) { return d.min; })(thirtyMins);
-  }
-
-  /**
-   * groupByWord - group words together
-   * using nest. Used to get counts for
-   * barcharts.
-   *
-   * @param words
-   */
-  function groupByWord(words) {
-    return d3.nest()
-      .key(function (d) { return d.word; })
-      .rollup(function (v) { return v.length; })
-      .entries(words)
-      .sort(function (a, b) {return b.value - a.value;});
-  }
-
-  /**
-   * activate -
+   * activate
    *
    * @param index - index of the activated section
    */
@@ -738,59 +370,28 @@ var scrollVis = function () {
     });
     lastIndex = activeIndex;
   };
-
-  /**
-   * update
-   *
-   * @param index
-   * @param progress
-   */
-  chart.update = function (index, progress) {
-    updateFunctions[index](progress);
-  };
-
+	
   // return chart function
   return chart;
 };
 
-
-/**
- * display - called once data
- * has been loaded.
- * sets up the scroller and
- * displays the visualization.
- *
- * @param data - loaded tsv data
- */
-function display(data) {
-  // create a new plot and
-  // display it
+function display() {
+  // create a new plot and display it
   var plot = scrollVis();
   d3.select('#vis')
-    .datum(data)
     .call(plot);
-
   // setup scroll functionality
-  var scroll = scroller()
-    .container(d3.select('#graphic'));
-
+  var scroll = scroller().container(d3.select('#graphic'));
   // pass in .step selection as the steps
   scroll(d3.selectAll('.step'));
-
   // setup event handling
   scroll.on('active', function (index) {
     // highlight current step text
     d3.selectAll('.step')
       .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
-
     // activate current section
     plot.activate(index);
   });
-
-  scroll.on('progress', function (index, progress) {
-    plot.update(index, progress);
-  });
 }
 
-// load data and display
-d3.tsv('data/words.tsv', display);
+display();
