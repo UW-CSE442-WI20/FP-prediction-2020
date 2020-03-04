@@ -107,8 +107,8 @@ var scrollVis = function () {
   // When scrolling to a new section the activation function for that section is called.
   var activateFunctions = [];
   // file paths to data files
-  var county_csv = 'data/FP_county_winners.csv';
-  var state_csv = 'data/FP_state_winners.csv';
+  var county_csv = './data/FP_county_winners.csv';
+  var state_csv = './FP_state_winners.csv';
   // dictionaries to store state and county info
   var stateInfo = {};
   var stateWinners = {};

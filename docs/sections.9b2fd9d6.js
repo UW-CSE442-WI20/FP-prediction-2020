@@ -31524,8 +31524,8 @@ var scrollVis = function scrollVis() {
 
   var activateFunctions = []; // file paths to data files
 
-  var county_csv = 'data/FP_county_winners.csv';
-  var state_csv = 'data/FP_state_winners.csv'; // dictionaries to store state and county info
+  var county_csv = './data/FP_county_winners.csv';
+  var state_csv = './FP_state_winners.csv'; // dictionaries to store state and county info
 
   var stateInfo = {};
   var stateWinners = {};
@@ -31798,4 +31798,4 @@ function display() {
 
 display();
 },{"d3":"UzF0","topojson":"Ftz0"}]},{},["nvby"], null)
-//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.93c18d36.js.map
+//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.9b2fd9d6.js.map
