@@ -106,6 +106,9 @@ var scrollVis = function () {
   var g = null;
   // When scrolling to a new section the activation function for that section is called.
   var activateFunctions = [];
+  // 
+  var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
+  var path = d3.geoPath().projection(projection);
   // file paths to data files
   var county_csv = require('./data/FP_county_winners.csv');
   var state_csv = require('./FP_state_winners.csv');
@@ -122,8 +125,6 @@ var scrollVis = function () {
    */
   var chart = function (selection) {
     selection.each(function () {
-	  var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
-      var path = d3.geoPath().projection(projection);
       // create svg
 	  svg = d3.select(this).selectAll('svg');
 //      svg = d3.select(this).selectAll('svg').data([wordData]);
