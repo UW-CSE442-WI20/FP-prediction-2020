@@ -31595,7 +31595,7 @@ var scrollVis = function scrollVis() {
       for (var i = 0; i < years.length; i++) {
         console.log(years[i]);
         var class_name = years[i].toString() + "map";
-        var winner = state_Winners[years[i]];
+        var winner = stateWinners[years[i]];
         var state_map = g.selectAll('path').data(states.features);
         var state_mapE = state_map.enter().append('path').classed(class_name, true);
         state_map = state_map.merge(state_mapE).attr("id", function (d) {
@@ -31798,4 +31798,4 @@ function display() {
 
 display();
 },{"d3":"UzF0","topojson":"Ftz0","./data/FP_county_winners.csv":"Yauf","./FP_state_winners.csv":"ON0T"}]},{},["qZWC"], null)
-//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.2e50dcca.js.map
+//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.5633f6e1.js.map

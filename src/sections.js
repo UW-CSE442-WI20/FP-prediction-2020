@@ -170,7 +170,7 @@ var scrollVis = function () {
 	  for (var i = 0; i < years.length; i++) {
 		console.log(years[i]);
 		var class_name = years[i].toString() + "map"
-		var winner = state_Winners[years[i]];
+		var winner = stateWinners[years[i]];
 		var state_map = g.selectAll('path').data(states.features);
 		var state_mapE = state_map.enter()
 		  .append('path')
