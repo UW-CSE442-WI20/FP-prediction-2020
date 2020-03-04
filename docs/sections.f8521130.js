@@ -31527,9 +31527,9 @@ var scrollVis = function scrollVis() {
   var g = null; // When scrolling to a new section the activation function for that section is called.
 
   var activateFunctions = []; // 
-
-  var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
-  var path = d3.geoPath().projection(projection); // file paths to data files
+  //  var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
+  //  var path = d3.geoPath().projection(projection);
+  // file paths to data files
 
   var county_csv = require('./data/FP_county_winners.csv');
 
@@ -31564,16 +31564,7 @@ var scrollVis = function scrollVis() {
       getStateInfo();
       getStateWinners();
       getCountyInfo();
-      getCountyWinners(); //	  var stateInfo = getStateInfo();
-      //      var stateWinners = getStateWinners();
-      //      var countyInfo = getCountyInfo();
-      //      var countyWinners = getCountyWinners();
-      //	  var years = [2000,2004,2008,2012,2016];
-      //	  stateInfo = getStateInfo();
-      //	  stateWinners = getStateWinners();
-      //	  countyInfo = getCountyInfo();
-      //	  countyWinners = getCountyWinners();
-
+      getCountyWinners();
       setupVis(stateInfo, stateWinners, countyInfo, countyWinners, years);
       setupSections();
     });
@@ -31590,7 +31581,7 @@ var scrollVis = function scrollVis() {
 
 
   var setupVis = function setupVis(stateInfo, stateWinners, countyInfo, countyWinners, years) {
-    var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
+    var projection = d3.geoAlbersUsa().scale(1100).translate([600 / 2, 520 / 2]);
     var path = d3.geoPath().projection(projection);
     d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function (json) {
       var states = topo.feature(json, json.objects.states);
@@ -31801,4 +31792,4 @@ function display() {
 
 display();
 },{"d3":"UzF0","topojson":"Ftz0","./data/FP_county_winners.csv":"Yauf","./FP_state_winners.csv":"ON0T"}]},{},["qZWC"], null)
-//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.dc1e0ed9.js.map
+//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.f8521130.js.map

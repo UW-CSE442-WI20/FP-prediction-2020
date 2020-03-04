@@ -107,8 +107,8 @@ var scrollVis = function () {
   // When scrolling to a new section the activation function for that section is called.
   var activateFunctions = [];
   // 
-  var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
-  var path = d3.geoPath().projection(projection);
+//  var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
+//  var path = d3.geoPath().projection(projection);
   // file paths to data files
   var county_csv = require('./data/FP_county_winners.csv');
   var state_csv = require('./FP_state_winners.csv');
@@ -137,20 +137,11 @@ var scrollVis = function () {
       svg.append('g');
 	  // this group element will be used to contain all other elements.
       g = svg.select('g')
-             .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+		  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 	  getStateInfo();
       getStateWinners();
       getCountyInfo();
       getCountyWinners();
-//	  var stateInfo = getStateInfo();
-//      var stateWinners = getStateWinners();
-//      var countyInfo = getCountyInfo();
-//      var countyWinners = getCountyWinners();
-//	  var years = [2000,2004,2008,2012,2016];
-//	  stateInfo = getStateInfo();
-//	  stateWinners = getStateWinners();
-//	  countyInfo = getCountyInfo();
-//	  countyWinners = getCountyWinners();
 	  setupVis(stateInfo, stateWinners, countyInfo, countyWinners, years);
       setupSections();
     });
@@ -166,7 +157,7 @@ var scrollVis = function () {
    * @param years - 
    */
   var setupVis = function (stateInfo, stateWinners, countyInfo, countyWinners, years) {
-	var projection = d3.geoAlbersUsa().scale(1100).translate([width / 2, height / 2]);
+	var projection = d3.geoAlbersUsa().scale(1100).translate([600 / 2, 520 / 2]);
     var path = d3.geoPath().projection(projection);
 	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
       var states = topo.feature(json, json.objects.states);
