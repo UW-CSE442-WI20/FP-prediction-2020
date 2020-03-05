@@ -31578,6 +31578,8 @@ var scrollVis = function scrollVis() {
 
 
   var setupVis = function setupVis(stateInfo, stateWinners, countyInfo, countyWinners, years) {
+    // title
+    g.append('text').attr('class', 'title').attr('x', width / 3).attr('y', height / 3).text('Prediction 2020').attr('opacity', 0);
     var projection = d3.geoAlbersUsa().scale(900).translate([width / 2, height / 2]);
     var path = d3.geoPath().projection(projection);
     d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function (json) {
@@ -31607,56 +31609,23 @@ var scrollVis = function scrollVis() {
         ;
       }).attr('d', path).attr('stroke', 'black').attr('opacity', 0) //        .on("click", zoomToState)
       .append('title').text(function (d) {
-        var temp = stateInfo["2000"];
-        var arr = temp[d.id];
-
-        if (arr) {
-          return temp[d.id][0] + "\n" + temp[d.id][1] + "\n" + temp[d.id][2] + "%";
-        }
-      });
-    }); //	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
-    //      var states = topo.feature(json, json.objects.states);
-    //	  for (var i = 0; i < years.length; i++) {
-    //		var year = years[i].toString();
-    //		console.log('drawmap' + year);
-    //		var class_name = "map" + year;
-    ////		console.log('state info', stateInfo);
-    ////		console.log('state info year', stateInfo[year]);
-    //		var winner = stateWinners[year];
-    //		var state_map = g.selectAll('path').data(states.features);
-    //		var state_mapE = state_map.enter()
-    //		  .append('path')
-    ////		  .classed(class_name, true);
-    //		state_map = state_map.merge(state_mapE)
-    //		  .attr("id", function (d) { 
-    //            return  "c" + d.id;})
-    //          .attr("class",function (d) {
-    //			var state = d.properties.name.replace(/\s/g,'');
-    //            var temp = winner.find((x) => x.id === d.id);
-    //            if (temp) {
-    ////			  console.log(temp);
-    ////			  console.log(temp.id, d.id);
-    //              var ret = "years" + year + " states" + state;
-    //              ret +=  " " + temp.winner_name;
-    //			  console.log(ret);
-    //              return ret;
-    //            };
-    //          })
-    //          .attr('d', path)
-    ////          .on("click", zoomToState)
-    //          .append('title')
-    //          .text(function (d) {
-    //		    var temp = stateInfo[year];
-    //            var arr = temp[d.id];
-    //            if (arr) {
-    //              return temp[d.id][0] + "\n" + 
-    //                temp[d.id][1] + "\n" + 
-    //                temp[d.id][2] + "%";
-    //            }  
-    //          })
-    //		  .attr('opacity', 0);	
-    //	  }
-    ////	});
+        return "";
+      }); //        .text(function (d) {
+      //	      var temp = stateInfo["2000"];
+      //          var arr = temp[d.id];
+      //          if (arr) {
+      //            return temp[d.id][0] + "\n" + 
+      //              temp[d.id][1] + "\n" + 
+      //              temp[d.id][2] + "%";
+      //          }  
+      //        });	
+    });
+    g.append('svg:image').attr('xlink:href', './Florida.png').attr('class', 'florida').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
+    g.append('svg:image').attr('xlink:href', './Iowa.png').attr('class', 'iowa').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
+    g.append('svg:image').attr('xlink:href', './Michigan.png').attr('class', 'michigan').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
+    g.append('svg:image').attr('xlink:href', './Ohio.png').attr('class', 'ohio').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
+    g.append('svg:image').attr('xlink:href', './Pennsylvania.png').attr('class', 'pennsylvania').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
+    g.append('svg:image').attr('xlink:href', './Wisconsin.png').attr('class', 'wisconsin').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
   };
   /**
    * setupSections - each section is activated by a separate function. Here we associate these functions to 
@@ -31666,19 +31635,20 @@ var scrollVis = function scrollVis() {
 
   var setupSections = function setupSections() {
     // activateFunctions are called each time the active section changes
-    activateFunctions[0] = result_2000;
-    activateFunctions[1] = result_2004;
-    activateFunctions[2] = result_2008;
-    activateFunctions[3] = result_2012;
-    activateFunctions[4] = result_2016;
-    activateFunctions[5] = swing_2016;
-    activateFunctions[6] = florida;
-    activateFunctions[7] = iowa;
-    activateFunctions[8] = michigan;
-    activateFunctions[9] = ohio;
-    activateFunctions[10] = pennsylvania;
-    activateFunctions[11] = wisconsin;
-    activateFunctions[12] = prediction_2020;
+    activateFunctions[0] = show_title;
+    activateFunctions[1] = result_2000;
+    activateFunctions[2] = result_2004;
+    activateFunctions[3] = result_2008;
+    activateFunctions[4] = result_2012;
+    activateFunctions[5] = result_2016;
+    activateFunctions[6] = swing_2016;
+    activateFunctions[7] = florida;
+    activateFunctions[8] = iowa;
+    activateFunctions[9] = michigan;
+    activateFunctions[10] = ohio;
+    activateFunctions[11] = pennsylvania;
+    activateFunctions[12] = wisconsin;
+    activateFunctions[13] = prediction_2020;
   };
   /**
    * ACTIVATE FUNCTIONS
@@ -31687,8 +31657,18 @@ var scrollVis = function scrollVis() {
    */
 
 
+  function show_title() {
+    console.log('showTitle');
+    g.selectAll(".map").select('title').text(function (d) {
+      return "";
+    });
+    g.selectAll(".map").transition().duration(500).attr('opacity', 0);
+    g.selectAll('.title').transition().duration(500).attr('opacity', 1.0);
+  }
+
   function result_2000() {
     console.log('result2000');
+    g.selectAll('.title').transition().duration(500).attr('opacity', 0);
     g.selectAll(".map").transition().duration(500).attr('opacity', 1.0);
     g.selectAll(".republican2000TRUE").transition('color').duration(500).style("fill", "red");
     g.selectAll(".republican2000FALSE").transition('color').duration(500).style("fill", "lightcoral");
@@ -31774,35 +31754,56 @@ var scrollVis = function scrollVis() {
     g.selectAll(".republican2016FALSE").transition('color').duration(500).style("fill", "black");
     g.selectAll(".democrat2016TRUE").transition('color').duration(500).style("fill", "blue");
     g.selectAll(".democrat2016FALSE").transition('color').duration(500).style("fill", "black");
+    g.selectAll(".florida").transition().duration(500).attr('opacity', 0);
   }
 
   function florida() {
     console.log('florida');
+    g.selectAll(".map").select('title').text(function (d) {
+      return "";
+    });
     g.selectAll(".map").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".florida").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".iowa").transition().duration(500).attr('opacity', 0);
   }
 
   function iowa() {
     console.log('iowa');
+    g.selectAll(".florida").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".iowa").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".michigan").transition().duration(500).attr('opacity', 0);
   }
 
   function michigan() {
     console.log('michigan');
+    g.selectAll(".iowa").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".michigan").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".ohio").transition().duration(500).attr('opacity', 0);
   }
 
   function ohio() {
     console.log('ohio');
+    g.selectAll(".michigan").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".ohio").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".pennsylvania").transition().duration(500).attr('opacity', 0);
   }
 
   function pennsylvania() {
     console.log('pennsylvania');
+    g.selectAll(".ohio").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".pennsylvania").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".wisconsin").transition().duration(500).attr('opacity', 0);
   }
 
   function wisconsin() {
     console.log('wisconsin');
+    g.selectAll(".pennsylvania").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".wisconsin").transition().duration(500).attr('opacity', 1.0);
   }
 
   function prediction_2020() {
     console.log('prediction2020');
+    g.selectAll(".wisconsin").transition().duration(500).attr('opacity', 0);
   }
   /**
    * DATA FUNCTIONS
@@ -31911,4 +31912,4 @@ function display() {
 display(); //window.addEventListener("load",display);
 //d3.csv('./FP_state_winners.csv', display);
 },{"d3":"UzF0","topojson":"Ftz0","./data/FP_county_winners.csv":"Yauf","./FP_state_winners.csv":"ON0T"}]},{},["qZWC"], null)
-//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.621207c6.js.map
+//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.f3955aab.js.map

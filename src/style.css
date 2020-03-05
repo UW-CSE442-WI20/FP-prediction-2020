@@ -83,6 +83,12 @@ h1 {
   margin-left: 0px;
 }
 
+#vis .title {
+  font-family: Arial,Helvetica,"san-serif";
+  font-size:80px;
+  text-anchor: middle;
+}
+
 #extra-space {
   height: 300px;
 }

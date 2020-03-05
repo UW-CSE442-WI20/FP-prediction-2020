@@ -83,10 +83,16 @@ h1 {
   margin-left: 0px;
 }
 
+#vis .title {
+  font-family: Arial,Helvetica,"san-serif";
+  font-size:80px;
+  text-anchor: middle;
+}
+
 #extra-space {
   height: 300px;
 }
 
 
 
-/*# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/style.ac5293d7.css.map */
+/*# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/style.c8d4d8f2.css.map */
