@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"pT13":[function(require,module,exports) {
+})({"../node_modules/d3/dist/package.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -207,7 +207,7 @@ var dependencies = {
   "d3-zoom": "1"
 };
 exports.dependencies = dependencies;
-},{}],"yJgn":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/ascending.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -218,7 +218,7 @@ exports.default = _default;
 function _default(a, b) {
   return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
 }
-},{}],"CQHQ":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/bisector.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -263,7 +263,7 @@ function ascendingComparator(f) {
     return (0, _ascending.default)(f(d), x);
   };
 }
-},{"./ascending":"yJgn"}],"YrTP":[function(require,module,exports) {
+},{"./ascending":"../node_modules/d3-array/src/ascending.js"}],"../node_modules/d3-array/src/bisect.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -284,7 +284,7 @@ var bisectLeft = ascendingBisect.left;
 exports.bisectLeft = bisectLeft;
 var _default = bisectRight;
 exports.default = _default;
-},{"./ascending":"yJgn","./bisector":"CQHQ"}],"DkXH":[function(require,module,exports) {
+},{"./ascending":"../node_modules/d3-array/src/ascending.js","./bisector":"../node_modules/d3-array/src/bisector.js"}],"../node_modules/d3-array/src/pairs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -308,7 +308,7 @@ function _default(array, f) {
 function pair(a, b) {
   return [a, b];
 }
-},{}],"LKVk":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/cross.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -336,7 +336,7 @@ function _default(values0, values1, reduce) {
 
   return values;
 }
-},{"./pairs":"DkXH"}],"fBAz":[function(require,module,exports) {
+},{"./pairs":"../node_modules/d3-array/src/pairs.js"}],"../node_modules/d3-array/src/descending.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -347,7 +347,7 @@ exports.default = _default;
 function _default(a, b) {
   return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
 }
-},{}],"XWLP":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/number.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -358,7 +358,7 @@ exports.default = _default;
 function _default(x) {
   return x === null ? NaN : +x;
 }
-},{}],"Nh5Q":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/variance.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -399,7 +399,7 @@ function _default(values, valueof) {
 
   if (m > 1) return sum / (m - 1);
 }
-},{"./number":"XWLP"}],"WEAa":[function(require,module,exports) {
+},{"./number":"../node_modules/d3-array/src/number.js"}],"../node_modules/d3-array/src/deviation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -415,7 +415,7 @@ function _default(array, f) {
   var v = (0, _variance.default)(array, f);
   return v ? Math.sqrt(v) : v;
 }
-},{"./variance":"Nh5Q"}],"UaWb":[function(require,module,exports) {
+},{"./variance":"../node_modules/d3-array/src/variance.js"}],"../node_modules/d3-array/src/extent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -464,7 +464,7 @@ function _default(values, valueof) {
 
   return [min, max];
 }
-},{}],"RkzJ":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -476,7 +476,7 @@ var slice = array.slice;
 exports.slice = slice;
 var map = array.map;
 exports.map = map;
-},{}],"aCvo":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/constant.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -489,7 +489,7 @@ function _default(x) {
     return x;
   };
 }
-},{}],"NNW9":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/identity.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -500,7 +500,7 @@ exports.default = _default;
 function _default(x) {
   return x;
 }
-},{}],"wcAU":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/range.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -520,7 +520,7 @@ function _default(start, stop, step) {
 
   return range;
 }
-},{}],"EUzg":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/ticks.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -576,7 +576,7 @@ function tickStep(start, stop, count) {
   if (error >= e10) step1 *= 10;else if (error >= e5) step1 *= 5;else if (error >= e2) step1 *= 2;
   return stop < start ? -step1 : step1;
 }
-},{}],"J0XR":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/threshold/sturges.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -587,7 +587,7 @@ exports.default = _default;
 function _default(values) {
   return Math.ceil(Math.log(values.length) / Math.LN2) + 1;
 }
-},{}],"d5Tn":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/histogram.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -680,7 +680,7 @@ function _default() {
 
   return histogram;
 }
-},{"./array":"RkzJ","./bisect":"YrTP","./constant":"aCvo","./extent":"UaWb","./identity":"NNW9","./range":"wcAU","./ticks":"EUzg","./threshold/sturges":"J0XR"}],"xM5B":[function(require,module,exports) {
+},{"./array":"../node_modules/d3-array/src/array.js","./bisect":"../node_modules/d3-array/src/bisect.js","./constant":"../node_modules/d3-array/src/constant.js","./extent":"../node_modules/d3-array/src/extent.js","./identity":"../node_modules/d3-array/src/identity.js","./range":"../node_modules/d3-array/src/range.js","./ticks":"../node_modules/d3-array/src/ticks.js","./threshold/sturges":"../node_modules/d3-array/src/threshold/sturges.js"}],"../node_modules/d3-array/src/quantile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -704,7 +704,7 @@ function _default(values, p, valueof) {
       value1 = +valueof(values[i0 + 1], i0 + 1, values);
   return value0 + (value1 - value0) * (i - i0);
 }
-},{"./number":"XWLP"}],"nJJ4":[function(require,module,exports) {
+},{"./number":"../node_modules/d3-array/src/number.js"}],"../node_modules/d3-array/src/threshold/freedmanDiaconis.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -726,7 +726,7 @@ function _default(values, min, max) {
   values = _array.map.call(values, _number.default).sort(_ascending.default);
   return Math.ceil((max - min) / (2 * ((0, _quantile.default)(values, 0.75) - (0, _quantile.default)(values, 0.25)) * Math.pow(values.length, -1 / 3)));
 }
-},{"../array":"RkzJ","../ascending":"yJgn","../number":"XWLP","../quantile":"xM5B"}],"Rqev":[function(require,module,exports) {
+},{"../array":"../node_modules/d3-array/src/array.js","../ascending":"../node_modules/d3-array/src/ascending.js","../number":"../node_modules/d3-array/src/number.js","../quantile":"../node_modules/d3-array/src/quantile.js"}],"../node_modules/d3-array/src/threshold/scott.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -741,7 +741,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(values, min, max) {
   return Math.ceil((max - min) / (3.5 * (0, _deviation.default)(values) * Math.pow(values.length, -1 / 3)));
 }
-},{"../deviation":"WEAa"}],"Ougw":[function(require,module,exports) {
+},{"../deviation":"../node_modules/d3-array/src/deviation.js"}],"../node_modules/d3-array/src/max.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -787,7 +787,7 @@ function _default(values, valueof) {
 
   return max;
 }
-},{}],"YY5N":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/mean.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -818,7 +818,7 @@ function _default(values, valueof) {
 
   if (m) return sum / m;
 }
-},{"./number":"XWLP"}],"CxwF":[function(require,module,exports) {
+},{"./number":"../node_modules/d3-array/src/number.js"}],"../node_modules/d3-array/src/median.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -856,7 +856,7 @@ function _default(values, valueof) {
 
   return (0, _quantile.default)(numbers.sort(_ascending.default), 0.5);
 }
-},{"./ascending":"yJgn","./number":"XWLP","./quantile":"xM5B"}],"Getd":[function(require,module,exports) {
+},{"./ascending":"../node_modules/d3-array/src/ascending.js","./number":"../node_modules/d3-array/src/number.js","./quantile":"../node_modules/d3-array/src/quantile.js"}],"../node_modules/d3-array/src/merge.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -887,7 +887,7 @@ function _default(arrays) {
 
   return merged;
 }
-},{}],"kP8m":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/min.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -933,7 +933,7 @@ function _default(values, valueof) {
 
   return min;
 }
-},{}],"RhiG":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/permute.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -949,7 +949,7 @@ function _default(array, indexes) {
 
   return permutes;
 }
-},{}],"swlo":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/scan.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -978,7 +978,7 @@ function _default(values, compare) {
 
   if (compare(xj, xj) === 0) return j;
 }
-},{"./ascending":"yJgn"}],"Xskt":[function(require,module,exports) {
+},{"./ascending":"../node_modules/d3-array/src/ascending.js"}],"../node_modules/d3-array/src/shuffle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1000,7 +1000,7 @@ function _default(array, i0, i1) {
 
   return array;
 }
-},{}],"uFmM":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/sum.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1026,7 +1026,7 @@ function _default(values, valueof) {
 
   return sum;
 }
-},{}],"DmNI":[function(require,module,exports) {
+},{}],"../node_modules/d3-array/src/transpose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1053,7 +1053,7 @@ function _default(matrix) {
 function length(d) {
   return d.length;
 }
-},{"./min":"kP8m"}],"ciZM":[function(require,module,exports) {
+},{"./min":"../node_modules/d3-array/src/min.js"}],"../node_modules/d3-array/src/zip.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1068,7 +1068,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default() {
   return (0, _transpose.default)(arguments);
 }
-},{"./transpose":"DmNI"}],"K0bd":[function(require,module,exports) {
+},{"./transpose":"../node_modules/d3-array/src/transpose.js"}],"../node_modules/d3-array/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1320,7 +1320,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./bisect":"YrTP","./ascending":"yJgn","./bisector":"CQHQ","./cross":"LKVk","./descending":"fBAz","./deviation":"WEAa","./extent":"UaWb","./histogram":"d5Tn","./threshold/freedmanDiaconis":"nJJ4","./threshold/scott":"Rqev","./threshold/sturges":"J0XR","./max":"Ougw","./mean":"YY5N","./median":"CxwF","./merge":"Getd","./min":"kP8m","./pairs":"DkXH","./permute":"RhiG","./quantile":"xM5B","./range":"wcAU","./scan":"swlo","./shuffle":"Xskt","./sum":"uFmM","./ticks":"EUzg","./transpose":"DmNI","./variance":"Nh5Q","./zip":"ciZM"}],"KXlw":[function(require,module,exports) {
+},{"./bisect":"../node_modules/d3-array/src/bisect.js","./ascending":"../node_modules/d3-array/src/ascending.js","./bisector":"../node_modules/d3-array/src/bisector.js","./cross":"../node_modules/d3-array/src/cross.js","./descending":"../node_modules/d3-array/src/descending.js","./deviation":"../node_modules/d3-array/src/deviation.js","./extent":"../node_modules/d3-array/src/extent.js","./histogram":"../node_modules/d3-array/src/histogram.js","./threshold/freedmanDiaconis":"../node_modules/d3-array/src/threshold/freedmanDiaconis.js","./threshold/scott":"../node_modules/d3-array/src/threshold/scott.js","./threshold/sturges":"../node_modules/d3-array/src/threshold/sturges.js","./max":"../node_modules/d3-array/src/max.js","./mean":"../node_modules/d3-array/src/mean.js","./median":"../node_modules/d3-array/src/median.js","./merge":"../node_modules/d3-array/src/merge.js","./min":"../node_modules/d3-array/src/min.js","./pairs":"../node_modules/d3-array/src/pairs.js","./permute":"../node_modules/d3-array/src/permute.js","./quantile":"../node_modules/d3-array/src/quantile.js","./range":"../node_modules/d3-array/src/range.js","./scan":"../node_modules/d3-array/src/scan.js","./shuffle":"../node_modules/d3-array/src/shuffle.js","./sum":"../node_modules/d3-array/src/sum.js","./ticks":"../node_modules/d3-array/src/ticks.js","./transpose":"../node_modules/d3-array/src/transpose.js","./variance":"../node_modules/d3-array/src/variance.js","./zip":"../node_modules/d3-array/src/zip.js"}],"../node_modules/d3-axis/src/array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1329,7 +1329,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.slice = void 0;
 var slice = Array.prototype.slice;
 exports.slice = slice;
-},{}],"c1MF":[function(require,module,exports) {
+},{}],"../node_modules/d3-axis/src/identity.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return x;
+}
+},{}],"../node_modules/d3-axis/src/axis.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1491,7 +1502,7 @@ function axisBottom(scale) {
 function axisLeft(scale) {
   return axis(left, scale);
 }
-},{"./array":"KXlw","./identity":"NNW9"}],"mp0m":[function(require,module,exports) {
+},{"./array":"../node_modules/d3-axis/src/array.js","./identity":"../node_modules/d3-axis/src/identity.js"}],"../node_modules/d3-axis/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1523,7 +1534,7 @@ Object.defineProperty(exports, "axisLeft", {
 });
 
 var _axis = require("./axis");
-},{"./axis":"c1MF"}],"a3oC":[function(require,module,exports) {
+},{"./axis":"../node_modules/d3-axis/src/axis.js"}],"../node_modules/d3-dispatch/src/dispatch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1631,7 +1642,7 @@ function set(type, name, callback) {
 
 var _default = dispatch;
 exports.default = _default;
-},{}],"D3zY":[function(require,module,exports) {
+},{}],"../node_modules/d3-dispatch/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1647,7 +1658,7 @@ Object.defineProperty(exports, "dispatch", {
 var _dispatch = _interopRequireDefault(require("./dispatch.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./dispatch.js":"a3oC"}],"YeOr":[function(require,module,exports) {
+},{"./dispatch.js":"../node_modules/d3-dispatch/src/dispatch.js"}],"../node_modules/d3-selection/src/namespaces.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1664,7 +1675,7 @@ var _default = {
   xmlns: "http://www.w3.org/2000/xmlns/"
 };
 exports.default = _default;
-},{}],"U3j5":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/namespace.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1685,7 +1696,7 @@ function _default(name) {
     local: name
   } : name;
 }
-},{"./namespaces":"YeOr"}],"z8hd":[function(require,module,exports) {
+},{"./namespaces":"../node_modules/d3-selection/src/namespaces.js"}],"../node_modules/d3-selection/src/creator.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1717,7 +1728,7 @@ function _default(name) {
   var fullname = (0, _namespace.default)(name);
   return (fullname.local ? creatorFixed : creatorInherit)(fullname);
 }
-},{"./namespace":"U3j5","./namespaces":"YeOr"}],"vXaf":[function(require,module,exports) {
+},{"./namespace":"../node_modules/d3-selection/src/namespace.js","./namespaces":"../node_modules/d3-selection/src/namespaces.js"}],"../node_modules/d3-selection/src/selector.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1732,7 +1743,7 @@ function _default(selector) {
     return this.querySelector(selector);
   };
 }
-},{}],"LlPS":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/select.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1760,7 +1771,7 @@ function _default(select) {
 
   return new _index.Selection(subgroups, this._parents);
 }
-},{"./index":"G2fv","../selector":"vXaf"}],"t3Ja":[function(require,module,exports) {
+},{"./index":"../node_modules/d3-selection/src/selection/index.js","../selector":"../node_modules/d3-selection/src/selector.js"}],"../node_modules/d3-selection/src/selectorAll.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1777,7 +1788,7 @@ function _default(selector) {
     return this.querySelectorAll(selector);
   };
 }
-},{}],"VXfp":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/selectAll.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1805,7 +1816,7 @@ function _default(select) {
 
   return new _index.Selection(subgroups, parents);
 }
-},{"./index":"G2fv","../selectorAll":"t3Ja"}],"oB3r":[function(require,module,exports) {
+},{"./index":"../node_modules/d3-selection/src/selection/index.js","../selectorAll":"../node_modules/d3-selection/src/selectorAll.js"}],"../node_modules/d3-selection/src/matcher.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1818,7 +1829,7 @@ function _default(selector) {
     return this.matches(selector);
   };
 }
-},{}],"SSab":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/filter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1845,7 +1856,7 @@ function _default(match) {
 
   return new _index.Selection(subgroups, this._parents);
 }
-},{"./index":"G2fv","../matcher":"oB3r"}],"CH7j":[function(require,module,exports) {
+},{"./index":"../node_modules/d3-selection/src/selection/index.js","../matcher":"../node_modules/d3-selection/src/matcher.js"}],"../node_modules/d3-selection/src/selection/sparse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1856,7 +1867,7 @@ exports.default = _default;
 function _default(update) {
   return new Array(update.length);
 }
-},{}],"Bnlt":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/enter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1898,7 +1909,20 @@ EnterNode.prototype = {
     return this._parent.querySelectorAll(selector);
   }
 };
-},{"./sparse":"CH7j","./index":"G2fv"}],"qO0c":[function(require,module,exports) {
+},{"./sparse":"../node_modules/d3-selection/src/selection/sparse.js","./index":"../node_modules/d3-selection/src/selection/index.js"}],"../node_modules/d3-selection/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-selection/src/selection/data.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2029,7 +2053,7 @@ function _default(value, key) {
   update._exit = exit;
   return update;
 }
-},{"./index":"G2fv","./enter":"Bnlt","../constant":"aCvo"}],"sLhL":[function(require,module,exports) {
+},{"./index":"../node_modules/d3-selection/src/selection/index.js","./enter":"../node_modules/d3-selection/src/selection/enter.js","../constant":"../node_modules/d3-selection/src/constant.js"}],"../node_modules/d3-selection/src/selection/exit.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2046,7 +2070,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default() {
   return new _index.Selection(this._exit || this._groups.map(_sparse.default), this._parents);
 }
-},{"./sparse":"CH7j","./index":"G2fv"}],"Rskg":[function(require,module,exports) {
+},{"./sparse":"../node_modules/d3-selection/src/selection/sparse.js","./index":"../node_modules/d3-selection/src/selection/index.js"}],"../node_modules/d3-selection/src/selection/join.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2063,7 +2087,7 @@ function _default(onenter, onupdate, onexit) {
   if (onexit == null) exit.remove();else onexit(exit);
   return enter && update ? enter.merge(update).order() : update;
 }
-},{}],"VSNx":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/merge.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2088,7 +2112,7 @@ function _default(selection) {
 
   return new _index.Selection(merges, this._parents);
 }
-},{"./index":"G2fv"}],"z9O9":[function(require,module,exports) {
+},{"./index":"../node_modules/d3-selection/src/selection/index.js"}],"../node_modules/d3-selection/src/selection/order.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2108,7 +2132,7 @@ function _default() {
 
   return this;
 }
-},{}],"Vwkw":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/sort.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2141,7 +2165,7 @@ function _default(compare) {
 function ascending(a, b) {
   return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
 }
-},{"./index":"G2fv"}],"fuyN":[function(require,module,exports) {
+},{"./index":"../node_modules/d3-selection/src/selection/index.js"}],"../node_modules/d3-selection/src/selection/call.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2155,7 +2179,7 @@ function _default() {
   callback.apply(null, arguments);
   return this;
 }
-},{}],"x3ma":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/nodes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2171,7 +2195,7 @@ function _default() {
   });
   return nodes;
 }
-},{}],"zOHW":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/node.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2189,7 +2213,7 @@ function _default() {
 
   return null;
 }
-},{}],"zFge":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/size.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2204,7 +2228,7 @@ function _default() {
   });
   return size;
 }
-},{}],"ZnyY":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/empty.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2215,7 +2239,7 @@ exports.default = _default;
 function _default() {
   return !this.node();
 }
-},{}],"ntqp":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/each.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2232,7 +2256,7 @@ function _default(callback) {
 
   return this;
 }
-},{}],"KUPz":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/attr.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2292,7 +2316,7 @@ function _default(name, value) {
 
   return this.each((value == null ? fullname.local ? attrRemoveNS : attrRemove : typeof value === "function" ? fullname.local ? attrFunctionNS : attrFunction : fullname.local ? attrConstantNS : attrConstant)(fullname, value));
 }
-},{"../namespace":"U3j5"}],"iFwm":[function(require,module,exports) {
+},{"../namespace":"../node_modules/d3-selection/src/namespace.js"}],"../node_modules/d3-selection/src/window.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2305,7 +2329,7 @@ function _default(node) {
   node.document && node // node is a Window
   || node.defaultView; // node is a Document
 }
-},{}],"WecP":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/style.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2344,7 +2368,7 @@ function _default(name, value, priority) {
 function styleValue(node, name) {
   return node.style.getPropertyValue(name) || (0, _window.default)(node).getComputedStyle(node, null).getPropertyValue(name);
 }
-},{"../window":"iFwm"}],"Tr0z":[function(require,module,exports) {
+},{"../window":"../node_modules/d3-selection/src/window.js"}],"../node_modules/d3-selection/src/selection/property.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2374,7 +2398,7 @@ function propertyFunction(name, value) {
 function _default(name, value) {
   return arguments.length > 1 ? this.each((value == null ? propertyRemove : typeof value === "function" ? propertyFunction : propertyConstant)(name, value)) : this.node()[name];
 }
-},{}],"CVLA":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/classed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2468,7 +2492,7 @@ function _default(name, value) {
 
   return this.each((typeof value === "function" ? classedFunction : value ? classedTrue : classedFalse)(names, value));
 }
-},{}],"wYBq":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/text.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2496,7 +2520,7 @@ function textFunction(value) {
 function _default(value) {
   return arguments.length ? this.each(value == null ? textRemove : (typeof value === "function" ? textFunction : textConstant)(value)) : this.node().textContent;
 }
-},{}],"FDS0":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/html.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2524,7 +2548,7 @@ function htmlFunction(value) {
 function _default(value) {
   return arguments.length ? this.each(value == null ? htmlRemove : (typeof value === "function" ? htmlFunction : htmlConstant)(value)) : this.node().innerHTML;
 }
-},{}],"AlDR":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/raise.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2539,7 +2563,7 @@ function raise() {
 function _default() {
   return this.each(raise);
 }
-},{}],"wunq":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/lower.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2554,7 +2578,7 @@ function lower() {
 function _default() {
   return this.each(lower);
 }
-},{}],"jPcQ":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/append.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2572,7 +2596,7 @@ function _default(name) {
     return this.appendChild(create.apply(this, arguments));
   });
 }
-},{"../creator":"z8hd"}],"NP4m":[function(require,module,exports) {
+},{"../creator":"../node_modules/d3-selection/src/creator.js"}],"../node_modules/d3-selection/src/selection/insert.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2597,7 +2621,7 @@ function _default(name, before) {
     return this.insertBefore(create.apply(this, arguments), select.apply(this, arguments) || null);
   });
 }
-},{"../creator":"z8hd","../selector":"vXaf"}],"BhwP":[function(require,module,exports) {
+},{"../creator":"../node_modules/d3-selection/src/creator.js","../selector":"../node_modules/d3-selection/src/selector.js"}],"../node_modules/d3-selection/src/selection/remove.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2613,7 +2637,7 @@ function remove() {
 function _default() {
   return this.each(remove);
 }
-},{}],"C0rN":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/clone.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2636,7 +2660,7 @@ function selection_cloneDeep() {
 function _default(deep) {
   return this.select(deep ? selection_cloneDeep : selection_cloneShallow);
 }
-},{}],"dIrG":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/datum.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2647,7 +2671,7 @@ exports.default = _default;
 function _default(value) {
   return arguments.length ? this.property("__data__", value) : this.node().__data__;
 }
-},{}],"pgiW":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/on.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2789,7 +2813,7 @@ function customEvent(event1, listener, that, args) {
     exports.event = event = event0;
   }
 }
-},{}],"YF1h":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/selection/dispatch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2830,7 +2854,7 @@ function dispatchFunction(type, params) {
 function _default(type, params) {
   return this.each((typeof params === "function" ? dispatchFunction : dispatchConstant)(type, params));
 }
-},{"../window":"iFwm"}],"G2fv":[function(require,module,exports) {
+},{"../window":"../node_modules/d3-selection/src/window.js"}],"../node_modules/d3-selection/src/selection/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2951,7 +2975,7 @@ Selection.prototype = selection.prototype = {
 };
 var _default = selection;
 exports.default = _default;
-},{"./select":"LlPS","./selectAll":"VXfp","./filter":"SSab","./data":"qO0c","./enter":"Bnlt","./exit":"sLhL","./join":"Rskg","./merge":"VSNx","./order":"z9O9","./sort":"Vwkw","./call":"fuyN","./nodes":"x3ma","./node":"zOHW","./size":"zFge","./empty":"ZnyY","./each":"ntqp","./attr":"KUPz","./style":"WecP","./property":"Tr0z","./classed":"CVLA","./text":"wYBq","./html":"FDS0","./raise":"AlDR","./lower":"wunq","./append":"jPcQ","./insert":"NP4m","./remove":"BhwP","./clone":"C0rN","./datum":"dIrG","./on":"pgiW","./dispatch":"YF1h"}],"RAQf":[function(require,module,exports) {
+},{"./select":"../node_modules/d3-selection/src/selection/select.js","./selectAll":"../node_modules/d3-selection/src/selection/selectAll.js","./filter":"../node_modules/d3-selection/src/selection/filter.js","./data":"../node_modules/d3-selection/src/selection/data.js","./enter":"../node_modules/d3-selection/src/selection/enter.js","./exit":"../node_modules/d3-selection/src/selection/exit.js","./join":"../node_modules/d3-selection/src/selection/join.js","./merge":"../node_modules/d3-selection/src/selection/merge.js","./order":"../node_modules/d3-selection/src/selection/order.js","./sort":"../node_modules/d3-selection/src/selection/sort.js","./call":"../node_modules/d3-selection/src/selection/call.js","./nodes":"../node_modules/d3-selection/src/selection/nodes.js","./node":"../node_modules/d3-selection/src/selection/node.js","./size":"../node_modules/d3-selection/src/selection/size.js","./empty":"../node_modules/d3-selection/src/selection/empty.js","./each":"../node_modules/d3-selection/src/selection/each.js","./attr":"../node_modules/d3-selection/src/selection/attr.js","./style":"../node_modules/d3-selection/src/selection/style.js","./property":"../node_modules/d3-selection/src/selection/property.js","./classed":"../node_modules/d3-selection/src/selection/classed.js","./text":"../node_modules/d3-selection/src/selection/text.js","./html":"../node_modules/d3-selection/src/selection/html.js","./raise":"../node_modules/d3-selection/src/selection/raise.js","./lower":"../node_modules/d3-selection/src/selection/lower.js","./append":"../node_modules/d3-selection/src/selection/append.js","./insert":"../node_modules/d3-selection/src/selection/insert.js","./remove":"../node_modules/d3-selection/src/selection/remove.js","./clone":"../node_modules/d3-selection/src/selection/clone.js","./datum":"../node_modules/d3-selection/src/selection/datum.js","./on":"../node_modules/d3-selection/src/selection/on.js","./dispatch":"../node_modules/d3-selection/src/selection/dispatch.js"}],"../node_modules/d3-selection/src/select.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2964,7 +2988,7 @@ var _index = require("./selection/index");
 function _default(selector) {
   return typeof selector === "string" ? new _index.Selection([[document.querySelector(selector)]], [document.documentElement]) : new _index.Selection([[selector]], _index.root);
 }
-},{"./selection/index":"G2fv"}],"aaeJ":[function(require,module,exports) {
+},{"./selection/index":"../node_modules/d3-selection/src/selection/index.js"}],"../node_modules/d3-selection/src/create.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2981,7 +3005,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(name) {
   return (0, _select.default)((0, _creator.default)(name).call(document.documentElement));
 }
-},{"./creator":"z8hd","./select":"RAQf"}],"iml1":[function(require,module,exports) {
+},{"./creator":"../node_modules/d3-selection/src/creator.js","./select":"../node_modules/d3-selection/src/select.js"}],"../node_modules/d3-selection/src/local.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3017,7 +3041,7 @@ Local.prototype = local.prototype = {
     return this._;
   }
 };
-},{}],"Tqn5":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/sourceEvent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3035,7 +3059,7 @@ function _default() {
 
   return current;
 }
-},{"./selection/on":"pgiW"}],"JEJ4":[function(require,module,exports) {
+},{"./selection/on":"../node_modules/d3-selection/src/selection/on.js"}],"../node_modules/d3-selection/src/point.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3056,7 +3080,7 @@ function _default(node, event) {
   var rect = node.getBoundingClientRect();
   return [event.clientX - rect.left - node.clientLeft, event.clientY - rect.top - node.clientTop];
 }
-},{}],"Y8Cy":[function(require,module,exports) {
+},{}],"../node_modules/d3-selection/src/mouse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3075,7 +3099,7 @@ function _default(node) {
   if (event.changedTouches) event = event.changedTouches[0];
   return (0, _point.default)(node, event);
 }
-},{"./sourceEvent":"Tqn5","./point":"JEJ4"}],"zmwq":[function(require,module,exports) {
+},{"./sourceEvent":"../node_modules/d3-selection/src/sourceEvent.js","./point":"../node_modules/d3-selection/src/point.js"}],"../node_modules/d3-selection/src/selectAll.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3088,7 +3112,7 @@ var _index = require("./selection/index");
 function _default(selector) {
   return typeof selector === "string" ? new _index.Selection([document.querySelectorAll(selector)], [document.documentElement]) : new _index.Selection([selector == null ? [] : selector], _index.root);
 }
-},{"./selection/index":"G2fv"}],"SZFU":[function(require,module,exports) {
+},{"./selection/index":"../node_modules/d3-selection/src/selection/index.js"}],"../node_modules/d3-selection/src/touch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3113,7 +3137,7 @@ function _default(node, touches, identifier) {
 
   return null;
 }
-},{"./sourceEvent":"Tqn5","./point":"JEJ4"}],"lhoo":[function(require,module,exports) {
+},{"./sourceEvent":"../node_modules/d3-selection/src/sourceEvent.js","./point":"../node_modules/d3-selection/src/point.js"}],"../node_modules/d3-selection/src/touches.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3136,7 +3160,7 @@ function _default(node, touches) {
 
   return points;
 }
-},{"./sourceEvent":"Tqn5","./point":"JEJ4"}],"ysDv":[function(require,module,exports) {
+},{"./sourceEvent":"../node_modules/d3-selection/src/sourceEvent.js","./point":"../node_modules/d3-selection/src/point.js"}],"../node_modules/d3-selection/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3294,7 +3318,7 @@ var _window = _interopRequireDefault(require("./window"));
 var _on = require("./selection/on");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./create":"aaeJ","./creator":"z8hd","./local":"iml1","./matcher":"oB3r","./mouse":"Y8Cy","./namespace":"U3j5","./namespaces":"YeOr","./point":"JEJ4","./select":"RAQf","./selectAll":"zmwq","./selection/index":"G2fv","./selector":"vXaf","./selectorAll":"t3Ja","./selection/style":"WecP","./touch":"SZFU","./touches":"lhoo","./window":"iFwm","./selection/on":"pgiW"}],"BxLv":[function(require,module,exports) {
+},{"./create":"../node_modules/d3-selection/src/create.js","./creator":"../node_modules/d3-selection/src/creator.js","./local":"../node_modules/d3-selection/src/local.js","./matcher":"../node_modules/d3-selection/src/matcher.js","./mouse":"../node_modules/d3-selection/src/mouse.js","./namespace":"../node_modules/d3-selection/src/namespace.js","./namespaces":"../node_modules/d3-selection/src/namespaces.js","./point":"../node_modules/d3-selection/src/point.js","./select":"../node_modules/d3-selection/src/select.js","./selectAll":"../node_modules/d3-selection/src/selectAll.js","./selection/index":"../node_modules/d3-selection/src/selection/index.js","./selector":"../node_modules/d3-selection/src/selector.js","./selectorAll":"../node_modules/d3-selection/src/selectorAll.js","./selection/style":"../node_modules/d3-selection/src/selection/style.js","./touch":"../node_modules/d3-selection/src/touch.js","./touches":"../node_modules/d3-selection/src/touches.js","./window":"../node_modules/d3-selection/src/window.js","./selection/on":"../node_modules/d3-selection/src/selection/on.js"}],"../node_modules/d3-drag/src/noevent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3314,7 +3338,7 @@ function _default() {
 
   _d3Selection.event.stopImmediatePropagation();
 }
-},{"d3-selection":"ysDv"}],"m07T":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js"}],"../node_modules/d3-drag/src/nodrag.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3359,7 +3383,20 @@ function yesdrag(view, noclick) {
     delete root.__noselect;
   }
 }
-},{"d3-selection":"ysDv","./noevent.js":"BxLv"}],"qb7E":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js","./noevent.js":"../node_modules/d3-drag/src/noevent.js"}],"../node_modules/d3-drag/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-drag/src/event.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3385,7 +3422,7 @@ DragEvent.prototype.on = function () {
 
   return value === this._ ? this : value;
 };
-},{}],"NgLN":[function(require,module,exports) {
+},{}],"../node_modules/d3-drag/src/drag.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3590,7 +3627,7 @@ function _default() {
 
   return drag;
 }
-},{"d3-dispatch":"D3zY","d3-selection":"ysDv","./nodrag.js":"m07T","./noevent.js":"BxLv","./constant.js":"aCvo","./event.js":"qb7E"}],"kkdU":[function(require,module,exports) {
+},{"d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","./nodrag.js":"../node_modules/d3-drag/src/nodrag.js","./noevent.js":"../node_modules/d3-drag/src/noevent.js","./constant.js":"../node_modules/d3-drag/src/constant.js","./event.js":"../node_modules/d3-drag/src/event.js"}],"../node_modules/d3-drag/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3624,7 +3661,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./drag.js":"NgLN","./nodrag.js":"m07T"}],"fV2I":[function(require,module,exports) {
+},{"./drag.js":"../node_modules/d3-drag/src/drag.js","./nodrag.js":"../node_modules/d3-drag/src/nodrag.js"}],"../node_modules/d3-color/src/define.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3645,7 +3682,7 @@ function extend(parent, definition) {
 
   return prototype;
 }
-},{}],"LIaf":[function(require,module,exports) {
+},{}],"../node_modules/d3-color/src/color.js":[function(require,module,exports) {
 
 "use strict";
 
@@ -4015,7 +4052,7 @@ function Hsl(h, s, l, opacity) {
 function hsl2rgb(h, m1, m2) {
   return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
 }
-},{"./define.js":"fV2I"}],"XzID":[function(require,module,exports) {
+},{"./define.js":"../node_modules/d3-color/src/define.js"}],"../node_modules/d3-color/src/math.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4026,7 +4063,7 @@ var deg2rad = Math.PI / 180;
 exports.deg2rad = deg2rad;
 var rad2deg = 180 / Math.PI;
 exports.rad2deg = rad2deg;
-},{}],"f7Av":[function(require,module,exports) {
+},{}],"../node_modules/d3-color/src/lab.js":[function(require,module,exports) {
 
 "use strict";
 
@@ -4168,7 +4205,7 @@ function hcl2lab(o) {
     return hcl2lab(this).rgb();
   }
 }));
-},{"./define.js":"fV2I","./color.js":"LIaf","./math.js":"XzID"}],"CMX9":[function(require,module,exports) {
+},{"./define.js":"../node_modules/d3-color/src/define.js","./color.js":"../node_modules/d3-color/src/color.js","./math.js":"../node_modules/d3-color/src/math.js"}],"../node_modules/d3-color/src/cubehelix.js":[function(require,module,exports) {
 
 "use strict";
 
@@ -4241,7 +4278,7 @@ function Cubehelix(h, s, l, opacity) {
     return new _color.Rgb(255 * (l + a * (A * cosh + B * sinh)), 255 * (l + a * (C * cosh + D * sinh)), 255 * (l + a * (E * cosh)), this.opacity);
   }
 }));
-},{"./define.js":"fV2I","./color.js":"LIaf","./math.js":"XzID"}],"Peej":[function(require,module,exports) {
+},{"./define.js":"../node_modules/d3-color/src/define.js","./color.js":"../node_modules/d3-color/src/color.js","./math.js":"../node_modules/d3-color/src/math.js"}],"../node_modules/d3-color/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4307,7 +4344,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./color.js":"LIaf","./lab.js":"f7Av","./cubehelix.js":"CMX9"}],"ElXH":[function(require,module,exports) {
+},{"./color.js":"../node_modules/d3-color/src/color.js","./lab.js":"../node_modules/d3-color/src/lab.js","./cubehelix.js":"../node_modules/d3-color/src/cubehelix.js"}],"../node_modules/d3-interpolate/src/basis.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4333,7 +4370,7 @@ function _default(values) {
     return basis((t - i / n) * n, v0, v1, v2, v3);
   };
 }
-},{}],"hnXz":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/basisClosed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4354,7 +4391,20 @@ function _default(values) {
     return (0, _basis.basis)((t - i / n) * n, v0, v1, v2, v3);
   };
 }
-},{"./basis.js":"ElXH"}],"RhzI":[function(require,module,exports) {
+},{"./basis.js":"../node_modules/d3-interpolate/src/basis.js"}],"../node_modules/d3-interpolate/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-interpolate/src/color.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4395,7 +4445,7 @@ function nogamma(a, b) {
   var d = b - a;
   return d ? linear(a, d) : (0, _constant.default)(isNaN(a) ? b : a);
 }
-},{"./constant.js":"aCvo"}],"rvVK":[function(require,module,exports) {
+},{"./constant.js":"../node_modules/d3-interpolate/src/constant.js"}],"../node_modules/d3-interpolate/src/rgb.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4473,7 +4523,7 @@ var rgbBasis = rgbSpline(_basis.default);
 exports.rgbBasis = rgbBasis;
 var rgbBasisClosed = rgbSpline(_basisClosed.default);
 exports.rgbBasisClosed = rgbBasisClosed;
-},{"d3-color":"Peej","./basis.js":"ElXH","./basisClosed.js":"hnXz","./color.js":"RhzI"}],"BOJ5":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","./basis.js":"../node_modules/d3-interpolate/src/basis.js","./basisClosed.js":"../node_modules/d3-interpolate/src/basisClosed.js","./color.js":"../node_modules/d3-interpolate/src/color.js"}],"../node_modules/d3-interpolate/src/numberArray.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4497,7 +4547,7 @@ function _default(a, b) {
 function isNumberArray(x) {
   return ArrayBuffer.isView(x) && !(x instanceof DataView);
 }
-},{}],"TYZM":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4537,7 +4587,7 @@ function genericArray(a, b) {
     return c;
   };
 }
-},{"./value.js":"gzcD","./numberArray.js":"BOJ5"}],"jEDF":[function(require,module,exports) {
+},{"./value.js":"../node_modules/d3-interpolate/src/value.js","./numberArray.js":"../node_modules/d3-interpolate/src/numberArray.js"}],"../node_modules/d3-interpolate/src/date.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4551,7 +4601,7 @@ function _default(a, b) {
     return d.setTime(a * (1 - t) + b * t), d;
   };
 }
-},{}],"YNf8":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/number.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4564,7 +4614,7 @@ function _default(a, b) {
     return a * (1 - t) + b * t;
   };
 }
-},{}],"iJdZ":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/object.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4597,7 +4647,7 @@ function _default(a, b) {
     return c;
   };
 }
-},{"./value.js":"gzcD"}],"nK0E":[function(require,module,exports) {
+},{"./value.js":"../node_modules/d3-interpolate/src/value.js"}],"../node_modules/d3-interpolate/src/string.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4681,7 +4731,7 @@ function _default(a, b) {
     return s.join("");
   });
 }
-},{"./number.js":"YNf8"}],"gzcD":[function(require,module,exports) {
+},{"./number.js":"../node_modules/d3-interpolate/src/number.js"}],"../node_modules/d3-interpolate/src/value.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4718,7 +4768,7 @@ function _default(a, b) {
       c;
   return b == null || t === "boolean" ? (0, _constant.default)(b) : (t === "number" ? _number.default : t === "string" ? (c = (0, _d3Color.color)(b)) ? (b = c, _rgb.default) : _string.default : b instanceof _d3Color.color ? _rgb.default : b instanceof Date ? _date.default : (0, _numberArray.isNumberArray)(b) ? _numberArray.default : Array.isArray(b) ? _array.genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? _object.default : _number.default)(a, b);
 }
-},{"d3-color":"Peej","./rgb.js":"rvVK","./array.js":"TYZM","./date.js":"jEDF","./number.js":"YNf8","./object.js":"iJdZ","./string.js":"nK0E","./constant.js":"aCvo","./numberArray.js":"BOJ5"}],"B1w8":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","./rgb.js":"../node_modules/d3-interpolate/src/rgb.js","./array.js":"../node_modules/d3-interpolate/src/array.js","./date.js":"../node_modules/d3-interpolate/src/date.js","./number.js":"../node_modules/d3-interpolate/src/number.js","./object.js":"../node_modules/d3-interpolate/src/object.js","./string.js":"../node_modules/d3-interpolate/src/string.js","./constant.js":"../node_modules/d3-interpolate/src/constant.js","./numberArray.js":"../node_modules/d3-interpolate/src/numberArray.js"}],"../node_modules/d3-interpolate/src/discrete.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4732,7 +4782,7 @@ function _default(range) {
     return range[Math.max(0, Math.min(n - 1, Math.floor(t * n)))];
   };
 }
-},{}],"ZrPS":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/hue.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4749,7 +4799,7 @@ function _default(a, b) {
     return x - 360 * Math.floor(x / 360);
   };
 }
-},{"./color.js":"RhzI"}],"nXvs":[function(require,module,exports) {
+},{"./color.js":"../node_modules/d3-interpolate/src/color.js"}],"../node_modules/d3-interpolate/src/round.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4762,7 +4812,7 @@ function _default(a, b) {
     return Math.round(a * (1 - t) + b * t);
   };
 }
-},{}],"UXwK":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/transform/decompose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4796,7 +4846,7 @@ function _default(a, b, c, d, e, f) {
     scaleY: scaleY
   };
 }
-},{}],"LVjk":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/transform/parse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4831,7 +4881,7 @@ function parseSvg(value) {
   value = value.matrix;
   return (0, _decompose.default)(value.a, value.b, value.c, value.d, value.e, value.f);
 }
-},{"./decompose.js":"UXwK"}],"v4Xl":[function(require,module,exports) {
+},{"./decompose.js":"../node_modules/d3-interpolate/src/transform/decompose.js"}],"../node_modules/d3-interpolate/src/transform/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4932,7 +4982,7 @@ var interpolateTransformCss = interpolateTransform(_parse.parseCss, "px, ", "px)
 exports.interpolateTransformCss = interpolateTransformCss;
 var interpolateTransformSvg = interpolateTransform(_parse.parseSvg, ", ", ")", ")");
 exports.interpolateTransformSvg = interpolateTransformSvg;
-},{"../number.js":"YNf8","./parse.js":"LVjk"}],"jU1v":[function(require,module,exports) {
+},{"../number.js":"../node_modules/d3-interpolate/src/number.js","./parse.js":"../node_modules/d3-interpolate/src/transform/parse.js"}],"../node_modules/d3-interpolate/src/zoom.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4997,7 +5047,7 @@ function _default(p0, p1) {
   i.duration = S * 1000;
   return i;
 }
-},{}],"LdeI":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/hsl.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5034,7 +5084,7 @@ var _default = hsl(_color.hue);
 exports.default = _default;
 var hslLong = hsl(_color.default);
 exports.hslLong = hslLong;
-},{"d3-color":"Peej","./color.js":"RhzI"}],"rghB":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","./color.js":"../node_modules/d3-interpolate/src/color.js"}],"../node_modules/d3-interpolate/src/lab.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5061,7 +5111,7 @@ function lab(start, end) {
     return start + "";
   };
 }
-},{"d3-color":"Peej","./color.js":"RhzI"}],"dxPN":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","./color.js":"../node_modules/d3-interpolate/src/color.js"}],"../node_modules/d3-interpolate/src/hcl.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5098,7 +5148,7 @@ var _default = hcl(_color.hue);
 exports.default = _default;
 var hclLong = hcl(_color.default);
 exports.hclLong = hclLong;
-},{"d3-color":"Peej","./color.js":"RhzI"}],"X3VV":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","./color.js":"../node_modules/d3-interpolate/src/color.js"}],"../node_modules/d3-interpolate/src/cubehelix.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5142,7 +5192,7 @@ var _default = cubehelix(_color.hue);
 exports.default = _default;
 var cubehelixLong = cubehelix(_color.default);
 exports.cubehelixLong = cubehelixLong;
-},{"d3-color":"Peej","./color.js":"RhzI"}],"xtkP":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","./color.js":"../node_modules/d3-interpolate/src/color.js"}],"../node_modules/d3-interpolate/src/piecewise.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5163,7 +5213,7 @@ function piecewise(interpolate, values) {
     return I[i](t - i);
   };
 }
-},{}],"Oe1t":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/quantize.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5178,7 +5228,7 @@ function _default(interpolator, n) {
 
   return samples;
 }
-},{}],"k9aH":[function(require,module,exports) {
+},{}],"../node_modules/d3-interpolate/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5394,7 +5444,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./value.js":"gzcD","./array.js":"TYZM","./basis.js":"ElXH","./basisClosed.js":"hnXz","./date.js":"jEDF","./discrete.js":"B1w8","./hue.js":"ZrPS","./number.js":"YNf8","./numberArray.js":"BOJ5","./object.js":"iJdZ","./round.js":"nXvs","./string.js":"nK0E","./transform/index.js":"v4Xl","./zoom.js":"jU1v","./rgb.js":"rvVK","./hsl.js":"LdeI","./lab.js":"rghB","./hcl.js":"dxPN","./cubehelix.js":"X3VV","./piecewise.js":"xtkP","./quantize.js":"Oe1t"}],"ea66":[function(require,module,exports) {
+},{"./value.js":"../node_modules/d3-interpolate/src/value.js","./array.js":"../node_modules/d3-interpolate/src/array.js","./basis.js":"../node_modules/d3-interpolate/src/basis.js","./basisClosed.js":"../node_modules/d3-interpolate/src/basisClosed.js","./date.js":"../node_modules/d3-interpolate/src/date.js","./discrete.js":"../node_modules/d3-interpolate/src/discrete.js","./hue.js":"../node_modules/d3-interpolate/src/hue.js","./number.js":"../node_modules/d3-interpolate/src/number.js","./numberArray.js":"../node_modules/d3-interpolate/src/numberArray.js","./object.js":"../node_modules/d3-interpolate/src/object.js","./round.js":"../node_modules/d3-interpolate/src/round.js","./string.js":"../node_modules/d3-interpolate/src/string.js","./transform/index.js":"../node_modules/d3-interpolate/src/transform/index.js","./zoom.js":"../node_modules/d3-interpolate/src/zoom.js","./rgb.js":"../node_modules/d3-interpolate/src/rgb.js","./hsl.js":"../node_modules/d3-interpolate/src/hsl.js","./lab.js":"../node_modules/d3-interpolate/src/lab.js","./hcl.js":"../node_modules/d3-interpolate/src/hcl.js","./cubehelix.js":"../node_modules/d3-interpolate/src/cubehelix.js","./piecewise.js":"../node_modules/d3-interpolate/src/piecewise.js","./quantize.js":"../node_modules/d3-interpolate/src/quantize.js"}],"../node_modules/d3-timer/src/timer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5533,7 +5583,7 @@ function sleep(time) {
     frame = 1, setFrame(wake);
   }
 }
-},{}],"jIZm":[function(require,module,exports) {
+},{}],"../node_modules/d3-timer/src/timeout.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5552,7 +5602,7 @@ function _default(callback, delay, time) {
   }, delay, time);
   return t;
 }
-},{"./timer.js":"ea66"}],"QZ3s":[function(require,module,exports) {
+},{"./timer.js":"../node_modules/d3-timer/src/timer.js"}],"../node_modules/d3-timer/src/interval.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5574,7 +5624,7 @@ function _default(callback, delay, time) {
   }, delay, time);
   return t;
 }
-},{"./timer.js":"ea66"}],"rdzS":[function(require,module,exports) {
+},{"./timer.js":"../node_modules/d3-timer/src/timer.js"}],"../node_modules/d3-timer/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5618,7 +5668,7 @@ var _timeout = _interopRequireDefault(require("./timeout.js"));
 var _interval = _interopRequireDefault(require("./interval.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./timer.js":"ea66","./timeout.js":"jIZm","./interval.js":"QZ3s"}],"nqGJ":[function(require,module,exports) {
+},{"./timer.js":"../node_modules/d3-timer/src/timer.js","./timeout.js":"../node_modules/d3-timer/src/timeout.js","./interval.js":"../node_modules/d3-timer/src/interval.js"}],"../node_modules/d3-transition/src/transition/schedule.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5788,7 +5838,7 @@ function create(node, id, self) {
     delete node.__transition;
   }
 }
-},{"d3-dispatch":"D3zY","d3-timer":"rdzS"}],"fDNN":[function(require,module,exports) {
+},{"d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-timer":"../node_modules/d3-timer/src/index.js"}],"../node_modules/d3-transition/src/interrupt.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5822,7 +5872,7 @@ function _default(node, name) {
 
   if (empty) delete node.__transition;
 }
-},{"./transition/schedule.js":"nqGJ"}],"cQLj":[function(require,module,exports) {
+},{"./transition/schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/selection/interrupt.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5839,7 +5889,7 @@ function _default(name) {
     (0, _interrupt.default)(this, name);
   });
 }
-},{"../interrupt.js":"fDNN"}],"jGA0":[function(require,module,exports) {
+},{"../interrupt.js":"../node_modules/d3-transition/src/interrupt.js"}],"../node_modules/d3-transition/src/transition/tween.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5932,7 +5982,7 @@ function tweenValue(transition, name, value) {
     return (0, _schedule.get)(node, id).value[name];
   };
 }
-},{"./schedule.js":"nqGJ"}],"EwAl":[function(require,module,exports) {
+},{"./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/interpolate.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5948,7 +5998,7 @@ function _default(a, b) {
   var c;
   return (typeof b === "number" ? _d3Interpolate.interpolateNumber : b instanceof _d3Color.color ? _d3Interpolate.interpolateRgb : (c = (0, _d3Color.color)(b)) ? (b = c, _d3Interpolate.interpolateRgb) : _d3Interpolate.interpolateString)(a, b);
 }
-},{"d3-color":"Peej","d3-interpolate":"k9aH"}],"Edhf":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js"}],"../node_modules/d3-transition/src/transition/attr.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6029,7 +6079,7 @@ function _default(name, value) {
       i = fullname === "transform" ? _d3Interpolate.interpolateTransformSvg : _interpolate.default;
   return this.attrTween(name, typeof value === "function" ? (fullname.local ? attrFunctionNS : attrFunction)(fullname, i, (0, _tween.tweenValue)(this, "attr." + name, value)) : value == null ? (fullname.local ? attrRemoveNS : attrRemove)(fullname) : (fullname.local ? attrConstantNS : attrConstant)(fullname, i, value));
 }
-},{"d3-interpolate":"k9aH","d3-selection":"ysDv","./tween.js":"jGA0","./interpolate.js":"EwAl"}],"bknt":[function(require,module,exports) {
+},{"d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","./tween.js":"../node_modules/d3-transition/src/transition/tween.js","./interpolate.js":"../node_modules/d3-transition/src/transition/interpolate.js"}],"../node_modules/d3-transition/src/transition/attrTween.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6085,7 +6135,7 @@ function _default(name, value) {
   var fullname = (0, _d3Selection.namespace)(name);
   return this.tween(key, (fullname.local ? attrTweenNS : attrTween)(fullname, value));
 }
-},{"d3-selection":"ysDv"}],"ln8e":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js"}],"../node_modules/d3-transition/src/transition/delay.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6111,7 +6161,7 @@ function _default(value) {
   var id = this._id;
   return arguments.length ? this.each((typeof value === "function" ? delayFunction : delayConstant)(id, value)) : (0, _schedule.get)(this.node(), id).delay;
 }
-},{"./schedule.js":"nqGJ"}],"WWpH":[function(require,module,exports) {
+},{"./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/duration.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6137,7 +6187,7 @@ function _default(value) {
   var id = this._id;
   return arguments.length ? this.each((typeof value === "function" ? durationFunction : durationConstant)(id, value)) : (0, _schedule.get)(this.node(), id).duration;
 }
-},{"./schedule.js":"nqGJ"}],"AcgK":[function(require,module,exports) {
+},{"./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/ease.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6158,7 +6208,7 @@ function _default(value) {
   var id = this._id;
   return arguments.length ? this.each(easeConstant(id, value)) : (0, _schedule.get)(this.node(), id).ease;
 }
-},{"./schedule.js":"nqGJ"}],"MnwJ":[function(require,module,exports) {
+},{"./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/filter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6183,7 +6233,7 @@ function _default(match) {
 
   return new _index.Transition(subgroups, this._parents, this._name, this._id);
 }
-},{"d3-selection":"ysDv","./index.js":"OWOq"}],"cfNr":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js","./index.js":"../node_modules/d3-transition/src/transition/index.js"}],"../node_modules/d3-transition/src/transition/merge.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6210,7 +6260,7 @@ function _default(transition) {
 
   return new _index.Transition(merges, this._parents, this._name, this._id);
 }
-},{"./index.js":"OWOq"}],"ELQ0":[function(require,module,exports) {
+},{"./index.js":"../node_modules/d3-transition/src/transition/index.js"}],"../node_modules/d3-transition/src/transition/on.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6247,7 +6297,7 @@ function _default(name, listener) {
   var id = this._id;
   return arguments.length < 2 ? (0, _schedule.get)(this.node(), id).on.on(name) : this.each(onFunction(id, name, listener));
 }
-},{"./schedule.js":"nqGJ"}],"mXFz":[function(require,module,exports) {
+},{"./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/remove.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6268,7 +6318,7 @@ function removeFunction(id) {
 function _default() {
   return this.on("end.remove", removeFunction(this._id));
 }
-},{}],"P4XU":[function(require,module,exports) {
+},{}],"../node_modules/d3-transition/src/transition/select.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6303,7 +6353,7 @@ function _default(select) {
 
   return new _index.Transition(subgroups, this._parents, name, id);
 }
-},{"d3-selection":"ysDv","./index.js":"OWOq","./schedule.js":"nqGJ"}],"BH5v":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js","./index.js":"../node_modules/d3-transition/src/transition/index.js","./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/selectAll.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6343,7 +6393,7 @@ function _default(select) {
 
   return new _index.Transition(subgroups, parents, name, id);
 }
-},{"d3-selection":"ysDv","./index.js":"OWOq","./schedule.js":"nqGJ"}],"kIVv":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js","./index.js":"../node_modules/d3-transition/src/transition/index.js","./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/selection.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6358,7 +6408,7 @@ var Selection = _d3Selection.selection.prototype.constructor;
 function _default() {
   return new Selection(this._groups, this._parents);
 }
-},{"d3-selection":"ysDv"}],"xTYE":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js"}],"../node_modules/d3-transition/src/transition/style.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6437,7 +6487,7 @@ function _default(name, value, priority) {
   var i = (name += "") === "transform" ? _d3Interpolate.interpolateTransformCss : _interpolate.default;
   return value == null ? this.styleTween(name, styleNull(name, i)).on("end.style." + name, styleRemove(name)) : typeof value === "function" ? this.styleTween(name, styleFunction(name, i, (0, _tween.tweenValue)(this, "style." + name, value))).each(styleMaybeRemove(this._id, name)) : this.styleTween(name, styleConstant(name, i, value), priority).on("end.style." + name, null);
 }
-},{"d3-interpolate":"k9aH","d3-selection":"ysDv","./schedule.js":"nqGJ","./tween.js":"jGA0","./interpolate.js":"EwAl"}],"PSnC":[function(require,module,exports) {
+},{"d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js","./tween.js":"../node_modules/d3-transition/src/transition/tween.js","./interpolate.js":"../node_modules/d3-transition/src/transition/interpolate.js"}],"../node_modules/d3-transition/src/transition/styleTween.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6471,7 +6521,7 @@ function _default(name, value, priority) {
   if (typeof value !== "function") throw new Error();
   return this.tween(key, styleTween(name, value, priority == null ? "" : priority));
 }
-},{}],"JpCG":[function(require,module,exports) {
+},{}],"../node_modules/d3-transition/src/transition/text.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6497,7 +6547,7 @@ function textFunction(value) {
 function _default(value) {
   return this.tween("text", typeof value === "function" ? textFunction((0, _tween.tweenValue)(this, "text", value)) : textConstant(value == null ? "" : value + ""));
 }
-},{"./tween.js":"jGA0"}],"cW7v":[function(require,module,exports) {
+},{"./tween.js":"../node_modules/d3-transition/src/transition/tween.js"}],"../node_modules/d3-transition/src/transition/textTween.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6531,7 +6581,7 @@ function _default(value) {
   if (typeof value !== "function") throw new Error();
   return this.tween(key, textTween(value));
 }
-},{}],"IPhv":[function(require,module,exports) {
+},{}],"../node_modules/d3-transition/src/transition/transition.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6568,7 +6618,7 @@ function _default() {
 
   return new _index.Transition(groups, this._parents, name, id1);
 }
-},{"./index.js":"OWOq","./schedule.js":"nqGJ"}],"Q4LY":[function(require,module,exports) {
+},{"./index.js":"../node_modules/d3-transition/src/transition/index.js","./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/end.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6613,7 +6663,7 @@ function _default() {
     });
   });
 }
-},{"./schedule.js":"nqGJ"}],"OWOq":[function(require,module,exports) {
+},{"./schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/transition/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6711,7 +6761,7 @@ Transition.prototype = transition.prototype = {
   ease: _ease.default,
   end: _end.default
 };
-},{"d3-selection":"ysDv","./attr.js":"Edhf","./attrTween.js":"bknt","./delay.js":"ln8e","./duration.js":"WWpH","./ease.js":"AcgK","./filter.js":"MnwJ","./merge.js":"cfNr","./on.js":"ELQ0","./remove.js":"mXFz","./select.js":"P4XU","./selectAll.js":"BH5v","./selection.js":"kIVv","./style.js":"xTYE","./styleTween.js":"PSnC","./text.js":"JpCG","./textTween.js":"cW7v","./transition.js":"IPhv","./tween.js":"jGA0","./end.js":"Q4LY"}],"VacQ":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js","./attr.js":"../node_modules/d3-transition/src/transition/attr.js","./attrTween.js":"../node_modules/d3-transition/src/transition/attrTween.js","./delay.js":"../node_modules/d3-transition/src/transition/delay.js","./duration.js":"../node_modules/d3-transition/src/transition/duration.js","./ease.js":"../node_modules/d3-transition/src/transition/ease.js","./filter.js":"../node_modules/d3-transition/src/transition/filter.js","./merge.js":"../node_modules/d3-transition/src/transition/merge.js","./on.js":"../node_modules/d3-transition/src/transition/on.js","./remove.js":"../node_modules/d3-transition/src/transition/remove.js","./select.js":"../node_modules/d3-transition/src/transition/select.js","./selectAll.js":"../node_modules/d3-transition/src/transition/selectAll.js","./selection.js":"../node_modules/d3-transition/src/transition/selection.js","./style.js":"../node_modules/d3-transition/src/transition/style.js","./styleTween.js":"../node_modules/d3-transition/src/transition/styleTween.js","./text.js":"../node_modules/d3-transition/src/transition/text.js","./textTween.js":"../node_modules/d3-transition/src/transition/textTween.js","./transition.js":"../node_modules/d3-transition/src/transition/transition.js","./tween.js":"../node_modules/d3-transition/src/transition/tween.js","./end.js":"../node_modules/d3-transition/src/transition/end.js"}],"../node_modules/d3-ease/src/linear.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6722,7 +6772,7 @@ exports.linear = linear;
 function linear(t) {
   return +t;
 }
-},{}],"EZNz":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/quad.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6743,7 +6793,7 @@ function quadOut(t) {
 function quadInOut(t) {
   return ((t *= 2) <= 1 ? t * t : --t * (2 - t) + 1) / 2;
 }
-},{}],"ropQ":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/cubic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6764,7 +6814,7 @@ function cubicOut(t) {
 function cubicInOut(t) {
   return ((t *= 2) <= 1 ? t * t * t : (t -= 2) * t * t + 2) / 2;
 }
-},{}],"rJoA":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/poly.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6811,7 +6861,7 @@ var polyInOut = function custom(e) {
 }(exponent);
 
 exports.polyInOut = polyInOut;
-},{}],"XXPs":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/sin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6834,7 +6884,7 @@ function sinOut(t) {
 function sinInOut(t) {
   return (1 - Math.cos(pi * t)) / 2;
 }
-},{}],"PTZz":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/exp.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6855,7 +6905,7 @@ function expOut(t) {
 function expInOut(t) {
   return ((t *= 2) <= 1 ? Math.pow(2, 10 * t - 10) : 2 - Math.pow(2, 10 - 10 * t)) / 2;
 }
-},{}],"qwy6":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/circle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6876,7 +6926,7 @@ function circleOut(t) {
 function circleInOut(t) {
   return ((t *= 2) <= 1 ? 1 - Math.sqrt(1 - t * t) : Math.sqrt(1 - (t -= 2) * t) + 1) / 2;
 }
-},{}],"rEBC":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/bounce.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6907,7 +6957,7 @@ function bounceOut(t) {
 function bounceInOut(t) {
   return ((t *= 2) <= 1 ? 1 - bounceOut(1 - t) : bounceOut(t - 1) + 1) / 2;
 }
-},{}],"G5Mi":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/back.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6954,7 +7004,7 @@ var backInOut = function custom(s) {
 }(overshoot);
 
 exports.backInOut = backInOut;
-},{}],"TN0k":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/elastic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7024,7 +7074,7 @@ var elasticInOut = function custom(a, p) {
 }(amplitude, period);
 
 exports.elasticInOut = elasticInOut;
-},{}],"pJ11":[function(require,module,exports) {
+},{}],"../node_modules/d3-ease/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7272,7 +7322,7 @@ var _bounce = require("./bounce.js");
 var _back = require("./back.js");
 
 var _elastic = require("./elastic.js");
-},{"./linear.js":"VacQ","./quad.js":"EZNz","./cubic.js":"ropQ","./poly.js":"rJoA","./sin.js":"XXPs","./exp.js":"PTZz","./circle.js":"qwy6","./bounce.js":"rEBC","./back.js":"G5Mi","./elastic.js":"TN0k"}],"VKWr":[function(require,module,exports) {
+},{"./linear.js":"../node_modules/d3-ease/src/linear.js","./quad.js":"../node_modules/d3-ease/src/quad.js","./cubic.js":"../node_modules/d3-ease/src/cubic.js","./poly.js":"../node_modules/d3-ease/src/poly.js","./sin.js":"../node_modules/d3-ease/src/sin.js","./exp.js":"../node_modules/d3-ease/src/exp.js","./circle.js":"../node_modules/d3-ease/src/circle.js","./bounce.js":"../node_modules/d3-ease/src/bounce.js","./back.js":"../node_modules/d3-ease/src/back.js","./elastic.js":"../node_modules/d3-ease/src/elastic.js"}],"../node_modules/d3-transition/src/selection/transition.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7329,7 +7379,7 @@ function _default(name) {
 
   return new _index.Transition(groups, this._parents, name, id);
 }
-},{"../transition/index.js":"OWOq","../transition/schedule.js":"nqGJ","d3-ease":"pJ11","d3-timer":"rdzS"}],"vGqA":[function(require,module,exports) {
+},{"../transition/index.js":"../node_modules/d3-transition/src/transition/index.js","../transition/schedule.js":"../node_modules/d3-transition/src/transition/schedule.js","d3-ease":"../node_modules/d3-ease/src/index.js","d3-timer":"../node_modules/d3-timer/src/index.js"}],"../node_modules/d3-transition/src/selection/index.js":[function(require,module,exports) {
 "use strict";
 
 var _d3Selection = require("d3-selection");
@@ -7342,7 +7392,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _d3Selection.selection.prototype.interrupt = _interrupt.default;
 _d3Selection.selection.prototype.transition = _transition.default;
-},{"d3-selection":"ysDv","./interrupt.js":"cQLj","./transition.js":"VKWr"}],"UWV3":[function(require,module,exports) {
+},{"d3-selection":"../node_modules/d3-selection/src/index.js","./interrupt.js":"../node_modules/d3-transition/src/selection/interrupt.js","./transition.js":"../node_modules/d3-transition/src/selection/transition.js"}],"../node_modules/d3-transition/src/active.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7373,7 +7423,7 @@ function _default(node, name) {
 
   return null;
 }
-},{"./transition/index.js":"OWOq","./transition/schedule.js":"nqGJ"}],"UqVV":[function(require,module,exports) {
+},{"./transition/index.js":"../node_modules/d3-transition/src/transition/index.js","./transition/schedule.js":"../node_modules/d3-transition/src/transition/schedule.js"}],"../node_modules/d3-transition/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7407,7 +7457,20 @@ var _active = _interopRequireDefault(require("./active.js"));
 var _interrupt = _interopRequireDefault(require("./interrupt.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./selection/index.js":"vGqA","./transition/index.js":"OWOq","./active.js":"UWV3","./interrupt.js":"fDNN"}],"Bo4j":[function(require,module,exports) {
+},{"./selection/index.js":"../node_modules/d3-transition/src/selection/index.js","./transition/index.js":"../node_modules/d3-transition/src/transition/index.js","./active.js":"../node_modules/d3-transition/src/active.js","./interrupt.js":"../node_modules/d3-transition/src/interrupt.js"}],"../node_modules/d3-brush/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-brush/src/event.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7420,7 +7483,27 @@ function _default(target, type, selection) {
   this.type = type;
   this.selection = selection;
 }
-},{}],"qu2I":[function(require,module,exports) {
+},{}],"../node_modules/d3-brush/src/noevent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.nopropagation = nopropagation;
+exports.default = _default;
+
+var _d3Selection = require("d3-selection");
+
+function nopropagation() {
+  _d3Selection.event.stopImmediatePropagation();
+}
+
+function _default() {
+  _d3Selection.event.preventDefault();
+
+  _d3Selection.event.stopImmediatePropagation();
+}
+},{"d3-selection":"../node_modules/d3-selection/src/index.js"}],"../node_modules/d3-brush/src/brush.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8036,7 +8119,7 @@ function brush(dim) {
 
   return brush;
 }
-},{"d3-dispatch":"D3zY","d3-drag":"kkdU","d3-interpolate":"k9aH","d3-selection":"ysDv","d3-transition":"UqVV","./constant.js":"aCvo","./event.js":"Bo4j","./noevent.js":"BxLv"}],"tkh5":[function(require,module,exports) {
+},{"d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-drag":"../node_modules/d3-drag/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","d3-transition":"../node_modules/d3-transition/src/index.js","./constant.js":"../node_modules/d3-brush/src/constant.js","./event.js":"../node_modules/d3-brush/src/event.js","./noevent.js":"../node_modules/d3-brush/src/noevent.js"}],"../node_modules/d3-brush/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8072,7 +8155,7 @@ var _brush = _interopRequireWildcard(require("./brush.js"));
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./brush.js":"qu2I"}],"nrzw":[function(require,module,exports) {
+},{"./brush.js":"../node_modules/d3-brush/src/brush.js"}],"../node_modules/d3-chord/src/math.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8091,7 +8174,7 @@ var tau = pi * 2;
 exports.tau = tau;
 var max = Math.max;
 exports.max = max;
-},{}],"TnSC":[function(require,module,exports) {
+},{}],"../node_modules/d3-chord/src/chord.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8233,7 +8316,29 @@ function _default() {
 
   return chord;
 }
-},{"d3-array":"K0bd","./math":"nrzw"}],"hMob":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./math":"../node_modules/d3-chord/src/math.js"}],"../node_modules/d3-chord/src/array.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.slice = void 0;
+var slice = Array.prototype.slice;
+exports.slice = slice;
+},{}],"../node_modules/d3-chord/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-path/src/path.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8354,7 +8459,7 @@ Path.prototype = path.prototype = {
 };
 var _default = path;
 exports.default = _default;
-},{}],"OTyq":[function(require,module,exports) {
+},{}],"../node_modules/d3-path/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8370,7 +8475,7 @@ Object.defineProperty(exports, "path", {
 var _path = _interopRequireDefault(require("./path.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./path.js":"hMob"}],"stmI":[function(require,module,exports) {
+},{"./path.js":"../node_modules/d3-path/src/path.js"}],"../node_modules/d3-chord/src/ribbon.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8471,7 +8576,7 @@ function _default() {
 
   return ribbon;
 }
-},{"./array":"KXlw","./constant":"aCvo","./math":"nrzw","d3-path":"OTyq"}],"Iy8J":[function(require,module,exports) {
+},{"./array":"../node_modules/d3-chord/src/array.js","./constant":"../node_modules/d3-chord/src/constant.js","./math":"../node_modules/d3-chord/src/math.js","d3-path":"../node_modules/d3-path/src/index.js"}],"../node_modules/d3-chord/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8495,7 +8600,7 @@ var _chord = _interopRequireDefault(require("./chord"));
 var _ribbon = _interopRequireDefault(require("./ribbon"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./chord":"TnSC","./ribbon":"stmI"}],"lDuF":[function(require,module,exports) {
+},{"./chord":"../node_modules/d3-chord/src/chord.js","./ribbon":"../node_modules/d3-chord/src/ribbon.js"}],"../node_modules/d3-collection/src/map.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8585,7 +8690,7 @@ function map(object, f) {
 
 var _default = map;
 exports.default = _default;
-},{}],"kDkA":[function(require,module,exports) {
+},{}],"../node_modules/d3-collection/src/nest.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8692,7 +8797,7 @@ function createMap() {
 function setMap(map, key, value) {
   map.set(key, value);
 }
-},{"./map":"lDuF"}],"vFPv":[function(require,module,exports) {
+},{"./map":"../node_modules/d3-collection/src/map.js"}],"../node_modules/d3-collection/src/set.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8741,7 +8846,7 @@ function set(object, f) {
 
 var _default = set;
 exports.default = _default;
-},{"./map":"lDuF"}],"DTc5":[function(require,module,exports) {
+},{"./map":"../node_modules/d3-collection/src/map.js"}],"../node_modules/d3-collection/src/keys.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8756,7 +8861,7 @@ function _default(map) {
 
   return keys;
 }
-},{}],"KaQc":[function(require,module,exports) {
+},{}],"../node_modules/d3-collection/src/values.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8771,7 +8876,7 @@ function _default(map) {
 
   return values;
 }
-},{}],"wnH6":[function(require,module,exports) {
+},{}],"../node_modules/d3-collection/src/entries.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8789,7 +8894,7 @@ function _default(map) {
 
   return entries;
 }
-},{}],"S3hn":[function(require,module,exports) {
+},{}],"../node_modules/d3-collection/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8845,7 +8950,7 @@ var _values = _interopRequireDefault(require("./values"));
 var _entries = _interopRequireDefault(require("./entries"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./nest":"kDkA","./set":"vFPv","./map":"lDuF","./keys":"DTc5","./values":"KaQc","./entries":"wnH6"}],"TvZ5":[function(require,module,exports) {
+},{"./nest":"../node_modules/d3-collection/src/nest.js","./set":"../node_modules/d3-collection/src/set.js","./map":"../node_modules/d3-collection/src/map.js","./keys":"../node_modules/d3-collection/src/keys.js","./values":"../node_modules/d3-collection/src/values.js","./entries":"../node_modules/d3-collection/src/entries.js"}],"../node_modules/d3-contour/src/array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8855,7 +8960,7 @@ exports.slice = void 0;
 var array = Array.prototype;
 var slice = array.slice;
 exports.slice = slice;
-},{}],"T6bn":[function(require,module,exports) {
+},{}],"../node_modules/d3-contour/src/ascending.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8866,7 +8971,7 @@ exports.default = _default;
 function _default(a, b) {
   return a - b;
 }
-},{}],"TIuo":[function(require,module,exports) {
+},{}],"../node_modules/d3-contour/src/area.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8883,7 +8988,20 @@ function _default(ring) {
 
   return area;
 }
-},{}],"MoCi":[function(require,module,exports) {
+},{}],"../node_modules/d3-contour/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-contour/src/contains.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8932,7 +9050,7 @@ function collinear(a, b, c) {
 function within(p, q, r) {
   return p <= q && q <= r || r <= q && q <= p;
 }
-},{}],"zOhu":[function(require,module,exports) {
+},{}],"../node_modules/d3-contour/src/noop.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8941,7 +9059,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = _default;
 
 function _default() {}
-},{}],"DT0k":[function(require,module,exports) {
+},{}],"../node_modules/d3-contour/src/contours.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9170,7 +9288,7 @@ function _default() {
 
   return contours;
 }
-},{"d3-array":"K0bd","./array":"TvZ5","./ascending":"T6bn","./area":"TIuo","./constant":"aCvo","./contains":"MoCi","./noop":"zOhu"}],"DGMp":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./array":"../node_modules/d3-contour/src/array.js","./ascending":"../node_modules/d3-contour/src/ascending.js","./area":"../node_modules/d3-contour/src/area.js","./constant":"../node_modules/d3-contour/src/constant.js","./contains":"../node_modules/d3-contour/src/contains.js","./noop":"../node_modules/d3-contour/src/noop.js"}],"../node_modules/d3-contour/src/blur.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9228,7 +9346,7 @@ function blurY(source, target, r) {
     }
   }
 }
-},{}],"NV0r":[function(require,module,exports) {
+},{}],"../node_modules/d3-contour/src/density.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9425,7 +9543,7 @@ function _default() {
 
   return density;
 }
-},{"d3-array":"K0bd","./array":"TvZ5","./blur":"DGMp","./constant":"aCvo","./contours":"DT0k"}],"SiBy":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./array":"../node_modules/d3-contour/src/array.js","./blur":"../node_modules/d3-contour/src/blur.js","./constant":"../node_modules/d3-contour/src/constant.js","./contours":"../node_modules/d3-contour/src/contours.js"}],"../node_modules/d3-contour/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9449,7 +9567,7 @@ var _contours = _interopRequireDefault(require("./contours"));
 var _density = _interopRequireDefault(require("./density"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./contours":"DT0k","./density":"NV0r"}],"uRW4":[function(require,module,exports) {
+},{"./contours":"../node_modules/d3-contour/src/contours.js","./density":"../node_modules/d3-contour/src/density.js"}],"../node_modules/d3-dsv/src/dsv.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9623,7 +9741,7 @@ function _default(delimiter) {
     formatValue: formatValue
   };
 }
-},{}],"yGbu":[function(require,module,exports) {
+},{}],"../node_modules/d3-dsv/src/csv.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9650,7 +9768,7 @@ var csvFormatRow = csv.formatRow;
 exports.csvFormatRow = csvFormatRow;
 var csvFormatValue = csv.formatValue;
 exports.csvFormatValue = csvFormatValue;
-},{"./dsv.js":"uRW4"}],"Rica":[function(require,module,exports) {
+},{"./dsv.js":"../node_modules/d3-dsv/src/dsv.js"}],"../node_modules/d3-dsv/src/tsv.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9677,7 +9795,7 @@ var tsvFormatRow = tsv.formatRow;
 exports.tsvFormatRow = tsvFormatRow;
 var tsvFormatValue = tsv.formatValue;
 exports.tsvFormatValue = tsvFormatValue;
-},{"./dsv.js":"uRW4"}],"hdSA":[function(require,module,exports) {
+},{"./dsv.js":"../node_modules/d3-dsv/src/dsv.js"}],"../node_modules/d3-dsv/src/autoType.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9702,7 +9820,7 @@ function autoType(object) {
 
 
 var fixtz = new Date("2019-01-01T00:00").getHours() || new Date("2019-07-01T00:00").getHours();
-},{}],"EC2w":[function(require,module,exports) {
+},{}],"../node_modules/d3-dsv/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9814,7 +9932,7 @@ var _tsv = require("./tsv.js");
 var _autoType = _interopRequireDefault(require("./autoType.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./dsv.js":"uRW4","./csv.js":"yGbu","./tsv.js":"Rica","./autoType.js":"hdSA"}],"qUE6":[function(require,module,exports) {
+},{"./dsv.js":"../node_modules/d3-dsv/src/dsv.js","./csv.js":"../node_modules/d3-dsv/src/csv.js","./tsv.js":"../node_modules/d3-dsv/src/tsv.js","./autoType.js":"../node_modules/d3-dsv/src/autoType.js"}],"../node_modules/d3-fetch/src/blob.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9830,7 +9948,7 @@ function responseBlob(response) {
 function _default(input, init) {
   return fetch(input, init).then(responseBlob);
 }
-},{}],"G9Fv":[function(require,module,exports) {
+},{}],"../node_modules/d3-fetch/src/buffer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9846,7 +9964,7 @@ function responseArrayBuffer(response) {
 function _default(input, init) {
   return fetch(input, init).then(responseArrayBuffer);
 }
-},{}],"bNd6":[function(require,module,exports) {
+},{}],"../node_modules/d3-fetch/src/text.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9862,7 +9980,7 @@ function responseText(response) {
 function _default(input, init) {
   return fetch(input, init).then(responseText);
 }
-},{}],"Ul8d":[function(require,module,exports) {
+},{}],"../node_modules/d3-fetch/src/dsv.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9898,7 +10016,7 @@ var csv = dsvParse(_d3Dsv.csvParse);
 exports.csv = csv;
 var tsv = dsvParse(_d3Dsv.tsvParse);
 exports.tsv = tsv;
-},{"d3-dsv":"EC2w","./text":"bNd6"}],"cIzq":[function(require,module,exports) {
+},{"d3-dsv":"../node_modules/d3-dsv/src/index.js","./text":"../node_modules/d3-fetch/src/text.js"}],"../node_modules/d3-fetch/src/image.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9921,7 +10039,7 @@ function _default(input, init) {
     image.src = input;
   });
 }
-},{}],"VDYt":[function(require,module,exports) {
+},{}],"../node_modules/d3-fetch/src/json.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9937,7 +10055,7 @@ function responseJson(response) {
 function _default(input, init) {
   return fetch(input, init).then(responseJson);
 }
-},{}],"NUeg":[function(require,module,exports) {
+},{}],"../node_modules/d3-fetch/src/xml.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9964,7 +10082,7 @@ var html = parser("text/html");
 exports.html = html;
 var svg = parser("image/svg+xml");
 exports.svg = svg;
-},{"./text":"bNd6"}],"grWT":[function(require,module,exports) {
+},{"./text":"../node_modules/d3-fetch/src/text.js"}],"../node_modules/d3-fetch/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10056,7 +10174,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./blob":"qUE6","./buffer":"G9Fv","./dsv":"Ul8d","./image":"cIzq","./json":"VDYt","./text":"bNd6","./xml":"NUeg"}],"i73m":[function(require,module,exports) {
+},{"./blob":"../node_modules/d3-fetch/src/blob.js","./buffer":"../node_modules/d3-fetch/src/buffer.js","./dsv":"../node_modules/d3-fetch/src/dsv.js","./image":"../node_modules/d3-fetch/src/image.js","./json":"../node_modules/d3-fetch/src/json.js","./text":"../node_modules/d3-fetch/src/text.js","./xml":"../node_modules/d3-fetch/src/xml.js"}],"../node_modules/d3-force/src/center.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10099,7 +10217,20 @@ function _default(x, y) {
 
   return force;
 }
-},{}],"Efbf":[function(require,module,exports) {
+},{}],"../node_modules/d3-force/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-force/src/jiggle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10110,7 +10241,7 @@ exports.default = _default;
 function _default() {
   return (Math.random() - 0.5) * 1e-6;
 }
-},{}],"ALzt":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/add.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10202,7 +10333,7 @@ function addAll(data) {
 
   return this;
 }
-},{}],"YvH0":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/cover.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10262,7 +10393,7 @@ function _default(x, y) {
   this._y1 = y1;
   return this;
 }
-},{}],"uVl3":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/data.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10277,7 +10408,7 @@ function _default() {
   });
   return data;
 }
-},{}],"wciv":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/extent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10288,7 +10419,7 @@ exports.default = _default;
 function _default(_) {
   return arguments.length ? this.cover(+_[0][0], +_[0][1]).cover(+_[1][0], +_[1][1]) : isNaN(this._x0) ? undefined : [[this._x0, this._y0], [this._x1, this._y1]];
 }
-},{}],"HTh0":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/quad.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10303,7 +10434,7 @@ function _default(node, x0, y0, x1, y1) {
   this.x1 = x1;
   this.y1 = y1;
 }
-},{}],"NXzM":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/find.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10367,7 +10498,7 @@ function _default(x, y, radius) {
 
   return data;
 }
-},{"./quad.js":"HTh0"}],"qMQE":[function(require,module,exports) {
+},{"./quad.js":"../node_modules/d3-quadtree/src/quad.js"}],"../node_modules/d3-quadtree/src/remove.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10430,7 +10561,7 @@ function removeAll(data) {
 
   return this;
 }
-},{}],"f6UW":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/root.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10441,7 +10572,7 @@ exports.default = _default;
 function _default() {
   return this._root;
 }
-},{}],"hpwG":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/size.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10456,7 +10587,7 @@ function _default() {
   });
   return size;
 }
-},{}],"NlIW":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/visit.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10492,7 +10623,7 @@ function _default(callback) {
 
   return this;
 }
-},{"./quad.js":"HTh0"}],"mFQa":[function(require,module,exports) {
+},{"./quad.js":"../node_modules/d3-quadtree/src/quad.js"}],"../node_modules/d3-quadtree/src/visitAfter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10536,7 +10667,7 @@ function _default(callback) {
 
   return this;
 }
-},{"./quad.js":"HTh0"}],"zEre":[function(require,module,exports) {
+},{"./quad.js":"../node_modules/d3-quadtree/src/quad.js"}],"../node_modules/d3-quadtree/src/x.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10552,7 +10683,7 @@ function defaultX(d) {
 function _default(_) {
   return arguments.length ? (this._x = _, this) : this._x;
 }
-},{}],"C58w":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/y.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10568,7 +10699,7 @@ function defaultY(d) {
 function _default(_) {
   return arguments.length ? (this._y = _, this) : this._y;
 }
-},{}],"e6a1":[function(require,module,exports) {
+},{}],"../node_modules/d3-quadtree/src/quadtree.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10676,7 +10807,7 @@ treeProto.visit = _visit.default;
 treeProto.visitAfter = _visitAfter.default;
 treeProto.x = _x.default;
 treeProto.y = _y.default;
-},{"./add.js":"ALzt","./cover.js":"YvH0","./data.js":"uVl3","./extent.js":"wciv","./find.js":"NXzM","./remove.js":"qMQE","./root.js":"f6UW","./size.js":"hpwG","./visit.js":"NlIW","./visitAfter.js":"mFQa","./x.js":"zEre","./y.js":"C58w"}],"lUbg":[function(require,module,exports) {
+},{"./add.js":"../node_modules/d3-quadtree/src/add.js","./cover.js":"../node_modules/d3-quadtree/src/cover.js","./data.js":"../node_modules/d3-quadtree/src/data.js","./extent.js":"../node_modules/d3-quadtree/src/extent.js","./find.js":"../node_modules/d3-quadtree/src/find.js","./remove.js":"../node_modules/d3-quadtree/src/remove.js","./root.js":"../node_modules/d3-quadtree/src/root.js","./size.js":"../node_modules/d3-quadtree/src/size.js","./visit.js":"../node_modules/d3-quadtree/src/visit.js","./visitAfter.js":"../node_modules/d3-quadtree/src/visitAfter.js","./x.js":"../node_modules/d3-quadtree/src/x.js","./y.js":"../node_modules/d3-quadtree/src/y.js"}],"../node_modules/d3-quadtree/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10692,7 +10823,7 @@ Object.defineProperty(exports, "quadtree", {
 var _quadtree = _interopRequireDefault(require("./quadtree.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./quadtree.js":"e6a1"}],"vmaP":[function(require,module,exports) {
+},{"./quadtree.js":"../node_modules/d3-quadtree/src/quadtree.js"}],"../node_modules/d3-force/src/collide.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10813,7 +10944,7 @@ function _default(radius) {
 
   return force;
 }
-},{"./constant":"aCvo","./jiggle":"Efbf","d3-quadtree":"lUbg"}],"zZLJ":[function(require,module,exports) {
+},{"./constant":"../node_modules/d3-force/src/constant.js","./jiggle":"../node_modules/d3-force/src/jiggle.js","d3-quadtree":"../node_modules/d3-quadtree/src/index.js"}],"../node_modules/d3-force/src/link.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10939,7 +11070,7 @@ function _default(links) {
 
   return force;
 }
-},{"./constant":"aCvo","./jiggle":"Efbf","d3-collection":"S3hn"}],"Jr7D":[function(require,module,exports) {
+},{"./constant":"../node_modules/d3-force/src/constant.js","./jiggle":"../node_modules/d3-force/src/jiggle.js","d3-collection":"../node_modules/d3-collection/src/index.js"}],"../node_modules/d3-force/src/simulation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11089,7 +11220,7 @@ function _default(nodes) {
     }
   };
 }
-},{"d3-dispatch":"D3zY","d3-collection":"S3hn","d3-timer":"rdzS"}],"i5c4":[function(require,module,exports) {
+},{"d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-collection":"../node_modules/d3-collection/src/index.js","d3-timer":"../node_modules/d3-timer/src/index.js"}],"../node_modules/d3-force/src/manyBody.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11223,7 +11354,7 @@ function _default() {
 
   return force;
 }
-},{"./constant":"aCvo","./jiggle":"Efbf","d3-quadtree":"lUbg","./simulation":"Jr7D"}],"UAq1":[function(require,module,exports) {
+},{"./constant":"../node_modules/d3-force/src/constant.js","./jiggle":"../node_modules/d3-force/src/jiggle.js","d3-quadtree":"../node_modules/d3-quadtree/src/index.js","./simulation":"../node_modules/d3-force/src/simulation.js"}],"../node_modules/d3-force/src/radial.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11291,7 +11422,7 @@ function _default(radius, x, y) {
 
   return force;
 }
-},{"./constant":"aCvo"}],"ossL":[function(require,module,exports) {
+},{"./constant":"../node_modules/d3-force/src/constant.js"}],"../node_modules/d3-force/src/x.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11343,7 +11474,7 @@ function _default(x) {
 
   return force;
 }
-},{"./constant":"aCvo"}],"GLsE":[function(require,module,exports) {
+},{"./constant":"../node_modules/d3-force/src/constant.js"}],"../node_modules/d3-force/src/y.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11395,7 +11526,7 @@ function _default(y) {
 
   return force;
 }
-},{"./constant":"aCvo"}],"oYRE":[function(require,module,exports) {
+},{"./constant":"../node_modules/d3-force/src/constant.js"}],"../node_modules/d3-force/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11467,7 +11598,7 @@ var _x = _interopRequireDefault(require("./x"));
 var _y = _interopRequireDefault(require("./y"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./center":"i73m","./collide":"vmaP","./link":"zZLJ","./manyBody":"i5c4","./radial":"UAq1","./simulation":"Jr7D","./x":"ossL","./y":"GLsE"}],"GAUC":[function(require,module,exports) {
+},{"./center":"../node_modules/d3-force/src/center.js","./collide":"../node_modules/d3-force/src/collide.js","./link":"../node_modules/d3-force/src/link.js","./manyBody":"../node_modules/d3-force/src/manyBody.js","./radial":"../node_modules/d3-force/src/radial.js","./simulation":"../node_modules/d3-force/src/simulation.js","./x":"../node_modules/d3-force/src/x.js","./y":"../node_modules/d3-force/src/y.js"}],"../node_modules/d3-format/src/formatDecimal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11487,7 +11618,7 @@ function _default(x, p) {
 
   return [coefficient.length > 1 ? coefficient[0] + coefficient.slice(2) : coefficient, +x.slice(i + 1)];
 }
-},{}],"tXBB":[function(require,module,exports) {
+},{}],"../node_modules/d3-format/src/exponent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11502,7 +11633,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(x) {
   return x = (0, _formatDecimal.default)(Math.abs(x)), x ? x[1] : NaN;
 }
-},{"./formatDecimal.js":"GAUC"}],"rbAM":[function(require,module,exports) {
+},{"./formatDecimal.js":"../node_modules/d3-format/src/formatDecimal.js"}],"../node_modules/d3-format/src/formatGroup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11528,7 +11659,7 @@ function _default(grouping, thousands) {
     return t.reverse().join(thousands);
   };
 }
-},{}],"hTcF":[function(require,module,exports) {
+},{}],"../node_modules/d3-format/src/formatNumerals.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11543,7 +11674,7 @@ function _default(numerals) {
     });
   };
 }
-},{}],"aibL":[function(require,module,exports) {
+},{}],"../node_modules/d3-format/src/formatSpecifier.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11589,7 +11720,7 @@ function FormatSpecifier(specifier) {
 FormatSpecifier.prototype.toString = function () {
   return this.fill + this.align + this.sign + this.symbol + (this.zero ? "0" : "") + (this.width === undefined ? "" : Math.max(1, this.width | 0)) + (this.comma ? "," : "") + (this.precision === undefined ? "" : "." + Math.max(0, this.precision | 0)) + (this.trim ? "~" : "") + this.type;
 };
-},{}],"SUnU":[function(require,module,exports) {
+},{}],"../node_modules/d3-format/src/formatTrim.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11619,7 +11750,7 @@ function _default(s) {
 
   return i0 > 0 ? s.slice(0, i0) + s.slice(i1 + 1) : s;
 }
-},{}],"fBpa":[function(require,module,exports) {
+},{}],"../node_modules/d3-format/src/formatPrefixAuto.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11644,7 +11775,7 @@ function _default(x, p) {
       n = coefficient.length;
   return i === n ? coefficient : i > n ? coefficient + new Array(i - n + 1).join("0") : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i) : "0." + new Array(1 - i).join("0") + (0, _formatDecimal.default)(x, Math.max(0, p + i - 1))[0]; // less than 1y!
 }
-},{"./formatDecimal.js":"GAUC"}],"UDrw":[function(require,module,exports) {
+},{"./formatDecimal.js":"../node_modules/d3-format/src/formatDecimal.js"}],"../node_modules/d3-format/src/formatRounded.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11663,7 +11794,7 @@ function _default(x, p) {
       exponent = d[1];
   return exponent < 0 ? "0." + new Array(-exponent).join("0") + coefficient : coefficient.length > exponent + 1 ? coefficient.slice(0, exponent + 1) + "." + coefficient.slice(exponent + 1) : coefficient + new Array(exponent - coefficient.length + 2).join("0");
 }
-},{"./formatDecimal.js":"GAUC"}],"Wavi":[function(require,module,exports) {
+},{"./formatDecimal.js":"../node_modules/d3-format/src/formatDecimal.js"}],"../node_modules/d3-format/src/formatTypes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11715,7 +11846,18 @@ var _default = {
   }
 };
 exports.default = _default;
-},{"./formatPrefixAuto.js":"fBpa","./formatRounded.js":"UDrw"}],"IVmM":[function(require,module,exports) {
+},{"./formatPrefixAuto.js":"../node_modules/d3-format/src/formatPrefixAuto.js","./formatRounded.js":"../node_modules/d3-format/src/formatRounded.js"}],"../node_modules/d3-format/src/identity.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return x;
+}
+},{}],"../node_modules/d3-format/src/locale.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11874,7 +12016,7 @@ function _default(locale) {
     formatPrefix: formatPrefix
   };
 }
-},{"./exponent.js":"tXBB","./formatGroup.js":"rbAM","./formatNumerals.js":"hTcF","./formatSpecifier.js":"aibL","./formatTrim.js":"SUnU","./formatTypes.js":"Wavi","./formatPrefixAuto.js":"fBpa","./identity.js":"NNW9"}],"KaMm":[function(require,module,exports) {
+},{"./exponent.js":"../node_modules/d3-format/src/exponent.js","./formatGroup.js":"../node_modules/d3-format/src/formatGroup.js","./formatNumerals.js":"../node_modules/d3-format/src/formatNumerals.js","./formatSpecifier.js":"../node_modules/d3-format/src/formatSpecifier.js","./formatTrim.js":"../node_modules/d3-format/src/formatTrim.js","./formatTypes.js":"../node_modules/d3-format/src/formatTypes.js","./formatPrefixAuto.js":"../node_modules/d3-format/src/formatPrefixAuto.js","./identity.js":"../node_modules/d3-format/src/identity.js"}],"../node_modules/d3-format/src/defaultLocale.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11906,7 +12048,7 @@ function defaultLocale(definition) {
   exports.formatPrefix = formatPrefix = locale.formatPrefix;
   return locale;
 }
-},{"./locale.js":"IVmM"}],"EyKk":[function(require,module,exports) {
+},{"./locale.js":"../node_modules/d3-format/src/locale.js"}],"../node_modules/d3-format/src/precisionFixed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11921,7 +12063,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(step) {
   return Math.max(0, -(0, _exponent.default)(Math.abs(step)));
 }
-},{"./exponent.js":"tXBB"}],"VPkn":[function(require,module,exports) {
+},{"./exponent.js":"../node_modules/d3-format/src/exponent.js"}],"../node_modules/d3-format/src/precisionPrefix.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11936,7 +12078,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(step, value) {
   return Math.max(0, Math.max(-8, Math.min(8, Math.floor((0, _exponent.default)(value) / 3))) * 3 - (0, _exponent.default)(Math.abs(step)));
 }
-},{"./exponent.js":"tXBB"}],"DMyZ":[function(require,module,exports) {
+},{"./exponent.js":"../node_modules/d3-format/src/exponent.js"}],"../node_modules/d3-format/src/precisionRound.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11952,7 +12094,7 @@ function _default(step, max) {
   step = Math.abs(step), max = Math.abs(max) - step;
   return Math.max(0, (0, _exponent.default)(max) - (0, _exponent.default)(step)) + 1;
 }
-},{"./exponent.js":"tXBB"}],"VuZR":[function(require,module,exports) {
+},{"./exponent.js":"../node_modules/d3-format/src/exponent.js"}],"../node_modules/d3-format/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12030,7 +12172,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./defaultLocale.js":"KaMm","./locale.js":"IVmM","./formatSpecifier.js":"aibL","./precisionFixed.js":"EyKk","./precisionPrefix.js":"VPkn","./precisionRound.js":"DMyZ"}],"fG8A":[function(require,module,exports) {
+},{"./defaultLocale.js":"../node_modules/d3-format/src/defaultLocale.js","./locale.js":"../node_modules/d3-format/src/locale.js","./formatSpecifier.js":"../node_modules/d3-format/src/formatSpecifier.js","./precisionFixed.js":"../node_modules/d3-format/src/precisionFixed.js","./precisionPrefix.js":"../node_modules/d3-format/src/precisionPrefix.js","./precisionRound.js":"../node_modules/d3-format/src/precisionRound.js"}],"../node_modules/d3-geo/src/adder.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12075,7 +12217,7 @@ function add(adder, a, b) {
       av = x - bv;
   adder.t = a - av + (b - bv);
 }
-},{}],"JQgf":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/math.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12143,7 +12285,7 @@ function asin(x) {
 function haversin(x) {
   return (x = sin(x / 2)) * x;
 }
-},{}],"DUih":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/noop.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12152,7 +12294,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = noop;
 
 function noop() {}
-},{}],"XQuq":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/stream.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12250,7 +12392,7 @@ function _default(object, stream) {
     streamGeometry(object, stream);
   }
 }
-},{}],"rKta":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/area.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12337,7 +12479,7 @@ function _default(object) {
   (0, _stream.default)(object, areaStream);
   return areaSum * 2;
 }
-},{"./adder.js":"fG8A","./math.js":"JQgf","./noop.js":"DUih","./stream.js":"XQuq"}],"V83Q":[function(require,module,exports) {
+},{"./adder.js":"../node_modules/d3-geo/src/adder.js","./math.js":"../node_modules/d3-geo/src/math.js","./noop.js":"../node_modules/d3-geo/src/noop.js","./stream.js":"../node_modules/d3-geo/src/stream.js"}],"../node_modules/d3-geo/src/cartesian.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12386,7 +12528,7 @@ function cartesianNormalizeInPlace(d) {
   var l = (0, _math.sqrt)(d[0] * d[0] + d[1] * d[1] + d[2] * d[2]);
   d[0] /= l, d[1] /= l, d[2] /= l;
 }
-},{"./math.js":"JQgf"}],"rw3L":[function(require,module,exports) {
+},{"./math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/bounds.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12589,7 +12731,7 @@ function _default(feature) {
   ranges = range = null;
   return lambda0 === Infinity || phi0 === Infinity ? [[NaN, NaN], [NaN, NaN]] : [[lambda0, phi0], [lambda1, phi1]];
 }
-},{"./adder.js":"fG8A","./area.js":"rKta","./cartesian.js":"V83Q","./math.js":"JQgf","./stream.js":"XQuq"}],"GCsQ":[function(require,module,exports) {
+},{"./adder.js":"../node_modules/d3-geo/src/adder.js","./area.js":"../node_modules/d3-geo/src/area.js","./cartesian.js":"../node_modules/d3-geo/src/cartesian.js","./math.js":"../node_modules/d3-geo/src/math.js","./stream.js":"../node_modules/d3-geo/src/stream.js"}],"../node_modules/d3-geo/src/centroid.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12733,7 +12875,20 @@ function _default(object) {
 
   return [(0, _math.atan2)(y, x) * _math.degrees, (0, _math.asin)(z / (0, _math.sqrt)(m)) * _math.degrees];
 }
-},{"./math.js":"JQgf","./noop.js":"DUih","./stream.js":"XQuq"}],"tY9i":[function(require,module,exports) {
+},{"./math.js":"../node_modules/d3-geo/src/math.js","./noop.js":"../node_modules/d3-geo/src/noop.js","./stream.js":"../node_modules/d3-geo/src/stream.js"}],"../node_modules/d3-geo/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-geo/src/compose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12751,7 +12906,7 @@ function _default(a, b) {
   };
   return compose;
 }
-},{}],"LqUY":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/rotation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12830,7 +12985,7 @@ function _default(rotate) {
 
   return forward;
 }
-},{"./compose.js":"tY9i","./math.js":"JQgf"}],"KcOR":[function(require,module,exports) {
+},{"./compose.js":"../node_modules/d3-geo/src/compose.js","./math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/circle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12924,7 +13079,7 @@ function _default() {
 
   return circle;
 }
-},{"./cartesian.js":"V83Q","./constant.js":"aCvo","./math.js":"JQgf","./rotation.js":"LqUY"}],"jFd0":[function(require,module,exports) {
+},{"./cartesian.js":"../node_modules/d3-geo/src/cartesian.js","./constant.js":"../node_modules/d3-geo/src/constant.js","./math.js":"../node_modules/d3-geo/src/math.js","./rotation.js":"../node_modules/d3-geo/src/rotation.js"}],"../node_modules/d3-geo/src/clip/buffer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12958,7 +13113,7 @@ function _default() {
     }
   };
 }
-},{"../noop.js":"DUih"}],"yH90":[function(require,module,exports) {
+},{"../noop.js":"../node_modules/d3-geo/src/noop.js"}],"../node_modules/d3-geo/src/pointEqual.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12971,7 +13126,7 @@ var _math = require("./math.js");
 function _default(a, b) {
   return (0, _math.abs)(a[0] - b[0]) < _math.epsilon && (0, _math.abs)(a[1] - b[1]) < _math.epsilon;
 }
-},{"./math.js":"JQgf"}],"Nr15":[function(require,module,exports) {
+},{"./math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/clip/rejoin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13097,7 +13252,7 @@ function link(array) {
   a.n = b = array[0];
   b.p = a;
 }
-},{"../pointEqual.js":"yH90"}],"GrwB":[function(require,module,exports) {
+},{"../pointEqual.js":"../node_modules/d3-geo/src/pointEqual.js"}],"../node_modules/d3-geo/src/polygonContains.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13180,7 +13335,7 @@ function _default(polygon, point) {
 
   return (angle < -_math.epsilon || angle < _math.epsilon && sum < -_math.epsilon) ^ winding & 1;
 }
-},{"./adder.js":"fG8A","./cartesian.js":"V83Q","./math.js":"JQgf"}],"J6h6":[function(require,module,exports) {
+},{"./adder.js":"../node_modules/d3-geo/src/adder.js","./cartesian.js":"../node_modules/d3-geo/src/cartesian.js","./math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/clip/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13326,7 +13481,7 @@ function validSegment(segment) {
 function compareIntersection(a, b) {
   return ((a = a.x)[0] < 0 ? a[1] - _math.halfPi - _math.epsilon : _math.halfPi - a[1]) - ((b = b.x)[0] < 0 ? b[1] - _math.halfPi - _math.epsilon : _math.halfPi - b[1]);
 }
-},{"./buffer.js":"jFd0","./rejoin.js":"Nr15","../math.js":"JQgf","../polygonContains.js":"GrwB","d3-array":"K0bd"}],"Gots":[function(require,module,exports) {
+},{"./buffer.js":"../node_modules/d3-geo/src/clip/buffer.js","./rejoin.js":"../node_modules/d3-geo/src/clip/rejoin.js","../math.js":"../node_modules/d3-geo/src/math.js","../polygonContains.js":"../node_modules/d3-geo/src/polygonContains.js","d3-array":"../node_modules/d3-array/src/index.js"}],"../node_modules/d3-geo/src/clip/antimeridian.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13430,7 +13585,7 @@ function clipAntimeridianInterpolate(from, to, direction, stream) {
     stream.point(to[0], to[1]);
   }
 }
-},{"./index.js":"J6h6","../math.js":"JQgf"}],"lcCJ":[function(require,module,exports) {
+},{"./index.js":"../node_modules/d3-geo/src/clip/index.js","../math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/clip/circle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13623,7 +13778,7 @@ function _default(radius) {
 
   return (0, _index.default)(visible, clipLine, interpolate, smallRadius ? [0, -radius] : [-_math.pi, radius - _math.pi]);
 }
-},{"../cartesian.js":"V83Q","../circle.js":"KcOR","../math.js":"JQgf","../pointEqual.js":"yH90","./index.js":"J6h6"}],"w1ni":[function(require,module,exports) {
+},{"../cartesian.js":"../node_modules/d3-geo/src/cartesian.js","../circle.js":"../node_modules/d3-geo/src/circle.js","../math.js":"../node_modules/d3-geo/src/math.js","../pointEqual.js":"../node_modules/d3-geo/src/pointEqual.js","./index.js":"../node_modules/d3-geo/src/clip/index.js"}],"../node_modules/d3-geo/src/clip/line.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13693,7 +13848,7 @@ function _default(a, b, x0, y0, x1, y1) {
   if (t1 < 1) b[0] = ax + t1 * dx, b[1] = ay + t1 * dy;
   return true;
 }
-},{}],"jRQA":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/clip/rectangle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13884,7 +14039,7 @@ function clipRectangle(x0, y0, x1, y1) {
     return clipStream;
   };
 }
-},{"../math.js":"JQgf","./buffer.js":"jFd0","./line.js":"w1ni","./rejoin.js":"Nr15","d3-array":"K0bd"}],"EodF":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./buffer.js":"../node_modules/d3-geo/src/clip/buffer.js","./line.js":"../node_modules/d3-geo/src/clip/line.js","./rejoin.js":"../node_modules/d3-geo/src/clip/rejoin.js","d3-array":"../node_modules/d3-array/src/index.js"}],"../node_modules/d3-geo/src/clip/extent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13913,7 +14068,7 @@ function _default() {
     }
   };
 }
-},{"./rectangle.js":"jRQA"}],"bXUe":[function(require,module,exports) {
+},{"./rectangle.js":"../node_modules/d3-geo/src/clip/rectangle.js"}],"../node_modules/d3-geo/src/length.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13978,7 +14133,7 @@ function _default(object) {
   (0, _stream.default)(object, lengthStream);
   return +lengthSum;
 }
-},{"./adder.js":"fG8A","./math.js":"JQgf","./noop.js":"DUih","./stream.js":"XQuq"}],"hTgK":[function(require,module,exports) {
+},{"./adder.js":"../node_modules/d3-geo/src/adder.js","./math.js":"../node_modules/d3-geo/src/math.js","./noop.js":"../node_modules/d3-geo/src/noop.js","./stream.js":"../node_modules/d3-geo/src/stream.js"}],"../node_modules/d3-geo/src/distance.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14001,7 +14156,7 @@ function _default(a, b) {
   coordinates[1] = b;
   return (0, _length.default)(object);
 }
-},{"./length.js":"bXUe"}],"tRhb":[function(require,module,exports) {
+},{"./length.js":"../node_modules/d3-geo/src/length.js"}],"../node_modules/d3-geo/src/contains.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14123,7 +14278,7 @@ function pointRadians(point) {
 function _default(object, point) {
   return (object && containsObjectType.hasOwnProperty(object.type) ? containsObjectType[object.type] : containsGeometry)(object, point);
 }
-},{"./polygonContains.js":"GrwB","./distance.js":"hTgK","./math.js":"JQgf"}],"IdZ0":[function(require,module,exports) {
+},{"./polygonContains.js":"../node_modules/d3-geo/src/polygonContains.js","./distance.js":"../node_modules/d3-geo/src/distance.js","./math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/graticule.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14260,7 +14415,7 @@ function graticule() {
 function graticule10() {
   return graticule()();
 }
-},{"d3-array":"K0bd","./math.js":"JQgf"}],"uuLr":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/interpolate.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14298,7 +14453,18 @@ function _default(a, b) {
   interpolate.distance = d;
   return interpolate;
 }
-},{"./math.js":"JQgf"}],"ueEe":[function(require,module,exports) {
+},{"./math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/identity.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return x;
+}
+},{}],"../node_modules/d3-geo/src/path/area.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14360,7 +14526,7 @@ function areaRingEnd() {
 
 var _default = areaStream;
 exports.default = _default;
-},{"../adder.js":"fG8A","../math.js":"JQgf","../noop.js":"DUih"}],"tL3W":[function(require,module,exports) {
+},{"../adder.js":"../node_modules/d3-geo/src/adder.js","../math.js":"../node_modules/d3-geo/src/math.js","../noop.js":"../node_modules/d3-geo/src/noop.js"}],"../node_modules/d3-geo/src/path/bounds.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14398,7 +14564,7 @@ function boundsPoint(x, y) {
 
 var _default = boundsStream;
 exports.default = _default;
-},{"../noop.js":"DUih"}],"PA8j":[function(require,module,exports) {
+},{"../noop.js":"../node_modules/d3-geo/src/noop.js"}],"../node_modules/d3-geo/src/path/centroid.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14500,7 +14666,7 @@ function centroidPointRing(x, y) {
 
 var _default = centroidStream;
 exports.default = _default;
-},{"../math.js":"JQgf"}],"r69t":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/path/context.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14565,7 +14731,7 @@ PathContext.prototype = {
   },
   result: _noop.default
 };
-},{"../math.js":"JQgf","../noop.js":"DUih"}],"SjQK":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","../noop.js":"../node_modules/d3-geo/src/noop.js"}],"../node_modules/d3-geo/src/path/measure.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14622,7 +14788,7 @@ function lengthPoint(x, y) {
 
 var _default = lengthStream;
 exports.default = _default;
-},{"../adder.js":"fG8A","../math.js":"JQgf","../noop.js":"DUih"}],"cxj1":[function(require,module,exports) {
+},{"../adder.js":"../node_modules/d3-geo/src/adder.js","../math.js":"../node_modules/d3-geo/src/math.js","../noop.js":"../node_modules/d3-geo/src/noop.js"}],"../node_modules/d3-geo/src/path/string.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14696,7 +14862,7 @@ PathString.prototype = {
 function circle(radius) {
   return "m0," + radius + "a" + radius + "," + radius + " 0 1,1 0," + -2 * radius + "a" + radius + "," + radius + " 0 1,1 0," + 2 * radius + "z";
 }
-},{}],"JRMk":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/path/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14775,7 +14941,7 @@ function _default(projection, context) {
 
   return path.projection(projection).context(context);
 }
-},{"../identity.js":"NNW9","../stream.js":"XQuq","./area.js":"ueEe","./bounds.js":"tL3W","./centroid.js":"PA8j","./context.js":"r69t","./measure.js":"SjQK","./string.js":"cxj1"}],"pfKH":[function(require,module,exports) {
+},{"../identity.js":"../node_modules/d3-geo/src/identity.js","../stream.js":"../node_modules/d3-geo/src/stream.js","./area.js":"../node_modules/d3-geo/src/path/area.js","./bounds.js":"../node_modules/d3-geo/src/path/bounds.js","./centroid.js":"../node_modules/d3-geo/src/path/centroid.js","./context.js":"../node_modules/d3-geo/src/path/context.js","./measure.js":"../node_modules/d3-geo/src/path/measure.js","./string.js":"../node_modules/d3-geo/src/path/string.js"}],"../node_modules/d3-geo/src/transform.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14824,7 +14990,7 @@ TransformStream.prototype = {
     this.stream.polygonEnd();
   }
 };
-},{}],"Ycma":[function(require,module,exports) {
+},{}],"../node_modules/d3-geo/src/projection/fit.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14885,7 +15051,7 @@ function fitHeight(projection, height, object) {
     projection.scale(150 * k).translate([x, y]);
   }, object);
 }
-},{"../stream.js":"XQuq","../path/bounds.js":"tL3W"}],"nAh8":[function(require,module,exports) {
+},{"../stream.js":"../node_modules/d3-geo/src/stream.js","../path/bounds.js":"../node_modules/d3-geo/src/path/bounds.js"}],"../node_modules/d3-geo/src/projection/resample.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15008,7 +15174,7 @@ function resample(project, delta2) {
     return resampleStream;
   };
 }
-},{"../cartesian.js":"V83Q","../math.js":"JQgf","../transform.js":"pfKH"}],"Ktpb":[function(require,module,exports) {
+},{"../cartesian.js":"../node_modules/d3-geo/src/cartesian.js","../math.js":"../node_modules/d3-geo/src/math.js","../transform.js":"../node_modules/d3-geo/src/transform.js"}],"../node_modules/d3-geo/src/projection/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15217,7 +15383,7 @@ function projectionMutator(projectAt) {
     return recenter();
   };
 }
-},{"../clip/antimeridian.js":"Gots","../clip/circle.js":"lcCJ","../clip/rectangle.js":"jRQA","../compose.js":"tY9i","../identity.js":"NNW9","../math.js":"JQgf","../rotation.js":"LqUY","../transform.js":"pfKH","./fit.js":"Ycma","./resample.js":"nAh8"}],"Q2ed":[function(require,module,exports) {
+},{"../clip/antimeridian.js":"../node_modules/d3-geo/src/clip/antimeridian.js","../clip/circle.js":"../node_modules/d3-geo/src/clip/circle.js","../clip/rectangle.js":"../node_modules/d3-geo/src/clip/rectangle.js","../compose.js":"../node_modules/d3-geo/src/compose.js","../identity.js":"../node_modules/d3-geo/src/identity.js","../math.js":"../node_modules/d3-geo/src/math.js","../rotation.js":"../node_modules/d3-geo/src/rotation.js","../transform.js":"../node_modules/d3-geo/src/transform.js","./fit.js":"../node_modules/d3-geo/src/projection/fit.js","./resample.js":"../node_modules/d3-geo/src/projection/resample.js"}],"../node_modules/d3-geo/src/projection/conic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15241,7 +15407,7 @@ function conicProjection(projectAt) {
 
   return p;
 }
-},{"../math.js":"JQgf","./index.js":"Ktpb"}],"JFau":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/cylindricalEqualArea.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15264,7 +15430,7 @@ function cylindricalEqualAreaRaw(phi0) {
 
   return forward;
 }
-},{"../math.js":"JQgf"}],"TNCf":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/projection/conicEqualArea.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15303,7 +15469,7 @@ function conicEqualAreaRaw(y0, y1) {
 function _default() {
   return (0, _conic.conicProjection)(conicEqualAreaRaw).scale(155.424).center([0, 33.6442]);
 }
-},{"../math.js":"JQgf","./conic.js":"Q2ed","./cylindricalEqualArea.js":"JFau"}],"cpQd":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./conic.js":"../node_modules/d3-geo/src/projection/conic.js","./cylindricalEqualArea.js":"../node_modules/d3-geo/src/projection/cylindricalEqualArea.js"}],"../node_modules/d3-geo/src/projection/albers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15318,7 +15484,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default() {
   return (0, _conicEqualArea.default)().parallels([29.5, 45.5]).scale(1070).translate([480, 250]).rotate([96, 0]).center([-0.6, 38.7]);
 }
-},{"./conicEqualArea.js":"TNCf"}],"RPZI":[function(require,module,exports) {
+},{"./conicEqualArea.js":"../node_modules/d3-geo/src/projection/conicEqualArea.js"}],"../node_modules/d3-geo/src/projection/albersUsa.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15461,7 +15627,7 @@ function _default() {
 
   return albersUsa.scale(1070);
 }
-},{"../math.js":"JQgf","./albers.js":"cpQd","./conicEqualArea.js":"TNCf","./fit.js":"Ycma"}],"WksQ":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./albers.js":"../node_modules/d3-geo/src/projection/albers.js","./conicEqualArea.js":"../node_modules/d3-geo/src/projection/conicEqualArea.js","./fit.js":"../node_modules/d3-geo/src/projection/fit.js"}],"../node_modules/d3-geo/src/projection/azimuthal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15490,7 +15656,7 @@ function azimuthalInvert(angle) {
     return [(0, _math.atan2)(x * sc, z * cc), (0, _math.asin)(z && y * sc / z)];
   };
 }
-},{"../math.js":"JQgf"}],"OyGo":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/projection/azimuthalEqualArea.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15518,7 +15684,7 @@ azimuthalEqualAreaRaw.invert = (0, _azimuthal.azimuthalInvert)(function (z) {
 function _default() {
   return (0, _index.default)(azimuthalEqualAreaRaw).scale(124.75).clipAngle(180 - 1e-3);
 }
-},{"../math.js":"JQgf","./azimuthal.js":"WksQ","./index.js":"Ktpb"}],"mwct":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./azimuthal.js":"../node_modules/d3-geo/src/projection/azimuthal.js","./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/azimuthalEquidistant.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15546,7 +15712,7 @@ azimuthalEquidistantRaw.invert = (0, _azimuthal.azimuthalInvert)(function (z) {
 function _default() {
   return (0, _index.default)(azimuthalEquidistantRaw).scale(79.4188).clipAngle(180 - 1e-3);
 }
-},{"../math.js":"JQgf","./azimuthal.js":"WksQ","./index.js":"Ktpb"}],"n0Ot":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./azimuthal.js":"../node_modules/d3-geo/src/projection/azimuthal.js","./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/mercator.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15611,7 +15777,7 @@ function mercatorProjection(project) {
 
   return reclip();
 }
-},{"../math.js":"JQgf","../rotation.js":"LqUY","./index.js":"Ktpb"}],"kVD1":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","../rotation.js":"../node_modules/d3-geo/src/rotation.js","./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/conicConformal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15659,7 +15825,7 @@ function conicConformalRaw(y0, y1) {
 function _default() {
   return (0, _conic.conicProjection)(conicConformalRaw).scale(109.5).parallels([30, 30]);
 }
-},{"../math.js":"JQgf","./conic.js":"Q2ed","./mercator.js":"n0Ot"}],"RMXQ":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./conic.js":"../node_modules/d3-geo/src/projection/conic.js","./mercator.js":"../node_modules/d3-geo/src/projection/mercator.js"}],"../node_modules/d3-geo/src/projection/equirectangular.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15681,7 +15847,7 @@ equirectangularRaw.invert = equirectangularRaw;
 function _default() {
   return (0, _index.default)(equirectangularRaw).scale(152.63);
 }
-},{"./index.js":"Ktpb"}],"TJ85":[function(require,module,exports) {
+},{"./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/conicEquidistant.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15719,7 +15885,7 @@ function conicEquidistantRaw(y0, y1) {
 function _default() {
   return (0, _conic.conicProjection)(conicEquidistantRaw).scale(131.154).center([0, 13.9389]);
 }
-},{"../math.js":"JQgf","./conic.js":"Q2ed","./equirectangular.js":"RMXQ"}],"qrWJ":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./conic.js":"../node_modules/d3-geo/src/projection/conic.js","./equirectangular.js":"../node_modules/d3-geo/src/projection/equirectangular.js"}],"../node_modules/d3-geo/src/projection/equalEarth.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15766,7 +15932,7 @@ equalEarthRaw.invert = function (x, y) {
 function _default() {
   return (0, _index.default)(equalEarthRaw).scale(177.158);
 }
-},{"./index.js":"Ktpb","../math.js":"JQgf"}],"KVOo":[function(require,module,exports) {
+},{"./index.js":"../node_modules/d3-geo/src/projection/index.js","../math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/projection/gnomonic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15794,7 +15960,7 @@ gnomonicRaw.invert = (0, _azimuthal.azimuthalInvert)(_math.atan);
 function _default() {
   return (0, _index.default)(gnomonicRaw).scale(144.049).clipAngle(60);
 }
-},{"../math.js":"JQgf","./azimuthal.js":"WksQ","./index.js":"Ktpb"}],"XK0T":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./azimuthal.js":"../node_modules/d3-geo/src/projection/azimuthal.js","./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/identity.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15879,7 +16045,7 @@ function _default() {
     }
   };
 }
-},{"../clip/rectangle.js":"jRQA","../identity.js":"NNW9","../transform.js":"pfKH","./fit.js":"Ycma"}],"Y5z7":[function(require,module,exports) {
+},{"../clip/rectangle.js":"../node_modules/d3-geo/src/clip/rectangle.js","../identity.js":"../node_modules/d3-geo/src/identity.js","../transform.js":"../node_modules/d3-geo/src/transform.js","./fit.js":"../node_modules/d3-geo/src/projection/fit.js"}],"../node_modules/d3-geo/src/projection/naturalEarth1.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15917,7 +16083,7 @@ naturalEarth1Raw.invert = function (x, y) {
 function _default() {
   return (0, _index.default)(naturalEarth1Raw).scale(175.295);
 }
-},{"./index.js":"Ktpb","../math.js":"JQgf"}],"UMbg":[function(require,module,exports) {
+},{"./index.js":"../node_modules/d3-geo/src/projection/index.js","../math.js":"../node_modules/d3-geo/src/math.js"}],"../node_modules/d3-geo/src/projection/orthographic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15943,7 +16109,7 @@ orthographicRaw.invert = (0, _azimuthal.azimuthalInvert)(_math.asin);
 function _default() {
   return (0, _index.default)(orthographicRaw).scale(249.5).clipAngle(90 + _math.epsilon);
 }
-},{"../math.js":"JQgf","./azimuthal.js":"WksQ","./index.js":"Ktpb"}],"vfE9":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./azimuthal.js":"../node_modules/d3-geo/src/projection/azimuthal.js","./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/stereographic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15973,7 +16139,7 @@ stereographicRaw.invert = (0, _azimuthal.azimuthalInvert)(function (z) {
 function _default() {
   return (0, _index.default)(stereographicRaw).scale(250).clipAngle(142);
 }
-},{"../math.js":"JQgf","./azimuthal.js":"WksQ","./index.js":"Ktpb"}],"o0eF":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./azimuthal.js":"../node_modules/d3-geo/src/projection/azimuthal.js","./index.js":"../node_modules/d3-geo/src/projection/index.js"}],"../node_modules/d3-geo/src/projection/transverseMercator.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16009,7 +16175,7 @@ function _default() {
 
   return rotate([0, 0, 90]).scale(159.155);
 }
-},{"../math.js":"JQgf","./mercator.js":"n0Ot"}],"Ah6W":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-geo/src/math.js","./mercator.js":"../node_modules/d3-geo/src/projection/mercator.js"}],"../node_modules/d3-geo/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16383,7 +16549,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./area.js":"rKta","./bounds.js":"rw3L","./centroid.js":"GCsQ","./circle.js":"KcOR","./clip/antimeridian.js":"Gots","./clip/circle.js":"lcCJ","./clip/extent.js":"EodF","./clip/rectangle.js":"jRQA","./contains.js":"tRhb","./distance.js":"hTgK","./graticule.js":"IdZ0","./interpolate.js":"uuLr","./length.js":"bXUe","./path/index.js":"JRMk","./projection/albers.js":"cpQd","./projection/albersUsa.js":"RPZI","./projection/azimuthalEqualArea.js":"OyGo","./projection/azimuthalEquidistant.js":"mwct","./projection/conicConformal.js":"kVD1","./projection/conicEqualArea.js":"TNCf","./projection/conicEquidistant.js":"TJ85","./projection/equalEarth.js":"qrWJ","./projection/equirectangular.js":"RMXQ","./projection/gnomonic.js":"KVOo","./projection/identity.js":"XK0T","./projection/index.js":"Ktpb","./projection/mercator.js":"n0Ot","./projection/naturalEarth1.js":"Y5z7","./projection/orthographic.js":"UMbg","./projection/stereographic.js":"vfE9","./projection/transverseMercator.js":"o0eF","./rotation.js":"LqUY","./stream.js":"XQuq","./transform.js":"pfKH"}],"JRxK":[function(require,module,exports) {
+},{"./area.js":"../node_modules/d3-geo/src/area.js","./bounds.js":"../node_modules/d3-geo/src/bounds.js","./centroid.js":"../node_modules/d3-geo/src/centroid.js","./circle.js":"../node_modules/d3-geo/src/circle.js","./clip/antimeridian.js":"../node_modules/d3-geo/src/clip/antimeridian.js","./clip/circle.js":"../node_modules/d3-geo/src/clip/circle.js","./clip/extent.js":"../node_modules/d3-geo/src/clip/extent.js","./clip/rectangle.js":"../node_modules/d3-geo/src/clip/rectangle.js","./contains.js":"../node_modules/d3-geo/src/contains.js","./distance.js":"../node_modules/d3-geo/src/distance.js","./graticule.js":"../node_modules/d3-geo/src/graticule.js","./interpolate.js":"../node_modules/d3-geo/src/interpolate.js","./length.js":"../node_modules/d3-geo/src/length.js","./path/index.js":"../node_modules/d3-geo/src/path/index.js","./projection/albers.js":"../node_modules/d3-geo/src/projection/albers.js","./projection/albersUsa.js":"../node_modules/d3-geo/src/projection/albersUsa.js","./projection/azimuthalEqualArea.js":"../node_modules/d3-geo/src/projection/azimuthalEqualArea.js","./projection/azimuthalEquidistant.js":"../node_modules/d3-geo/src/projection/azimuthalEquidistant.js","./projection/conicConformal.js":"../node_modules/d3-geo/src/projection/conicConformal.js","./projection/conicEqualArea.js":"../node_modules/d3-geo/src/projection/conicEqualArea.js","./projection/conicEquidistant.js":"../node_modules/d3-geo/src/projection/conicEquidistant.js","./projection/equalEarth.js":"../node_modules/d3-geo/src/projection/equalEarth.js","./projection/equirectangular.js":"../node_modules/d3-geo/src/projection/equirectangular.js","./projection/gnomonic.js":"../node_modules/d3-geo/src/projection/gnomonic.js","./projection/identity.js":"../node_modules/d3-geo/src/projection/identity.js","./projection/index.js":"../node_modules/d3-geo/src/projection/index.js","./projection/mercator.js":"../node_modules/d3-geo/src/projection/mercator.js","./projection/naturalEarth1.js":"../node_modules/d3-geo/src/projection/naturalEarth1.js","./projection/orthographic.js":"../node_modules/d3-geo/src/projection/orthographic.js","./projection/stereographic.js":"../node_modules/d3-geo/src/projection/stereographic.js","./projection/transverseMercator.js":"../node_modules/d3-geo/src/projection/transverseMercator.js","./rotation.js":"../node_modules/d3-geo/src/rotation.js","./stream.js":"../node_modules/d3-geo/src/stream.js","./transform.js":"../node_modules/d3-geo/src/transform.js"}],"../node_modules/d3-hierarchy/src/cluster.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16477,7 +16643,7 @@ function _default() {
 
   return cluster;
 }
-},{}],"FbP8":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/count.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16496,7 +16662,7 @@ function count(node) {
 function _default() {
   return this.eachAfter(count);
 }
-},{}],"aoO7":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/each.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16525,7 +16691,7 @@ function _default(callback) {
 
   return this;
 }
-},{}],"vU7q":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/eachBefore.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16548,7 +16714,7 @@ function _default(callback) {
 
   return this;
 }
-},{}],"bidz":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/eachAfter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16577,7 +16743,7 @@ function _default(callback) {
 
   return this;
 }
-},{}],"tYQG":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/sum.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16596,7 +16762,7 @@ function _default(value) {
     node.value = sum;
   });
 }
-},{}],"l55u":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/sort.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16611,7 +16777,7 @@ function _default(compare) {
     }
   });
 }
-},{}],"Rfs8":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/path.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16655,7 +16821,7 @@ function leastCommonAncestor(a, b) {
 
   return c;
 }
-},{}],"iENO":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/ancestors.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16673,7 +16839,7 @@ function _default() {
 
   return nodes;
 }
-},{}],"b4YN":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/descendants.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16688,7 +16854,7 @@ function _default() {
   });
   return nodes;
 }
-},{}],"A1Sr":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/leaves.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16705,7 +16871,7 @@ function _default() {
   });
   return leaves;
 }
-},{}],"NfF5":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/links.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16727,7 +16893,7 @@ function _default() {
   });
   return links;
 }
-},{}],"xn1B":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/hierarchy/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16828,7 +16994,7 @@ Node.prototype = hierarchy.prototype = {
   links: _links.default,
   copy: node_copy
 };
-},{"./count.js":"FbP8","./each.js":"aoO7","./eachBefore.js":"vU7q","./eachAfter.js":"bidz","./sum.js":"tYQG","./sort.js":"l55u","./path.js":"Rfs8","./ancestors.js":"iENO","./descendants.js":"b4YN","./leaves.js":"A1Sr","./links.js":"NfF5"}],"aDgv":[function(require,module,exports) {
+},{"./count.js":"../node_modules/d3-hierarchy/src/hierarchy/count.js","./each.js":"../node_modules/d3-hierarchy/src/hierarchy/each.js","./eachBefore.js":"../node_modules/d3-hierarchy/src/hierarchy/eachBefore.js","./eachAfter.js":"../node_modules/d3-hierarchy/src/hierarchy/eachAfter.js","./sum.js":"../node_modules/d3-hierarchy/src/hierarchy/sum.js","./sort.js":"../node_modules/d3-hierarchy/src/hierarchy/sort.js","./path.js":"../node_modules/d3-hierarchy/src/hierarchy/path.js","./ancestors.js":"../node_modules/d3-hierarchy/src/hierarchy/ancestors.js","./descendants.js":"../node_modules/d3-hierarchy/src/hierarchy/descendants.js","./leaves.js":"../node_modules/d3-hierarchy/src/hierarchy/leaves.js","./links.js":"../node_modules/d3-hierarchy/src/hierarchy/links.js"}],"../node_modules/d3-hierarchy/src/array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16853,7 +17019,7 @@ function shuffle(array) {
 
   return array;
 }
-},{}],"H7R8":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/pack/enclose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16998,7 +17164,7 @@ function encloseBasis3(a, b, c) {
     r: r
   };
 }
-},{"../array.js":"aDgv"}],"ObEg":[function(require,module,exports) {
+},{"../array.js":"../node_modules/d3-hierarchy/src/array.js"}],"../node_modules/d3-hierarchy/src/pack/siblings.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17135,7 +17301,7 @@ function _default(circles) {
   packEnclose(circles);
   return circles;
 }
-},{"./enclose.js":"H7R8"}],"kxuB":[function(require,module,exports) {
+},{"./enclose.js":"../node_modules/d3-hierarchy/src/pack/enclose.js"}],"../node_modules/d3-hierarchy/src/accessors.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17152,7 +17318,7 @@ function required(f) {
   if (typeof f !== "function") throw new Error();
   return f;
 }
-},{}],"JuqG":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/constant.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17170,7 +17336,7 @@ function _default(x) {
     return x;
   };
 }
-},{}],"fIYd":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/pack/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17260,7 +17426,7 @@ function translateChild(k) {
     }
   };
 }
-},{"./siblings.js":"ObEg","../accessors.js":"kxuB","../constant.js":"JuqG"}],"kcDz":[function(require,module,exports) {
+},{"./siblings.js":"../node_modules/d3-hierarchy/src/pack/siblings.js","../accessors.js":"../node_modules/d3-hierarchy/src/accessors.js","../constant.js":"../node_modules/d3-hierarchy/src/constant.js"}],"../node_modules/d3-hierarchy/src/treemap/round.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17274,7 +17440,7 @@ function _default(node) {
   node.x1 = Math.round(node.x1);
   node.y1 = Math.round(node.y1);
 }
-},{}],"Z1AK":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/treemap/dice.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17294,7 +17460,7 @@ function _default(parent, x0, y0, x1, y1) {
     node.x0 = x0, node.x1 = x0 += node.value * k;
   }
 }
-},{}],"ekbw":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/partition.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17357,7 +17523,7 @@ function _default() {
 
   return partition;
 }
-},{"./treemap/round.js":"kcDz","./treemap/dice.js":"Z1AK"}],"fM3r":[function(require,module,exports) {
+},{"./treemap/round.js":"../node_modules/d3-hierarchy/src/treemap/round.js","./treemap/dice.js":"../node_modules/d3-hierarchy/src/treemap/dice.js"}],"../node_modules/d3-hierarchy/src/stratify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17445,7 +17611,7 @@ function _default() {
 
   return stratify;
 }
-},{"./accessors.js":"kxuB","./hierarchy/index.js":"xn1B"}],"xQqP":[function(require,module,exports) {
+},{"./accessors.js":"../node_modules/d3-hierarchy/src/accessors.js","./hierarchy/index.js":"../node_modules/d3-hierarchy/src/hierarchy/index.js"}],"../node_modules/d3-hierarchy/src/tree.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17702,7 +17868,7 @@ function _default() {
 
   return tree;
 }
-},{"./hierarchy/index.js":"xn1B"}],"XP76":[function(require,module,exports) {
+},{"./hierarchy/index.js":"../node_modules/d3-hierarchy/src/hierarchy/index.js"}],"../node_modules/d3-hierarchy/src/treemap/slice.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17722,7 +17888,7 @@ function _default(parent, x0, y0, x1, y1) {
     node.y0 = y0, node.y1 = y0 += node.value * k;
   }
 }
-},{}],"sjir":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/treemap/squarify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17810,7 +17976,7 @@ var _default = function custom(ratio) {
 }(phi);
 
 exports.default = _default;
-},{"./dice.js":"Z1AK","./slice.js":"XP76"}],"dRX5":[function(require,module,exports) {
+},{"./dice.js":"../node_modules/d3-hierarchy/src/treemap/dice.js","./slice.js":"../node_modules/d3-hierarchy/src/treemap/slice.js"}],"../node_modules/d3-hierarchy/src/treemap/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17921,7 +18087,7 @@ function _default() {
 
   return treemap;
 }
-},{"./round.js":"kcDz","./squarify.js":"sjir","../accessors.js":"kxuB","../constant.js":"JuqG"}],"dNVH":[function(require,module,exports) {
+},{"./round.js":"../node_modules/d3-hierarchy/src/treemap/round.js","./squarify.js":"../node_modules/d3-hierarchy/src/treemap/squarify.js","../accessors.js":"../node_modules/d3-hierarchy/src/accessors.js","../constant.js":"../node_modules/d3-hierarchy/src/constant.js"}],"../node_modules/d3-hierarchy/src/treemap/binary.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17975,7 +18141,7 @@ function _default(parent, x0, y0, x1, y1) {
     }
   }
 }
-},{}],"rOuR":[function(require,module,exports) {
+},{}],"../node_modules/d3-hierarchy/src/treemap/sliceDice.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17992,7 +18158,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(parent, x0, y0, x1, y1) {
   (parent.depth & 1 ? _slice.default : _dice.default)(parent, x0, y0, x1, y1);
 }
-},{"./dice.js":"Z1AK","./slice.js":"XP76"}],"XhZ5":[function(require,module,exports) {
+},{"./dice.js":"../node_modules/d3-hierarchy/src/treemap/dice.js","./slice.js":"../node_modules/d3-hierarchy/src/treemap/slice.js"}],"../node_modules/d3-hierarchy/src/treemap/resquarify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18042,7 +18208,7 @@ var _default = function custom(ratio) {
 }(_squarify.phi);
 
 exports.default = _default;
-},{"./dice.js":"Z1AK","./slice.js":"XP76","./squarify.js":"sjir"}],"Kps6":[function(require,module,exports) {
+},{"./dice.js":"../node_modules/d3-hierarchy/src/treemap/dice.js","./slice.js":"../node_modules/d3-hierarchy/src/treemap/slice.js","./squarify.js":"../node_modules/d3-hierarchy/src/treemap/squarify.js"}],"../node_modules/d3-hierarchy/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18170,7 +18336,7 @@ var _squarify = _interopRequireDefault(require("./treemap/squarify.js"));
 var _resquarify = _interopRequireDefault(require("./treemap/resquarify.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./cluster.js":"JRxK","./hierarchy/index.js":"xn1B","./pack/index.js":"fIYd","./pack/siblings.js":"ObEg","./pack/enclose.js":"H7R8","./partition.js":"ekbw","./stratify.js":"fM3r","./tree.js":"xQqP","./treemap/index.js":"dRX5","./treemap/binary.js":"dNVH","./treemap/dice.js":"Z1AK","./treemap/slice.js":"XP76","./treemap/sliceDice.js":"rOuR","./treemap/squarify.js":"sjir","./treemap/resquarify.js":"XhZ5"}],"lAFu":[function(require,module,exports) {
+},{"./cluster.js":"../node_modules/d3-hierarchy/src/cluster.js","./hierarchy/index.js":"../node_modules/d3-hierarchy/src/hierarchy/index.js","./pack/index.js":"../node_modules/d3-hierarchy/src/pack/index.js","./pack/siblings.js":"../node_modules/d3-hierarchy/src/pack/siblings.js","./pack/enclose.js":"../node_modules/d3-hierarchy/src/pack/enclose.js","./partition.js":"../node_modules/d3-hierarchy/src/partition.js","./stratify.js":"../node_modules/d3-hierarchy/src/stratify.js","./tree.js":"../node_modules/d3-hierarchy/src/tree.js","./treemap/index.js":"../node_modules/d3-hierarchy/src/treemap/index.js","./treemap/binary.js":"../node_modules/d3-hierarchy/src/treemap/binary.js","./treemap/dice.js":"../node_modules/d3-hierarchy/src/treemap/dice.js","./treemap/slice.js":"../node_modules/d3-hierarchy/src/treemap/slice.js","./treemap/sliceDice.js":"../node_modules/d3-hierarchy/src/treemap/sliceDice.js","./treemap/squarify.js":"../node_modules/d3-hierarchy/src/treemap/squarify.js","./treemap/resquarify.js":"../node_modules/d3-hierarchy/src/treemap/resquarify.js"}],"../node_modules/d3-polygon/src/area.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18193,7 +18359,7 @@ function _default(polygon) {
 
   return area / 2;
 }
-},{}],"CP3F":[function(require,module,exports) {
+},{}],"../node_modules/d3-polygon/src/centroid.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18221,7 +18387,7 @@ function _default(polygon) {
 
   return k *= 3, [x / k, y / k];
 }
-},{}],"zVqT":[function(require,module,exports) {
+},{}],"../node_modules/d3-polygon/src/cross.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18236,7 +18402,7 @@ exports.default = _default;
 function _default(a, b, c) {
   return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
 }
-},{}],"Q16x":[function(require,module,exports) {
+},{}],"../node_modules/d3-polygon/src/hull.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18296,7 +18462,7 @@ function _default(points) {
 
   return hull;
 }
-},{"./cross.js":"zVqT"}],"tuiT":[function(require,module,exports) {
+},{"./cross.js":"../node_modules/d3-polygon/src/cross.js"}],"../node_modules/d3-polygon/src/contains.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18323,7 +18489,7 @@ function _default(polygon, point) {
 
   return inside;
 }
-},{}],"AReD":[function(require,module,exports) {
+},{}],"../node_modules/d3-polygon/src/length.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18354,7 +18520,7 @@ function _default(polygon) {
 
   return perimeter;
 }
-},{}],"H15P":[function(require,module,exports) {
+},{}],"../node_modules/d3-polygon/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18402,7 +18568,7 @@ var _contains = _interopRequireDefault(require("./contains.js"));
 var _length = _interopRequireDefault(require("./length.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./area.js":"lAFu","./centroid.js":"CP3F","./hull.js":"Q16x","./contains.js":"tuiT","./length.js":"AReD"}],"m3Qw":[function(require,module,exports) {
+},{"./area.js":"../node_modules/d3-polygon/src/area.js","./centroid.js":"../node_modules/d3-polygon/src/centroid.js","./hull.js":"../node_modules/d3-polygon/src/hull.js","./contains.js":"../node_modules/d3-polygon/src/contains.js","./length.js":"../node_modules/d3-polygon/src/length.js"}],"../node_modules/d3-random/src/defaultSource.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18413,7 +18579,7 @@ exports.default = _default;
 function _default() {
   return Math.random();
 }
-},{}],"j5my":[function(require,module,exports) {
+},{}],"../node_modules/d3-random/src/uniform.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18440,7 +18606,7 @@ var _default = function sourceRandomUniform(source) {
 }(_defaultSource.default);
 
 exports.default = _default;
-},{"./defaultSource":"m3Qw"}],"rHsL":[function(require,module,exports) {
+},{"./defaultSource":"../node_modules/d3-random/src/defaultSource.js"}],"../node_modules/d3-random/src/normal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18475,7 +18641,7 @@ var _default = function sourceRandomNormal(source) {
 }(_defaultSource.default);
 
 exports.default = _default;
-},{"./defaultSource":"m3Qw"}],"egwl":[function(require,module,exports) {
+},{"./defaultSource":"../node_modules/d3-random/src/defaultSource.js"}],"../node_modules/d3-random/src/logNormal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18503,7 +18669,7 @@ var _default = function sourceRandomLogNormal(source) {
 }(_defaultSource.default);
 
 exports.default = _default;
-},{"./defaultSource":"m3Qw","./normal":"rHsL"}],"xpLv":[function(require,module,exports) {
+},{"./defaultSource":"../node_modules/d3-random/src/defaultSource.js","./normal":"../node_modules/d3-random/src/normal.js"}],"../node_modules/d3-random/src/irwinHall.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18529,7 +18695,7 @@ var _default = function sourceRandomIrwinHall(source) {
 }(_defaultSource.default);
 
 exports.default = _default;
-},{"./defaultSource":"m3Qw"}],"th5P":[function(require,module,exports) {
+},{"./defaultSource":"../node_modules/d3-random/src/defaultSource.js"}],"../node_modules/d3-random/src/bates.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18557,7 +18723,7 @@ var _default = function sourceRandomBates(source) {
 }(_defaultSource.default);
 
 exports.default = _default;
-},{"./defaultSource":"m3Qw","./irwinHall":"xpLv"}],"r4q1":[function(require,module,exports) {
+},{"./defaultSource":"../node_modules/d3-random/src/defaultSource.js","./irwinHall":"../node_modules/d3-random/src/irwinHall.js"}],"../node_modules/d3-random/src/exponential.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18581,7 +18747,7 @@ var _default = function sourceRandomExponential(source) {
 }(_defaultSource.default);
 
 exports.default = _default;
-},{"./defaultSource":"m3Qw"}],"Gz2j":[function(require,module,exports) {
+},{"./defaultSource":"../node_modules/d3-random/src/defaultSource.js"}],"../node_modules/d3-random/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18637,7 +18803,7 @@ var _irwinHall = _interopRequireDefault(require("./irwinHall"));
 var _exponential = _interopRequireDefault(require("./exponential"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./uniform":"j5my","./normal":"rHsL","./logNormal":"egwl","./bates":"th5P","./irwinHall":"xpLv","./exponential":"r4q1"}],"buZa":[function(require,module,exports) {
+},{"./uniform":"../node_modules/d3-random/src/uniform.js","./normal":"../node_modules/d3-random/src/normal.js","./logNormal":"../node_modules/d3-random/src/logNormal.js","./bates":"../node_modules/d3-random/src/bates.js","./irwinHall":"../node_modules/d3-random/src/irwinHall.js","./exponential":"../node_modules/d3-random/src/exponential.js"}],"../node_modules/d3-scale/src/init.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18679,7 +18845,7 @@ function initInterpolator(domain, interpolator) {
 
   return this;
 }
-},{}],"qoMs":[function(require,module,exports) {
+},{}],"../node_modules/d3-scale/src/array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18691,7 +18857,7 @@ var map = array.map;
 exports.map = map;
 var slice = array.slice;
 exports.slice = slice;
-},{}],"GjLX":[function(require,module,exports) {
+},{}],"../node_modules/d3-scale/src/ordinal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18758,7 +18924,7 @@ function ordinal() {
 
   return scale;
 }
-},{"d3-collection":"S3hn","./array":"qoMs","./init":"buZa"}],"BAgl":[function(require,module,exports) {
+},{"d3-collection":"../node_modules/d3-collection/src/index.js","./array":"../node_modules/d3-scale/src/array.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/band.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18867,7 +19033,20 @@ function pointish(scale) {
 function point() {
   return pointish(band.apply(null, arguments).paddingInner(1));
 }
-},{"d3-array":"K0bd","./init":"buZa","./ordinal":"GjLX"}],"FNaI":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./init":"../node_modules/d3-scale/src/init.js","./ordinal":"../node_modules/d3-scale/src/ordinal.js"}],"../node_modules/d3-scale/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-scale/src/number.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18878,7 +19057,7 @@ exports.default = _default;
 function _default(x) {
   return +x;
 }
-},{}],"CjJ5":[function(require,module,exports) {
+},{}],"../node_modules/d3-scale/src/continuous.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19021,7 +19200,7 @@ function transformer() {
 function continuous(transform, untransform) {
   return transformer()(transform, untransform);
 }
-},{"d3-array":"K0bd","d3-interpolate":"k9aH","./array":"qoMs","./constant":"aCvo","./number":"FNaI"}],"qjRa":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js","./array":"../node_modules/d3-scale/src/array.js","./constant":"../node_modules/d3-scale/src/constant.js","./number":"../node_modules/d3-scale/src/number.js"}],"../node_modules/d3-scale/src/tickFormat.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19066,7 +19245,7 @@ function _default(start, stop, count, specifier) {
 
   return (0, _d3Format.format)(specifier);
 }
-},{"d3-array":"K0bd","d3-format":"VuZR"}],"LIJk":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","d3-format":"../node_modules/d3-format/src/index.js"}],"../node_modules/d3-scale/src/linear.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19155,7 +19334,7 @@ function linear() {
 
   return linearish(scale);
 }
-},{"d3-array":"K0bd","./continuous":"CjJ5","./init":"buZa","./tickFormat":"qjRa"}],"FKHe":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js","./tickFormat":"../node_modules/d3-scale/src/tickFormat.js"}],"../node_modules/d3-scale/src/identity.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19195,7 +19374,7 @@ function identity(domain) {
   domain = arguments.length ? _array.map.call(domain, _number.default) : [0, 1];
   return (0, _linear.linearish)(scale);
 }
-},{"./array":"qoMs","./linear":"LIJk","./number":"FNaI"}],"eMTM":[function(require,module,exports) {
+},{"./array":"../node_modules/d3-scale/src/array.js","./linear":"../node_modules/d3-scale/src/linear.js","./number":"../node_modules/d3-scale/src/number.js"}],"../node_modules/d3-scale/src/nice.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19220,7 +19399,7 @@ function _default(domain, interval) {
   domain[i1] = interval.ceil(x1);
   return domain;
 }
-},{}],"ea59":[function(require,module,exports) {
+},{}],"../node_modules/d3-scale/src/log.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19384,7 +19563,7 @@ function log() {
 
   return scale;
 }
-},{"d3-array":"K0bd","d3-format":"VuZR","./nice":"eMTM","./continuous":"CjJ5","./init":"buZa"}],"nanU":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","d3-format":"../node_modules/d3-format/src/index.js","./nice":"../node_modules/d3-scale/src/nice.js","./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/symlog.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19431,7 +19610,7 @@ function symlog() {
 
   return _init.initRange.apply(scale, arguments);
 }
-},{"./linear":"LIJk","./continuous":"CjJ5","./init":"buZa"}],"xeRN":[function(require,module,exports) {
+},{"./linear":"../node_modules/d3-scale/src/linear.js","./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/pow.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19491,7 +19670,7 @@ function pow() {
 function sqrt() {
   return pow.apply(null, arguments).exponent(0.5);
 }
-},{"./linear":"LIJk","./continuous":"CjJ5","./init":"buZa"}],"AGCd":[function(require,module,exports) {
+},{"./linear":"../node_modules/d3-scale/src/linear.js","./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/quantile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19558,7 +19737,7 @@ function quantile() {
 
   return _init.initRange.apply(scale, arguments);
 }
-},{"d3-array":"K0bd","./array":"qoMs","./init":"buZa"}],"d6Xk":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./array":"../node_modules/d3-scale/src/array.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/quantize.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19622,7 +19801,7 @@ function quantize() {
 
   return _init.initRange.apply((0, _linear.linearish)(scale), arguments);
 }
-},{"d3-array":"K0bd","./array":"qoMs","./linear":"LIJk","./init":"buZa"}],"I63C":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./array":"../node_modules/d3-scale/src/array.js","./linear":"../node_modules/d3-scale/src/linear.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/threshold.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19669,7 +19848,7 @@ function threshold() {
 
   return _init.initRange.apply(scale, arguments);
 }
-},{"d3-array":"K0bd","./array":"qoMs","./init":"buZa"}],"QFUQ":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./array":"../node_modules/d3-scale/src/array.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-time/src/interval.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19749,7 +19928,7 @@ function newInterval(floori, offseti, count, field) {
 
   return interval;
 }
-},{}],"WVmH":[function(require,module,exports) {
+},{}],"../node_modules/d3-time/src/millisecond.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19785,7 +19964,7 @@ var _default = millisecond;
 exports.default = _default;
 var milliseconds = millisecond.range;
 exports.milliseconds = milliseconds;
-},{"./interval.js":"QFUQ"}],"Vnta":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js"}],"../node_modules/d3-time/src/duration.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19802,7 +19981,7 @@ var durationDay = 864e5;
 exports.durationDay = durationDay;
 var durationWeek = 6048e5;
 exports.durationWeek = durationWeek;
-},{}],"AYLw":[function(require,module,exports) {
+},{}],"../node_modules/d3-time/src/second.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19829,7 +20008,7 @@ var _default = second;
 exports.default = _default;
 var seconds = second.range;
 exports.seconds = seconds;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"etD9":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/minute.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19856,7 +20035,7 @@ var _default = minute;
 exports.default = _default;
 var minutes = minute.range;
 exports.minutes = minutes;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"py4n":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/hour.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19883,7 +20062,7 @@ var _default = hour;
 exports.default = _default;
 var hours = hour.range;
 exports.hours = hours;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"LWrz":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/day.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19910,7 +20089,7 @@ var _default = day;
 exports.default = _default;
 var days = day.range;
 exports.days = days;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"Dweu":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/week.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19963,7 +20142,7 @@ var fridays = friday.range;
 exports.fridays = fridays;
 var saturdays = saturday.range;
 exports.saturdays = saturdays;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"gOAO":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/month.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19989,7 +20168,7 @@ var _default = month;
 exports.default = _default;
 var months = month.range;
 exports.months = months;
-},{"./interval.js":"QFUQ"}],"kReM":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js"}],"../node_modules/d3-time/src/year.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20026,7 +20205,7 @@ var _default = year;
 exports.default = _default;
 var years = year.range;
 exports.years = years;
-},{"./interval.js":"QFUQ"}],"O6lW":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js"}],"../node_modules/d3-time/src/utcMinute.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20053,7 +20232,7 @@ var _default = utcMinute;
 exports.default = _default;
 var utcMinutes = utcMinute.range;
 exports.utcMinutes = utcMinutes;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"qnVA":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/utcHour.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20080,7 +20259,7 @@ var _default = utcHour;
 exports.default = _default;
 var utcHours = utcHour.range;
 exports.utcHours = utcHours;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"HXiV":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/utcDay.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20107,7 +20286,7 @@ var _default = utcDay;
 exports.default = _default;
 var utcDays = utcDay.range;
 exports.utcDays = utcDays;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"CRXo":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/utcWeek.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20160,7 +20339,7 @@ var utcFridays = utcFriday.range;
 exports.utcFridays = utcFridays;
 var utcSaturdays = utcSaturday.range;
 exports.utcSaturdays = utcSaturdays;
-},{"./interval.js":"QFUQ","./duration.js":"Vnta"}],"EphR":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./duration.js":"../node_modules/d3-time/src/duration.js"}],"../node_modules/d3-time/src/utcMonth.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20186,7 +20365,7 @@ var _default = utcMonth;
 exports.default = _default;
 var utcMonths = utcMonth.range;
 exports.utcMonths = utcMonths;
-},{"./interval.js":"QFUQ"}],"Abfv":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js"}],"../node_modules/d3-time/src/utcYear.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20223,7 +20402,7 @@ var _default = utcYear;
 exports.default = _default;
 var utcYears = utcYear.range;
 exports.utcYears = utcYears;
-},{"./interval.js":"QFUQ"}],"hQYG":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js"}],"../node_modules/d3-time/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20631,7 +20810,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./interval.js":"QFUQ","./millisecond.js":"WVmH","./second.js":"AYLw","./minute.js":"etD9","./hour.js":"py4n","./day.js":"LWrz","./week.js":"Dweu","./month.js":"gOAO","./year.js":"kReM","./utcMinute.js":"O6lW","./utcHour.js":"qnVA","./utcDay.js":"HXiV","./utcWeek.js":"CRXo","./utcMonth.js":"EphR","./utcYear.js":"Abfv"}],"UbHU":[function(require,module,exports) {
+},{"./interval.js":"../node_modules/d3-time/src/interval.js","./millisecond.js":"../node_modules/d3-time/src/millisecond.js","./second.js":"../node_modules/d3-time/src/second.js","./minute.js":"../node_modules/d3-time/src/minute.js","./hour.js":"../node_modules/d3-time/src/hour.js","./day.js":"../node_modules/d3-time/src/day.js","./week.js":"../node_modules/d3-time/src/week.js","./month.js":"../node_modules/d3-time/src/month.js","./year.js":"../node_modules/d3-time/src/year.js","./utcMinute.js":"../node_modules/d3-time/src/utcMinute.js","./utcHour.js":"../node_modules/d3-time/src/utcHour.js","./utcDay.js":"../node_modules/d3-time/src/utcDay.js","./utcWeek.js":"../node_modules/d3-time/src/utcWeek.js","./utcMonth.js":"../node_modules/d3-time/src/utcMonth.js","./utcYear.js":"../node_modules/d3-time/src/utcYear.js"}],"../node_modules/d3-time-format/src/locale.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21315,7 +21494,7 @@ function formatUnixTimestamp(d) {
 function formatUnixTimestampSeconds(d) {
   return Math.floor(+d / 1000);
 }
-},{"d3-time":"hQYG"}],"csjH":[function(require,module,exports) {
+},{"d3-time":"../node_modules/d3-time/src/index.js"}],"../node_modules/d3-time-format/src/defaultLocale.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21356,7 +21535,7 @@ function defaultLocale(definition) {
   exports.utcParse = utcParse = locale.utcParse;
   return locale;
 }
-},{"./locale.js":"UbHU"}],"PKKZ":[function(require,module,exports) {
+},{"./locale.js":"../node_modules/d3-time-format/src/locale.js"}],"../node_modules/d3-time-format/src/isoFormat.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21376,7 +21555,7 @@ function formatIsoNative(date) {
 var formatIso = Date.prototype.toISOString ? formatIsoNative : (0, _defaultLocale.utcFormat)(isoSpecifier);
 var _default = formatIso;
 exports.default = _default;
-},{"./defaultLocale.js":"csjH"}],"d4jk":[function(require,module,exports) {
+},{"./defaultLocale.js":"../node_modules/d3-time-format/src/defaultLocale.js"}],"../node_modules/d3-time-format/src/isoParse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21396,7 +21575,7 @@ function parseIsoNative(string) {
 var parseIso = +new Date("2000-01-01T00:00:00.000Z") ? parseIsoNative : (0, _defaultLocale.utcParse)(_isoFormat.isoSpecifier);
 var _default = parseIso;
 exports.default = _default;
-},{"./isoFormat.js":"PKKZ","./defaultLocale.js":"csjH"}],"UYpZ":[function(require,module,exports) {
+},{"./isoFormat.js":"../node_modules/d3-time-format/src/isoFormat.js","./defaultLocale.js":"../node_modules/d3-time-format/src/defaultLocale.js"}],"../node_modules/d3-time-format/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21464,7 +21643,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./defaultLocale.js":"csjH","./locale.js":"UbHU","./isoFormat.js":"PKKZ","./isoParse.js":"d4jk"}],"kVXt":[function(require,module,exports) {
+},{"./defaultLocale.js":"../node_modules/d3-time-format/src/defaultLocale.js","./locale.js":"../node_modules/d3-time-format/src/locale.js","./isoFormat.js":"../node_modules/d3-time-format/src/isoFormat.js","./isoParse.js":"../node_modules/d3-time-format/src/isoParse.js"}],"../node_modules/d3-scale/src/time.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21594,7 +21773,7 @@ function calendar(year, month, week, day, hour, minute, second, millisecond, for
 function _default() {
   return _init.initRange.apply(calendar(_d3Time.timeYear, _d3Time.timeMonth, _d3Time.timeWeek, _d3Time.timeDay, _d3Time.timeHour, _d3Time.timeMinute, _d3Time.timeSecond, _d3Time.timeMillisecond, _d3TimeFormat.timeFormat).domain([new Date(2000, 0, 1), new Date(2000, 0, 2)]), arguments);
 }
-},{"d3-array":"K0bd","d3-time":"hQYG","d3-time-format":"UYpZ","./array":"qoMs","./continuous":"CjJ5","./init":"buZa","./nice":"eMTM"}],"WrbA":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","d3-time":"../node_modules/d3-time/src/index.js","d3-time-format":"../node_modules/d3-time-format/src/index.js","./array":"../node_modules/d3-scale/src/array.js","./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js","./nice":"../node_modules/d3-scale/src/nice.js"}],"../node_modules/d3-scale/src/utcTime.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21613,7 +21792,7 @@ var _init = require("./init");
 function _default() {
   return _init.initRange.apply((0, _time.calendar)(_d3Time.utcYear, _d3Time.utcMonth, _d3Time.utcWeek, _d3Time.utcDay, _d3Time.utcHour, _d3Time.utcMinute, _d3Time.utcSecond, _d3Time.utcMillisecond, _d3TimeFormat.utcFormat).domain([Date.UTC(2000, 0, 1), Date.UTC(2000, 0, 2)]), arguments);
 }
-},{"./time":"kVXt","d3-time-format":"UYpZ","d3-time":"hQYG","./init":"buZa"}],"J7VY":[function(require,module,exports) {
+},{"./time":"../node_modules/d3-scale/src/time.js","d3-time-format":"../node_modules/d3-time-format/src/index.js","d3-time":"../node_modules/d3-time/src/index.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/sequential.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21722,7 +21901,7 @@ function sequentialPow() {
 function sequentialSqrt() {
   return sequentialPow.apply(null, arguments).exponent(0.5);
 }
-},{"./continuous":"CjJ5","./init":"buZa","./linear":"LIJk","./log":"ea59","./symlog":"nanU","./pow":"xeRN"}],"XYTZ":[function(require,module,exports) {
+},{"./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js","./linear":"../node_modules/d3-scale/src/linear.js","./log":"../node_modules/d3-scale/src/log.js","./symlog":"../node_modules/d3-scale/src/symlog.js","./pow":"../node_modules/d3-scale/src/pow.js"}],"../node_modules/d3-scale/src/sequentialQuantile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21764,7 +21943,7 @@ function sequentialQuantile() {
 
   return _init.initInterpolator.apply(scale, arguments);
 }
-},{"d3-array":"K0bd","./continuous":"CjJ5","./init":"buZa"}],"CLse":[function(require,module,exports) {
+},{"d3-array":"../node_modules/d3-array/src/index.js","./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js"}],"../node_modules/d3-scale/src/diverging.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21873,7 +22052,7 @@ function divergingPow() {
 function divergingSqrt() {
   return divergingPow.apply(null, arguments).exponent(0.5);
 }
-},{"./continuous":"CjJ5","./init":"buZa","./linear":"LIJk","./log":"ea59","./sequential":"J7VY","./symlog":"nanU","./pow":"xeRN"}],"zL2z":[function(require,module,exports) {
+},{"./continuous":"../node_modules/d3-scale/src/continuous.js","./init":"../node_modules/d3-scale/src/init.js","./linear":"../node_modules/d3-scale/src/linear.js","./log":"../node_modules/d3-scale/src/log.js","./sequential":"../node_modules/d3-scale/src/sequential.js","./symlog":"../node_modules/d3-scale/src/symlog.js","./pow":"../node_modules/d3-scale/src/pow.js"}],"../node_modules/d3-scale/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22079,7 +22258,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./band":"BAgl","./identity":"FKHe","./linear":"LIJk","./log":"ea59","./symlog":"nanU","./ordinal":"GjLX","./pow":"xeRN","./quantile":"AGCd","./quantize":"d6Xk","./threshold":"I63C","./time":"kVXt","./utcTime":"WrbA","./sequential":"J7VY","./sequentialQuantile":"XYTZ","./diverging":"CLse","./tickFormat":"qjRa"}],"xz73":[function(require,module,exports) {
+},{"./band":"../node_modules/d3-scale/src/band.js","./identity":"../node_modules/d3-scale/src/identity.js","./linear":"../node_modules/d3-scale/src/linear.js","./log":"../node_modules/d3-scale/src/log.js","./symlog":"../node_modules/d3-scale/src/symlog.js","./ordinal":"../node_modules/d3-scale/src/ordinal.js","./pow":"../node_modules/d3-scale/src/pow.js","./quantile":"../node_modules/d3-scale/src/quantile.js","./quantize":"../node_modules/d3-scale/src/quantize.js","./threshold":"../node_modules/d3-scale/src/threshold.js","./time":"../node_modules/d3-scale/src/time.js","./utcTime":"../node_modules/d3-scale/src/utcTime.js","./sequential":"../node_modules/d3-scale/src/sequential.js","./sequentialQuantile":"../node_modules/d3-scale/src/sequentialQuantile.js","./diverging":"../node_modules/d3-scale/src/diverging.js","./tickFormat":"../node_modules/d3-scale/src/tickFormat.js"}],"../node_modules/d3-scale-chromatic/src/colors.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22096,7 +22275,7 @@ function _default(specifier) {
 
   return colors;
 }
-},{}],"dTYe":[function(require,module,exports) {
+},{}],"../node_modules/d3-scale-chromatic/src/categorical/category10.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22111,7 +22290,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"o8vx":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Accent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22126,7 +22305,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("7fc97fbeaed4fdc086ffff99386cb0f0027fbf5b17666666");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"regV":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Dark2.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22141,7 +22320,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("1b9e77d95f027570b3e7298a66a61ee6ab02a6761d666666");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"E9sC":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Paired.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22156,7 +22335,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("a6cee31f78b4b2df8a33a02cfb9a99e31a1cfdbf6fff7f00cab2d66a3d9affff99b15928");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"RCRU":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Pastel1.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22171,7 +22350,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("fbb4aeb3cde3ccebc5decbe4fed9a6ffffcce5d8bdfddaecf2f2f2");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"QfGF":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Pastel2.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22186,7 +22365,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("b3e2cdfdcdaccbd5e8f4cae4e6f5c9fff2aef1e2cccccccc");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"IldB":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Set1.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22201,7 +22380,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("e41a1c377eb84daf4a984ea3ff7f00ffff33a65628f781bf999999");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"KR9o":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Set2.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22216,7 +22395,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("66c2a5fc8d628da0cbe78ac3a6d854ffd92fe5c494b3b3b3");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"XNXw":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Set3.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22231,7 +22410,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("8dd3c7ffffb3bebadafb807280b1d3fdb462b3de69fccde5d9d9d9bc80bdccebc5ffed6f");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"FyyB":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/categorical/Tableau10.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22246,7 +22425,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _colors.default)("4e79a7f28e2ce1575976b7b259a14fedc949af7aa1ff9da79c755fbab0ab");
 
 exports.default = _default;
-},{"../colors.js":"xz73"}],"MNyl":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/ramp.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22259,7 +22438,7 @@ var _d3Interpolate = require("d3-interpolate");
 function _default(scheme) {
   return (0, _d3Interpolate.interpolateRgbBasis)(scheme[scheme.length - 1]);
 }
-},{"d3-interpolate":"k9aH"}],"ArEB":[function(require,module,exports) {
+},{"d3-interpolate":"../node_modules/d3-interpolate/src/index.js"}],"../node_modules/d3-scale-chromatic/src/diverging/BrBG.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22279,7 +22458,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"kzYK":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/PRGn.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22299,7 +22478,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"PI8x":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/PiYG.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22319,7 +22498,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"h8TC":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/PuOr.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22339,7 +22518,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"i3rG":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/RdBu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22359,7 +22538,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"WaJg":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/RdGy.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22379,7 +22558,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"JvsS":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/RdYlBu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22399,7 +22578,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"K9lw":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/RdYlGn.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22419,7 +22598,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"rXym":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/diverging/Spectral.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22439,7 +22618,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"KGBO":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/BuGn.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22459,7 +22638,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"lAoh":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/BuPu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22479,7 +22658,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"ZoIf":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/GnBu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22499,7 +22678,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"SiOD":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/OrRd.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22519,7 +22698,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"vp6S":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/PuBuGn.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22539,7 +22718,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"Wfss":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/PuBu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22559,7 +22738,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"NZPG":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/PuRd.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22579,7 +22758,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"fzkB":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/RdPu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22599,7 +22778,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"fL1Z":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/YlGnBu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22619,7 +22798,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"xEGO":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/YlGn.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22639,7 +22818,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"BmdO":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/YlOrBr.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22659,7 +22838,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"SHo5":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/YlOrRd.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22679,7 +22858,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"jpg6":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-single/Blues.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22699,7 +22878,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"rjqF":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-single/Greens.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22719,7 +22898,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"x8Iu":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-single/Greys.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22739,7 +22918,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"MJdW":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-single/Purples.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22759,7 +22938,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"DiEh":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-single/Reds.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22779,7 +22958,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"O9hI":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-single/Oranges.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22799,7 +22978,7 @@ exports.scheme = scheme;
 var _default = (0, _ramp.default)(scheme);
 
 exports.default = _default;
-},{"../colors.js":"xz73","../ramp.js":"MNyl"}],"SaPT":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js","../ramp.js":"../node_modules/d3-scale-chromatic/src/ramp.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/cividis.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22811,7 +22990,7 @@ function _default(t) {
   t = Math.max(0, Math.min(1, t));
   return "rgb(" + Math.max(0, Math.min(255, Math.round(-4.54 - t * (35.34 - t * (2381.73 - t * (6402.7 - t * (7024.72 - t * 2710.57))))))) + ", " + Math.max(0, Math.min(255, Math.round(32.49 + t * (170.73 + t * (52.82 - t * (131.46 - t * (176.58 - t * 67.37))))))) + ", " + Math.max(0, Math.min(255, Math.round(81.24 + t * (442.36 - t * (2482.43 - t * (6167.24 - t * (6614.94 - t * 2475.67))))))) + ")";
 }
-},{}],"cI87":[function(require,module,exports) {
+},{}],"../node_modules/d3-scale-chromatic/src/sequential-multi/cubehelix.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22826,7 +23005,7 @@ var _d3Interpolate = require("d3-interpolate");
 var _default = (0, _d3Interpolate.interpolateCubehelixLong)((0, _d3Color.cubehelix)(300, 0.5, 0.0), (0, _d3Color.cubehelix)(-240, 0.5, 1.0));
 
 exports.default = _default;
-},{"d3-color":"Peej","d3-interpolate":"k9aH"}],"BkJF":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/rainbow.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22853,7 +23032,7 @@ function _default(t) {
   c.l = 0.8 - 0.9 * ts;
   return c + "";
 }
-},{"d3-color":"Peej","d3-interpolate":"k9aH"}],"ZXMu":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/sinebow.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22875,7 +23054,7 @@ function _default(t) {
   c.b = 255 * (x = Math.sin(t + pi_2_3)) * x;
   return c + "";
 }
-},{"d3-color":"Peej"}],"PX18":[function(require,module,exports) {
+},{"d3-color":"../node_modules/d3-color/src/index.js"}],"../node_modules/d3-scale-chromatic/src/sequential-multi/turbo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22887,7 +23066,7 @@ function _default(t) {
   t = Math.max(0, Math.min(1, t));
   return "rgb(" + Math.max(0, Math.min(255, Math.round(34.61 + t * (1172.33 - t * (10793.56 - t * (33300.12 - t * (38394.49 - t * 14825.05))))))) + ", " + Math.max(0, Math.min(255, Math.round(23.31 + t * (557.33 + t * (1225.33 - t * (3574.96 - t * (1073.77 + t * 707.56))))))) + ", " + Math.max(0, Math.min(255, Math.round(27.2 + t * (3211.1 - t * (15327.97 - t * (27814 - t * (22569.18 - t * 6838.66))))))) + ")";
 }
-},{}],"SfG7":[function(require,module,exports) {
+},{}],"../node_modules/d3-scale-chromatic/src/sequential-multi/viridis.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22915,7 +23094,7 @@ var inferno = ramp((0, _colors.default)("00000401000501010601010802010a02020c020
 exports.inferno = inferno;
 var plasma = ramp((0, _colors.default)("0d088710078813078916078a19068c1b068d1d068e20068f2206902406912605912805922a05932c05942e05952f059631059733059735049837049938049a3a049a3c049b3e049c3f049c41049d43039e44039e46039f48039f4903a04b03a14c02a14e02a25002a25102a35302a35502a45601a45801a45901a55b01a55c01a65e01a66001a66100a76300a76400a76600a76700a86900a86a00a86c00a86e00a86f00a87100a87201a87401a87501a87701a87801a87a02a87b02a87d03a87e03a88004a88104a78305a78405a78606a68707a68808a68a09a58b0aa58d0ba58e0ca48f0da4910ea3920fa39410a29511a19613a19814a099159f9a169f9c179e9d189d9e199da01a9ca11b9ba21d9aa31e9aa51f99a62098a72197a82296aa2395ab2494ac2694ad2793ae2892b02991b12a90b22b8fb32c8eb42e8db52f8cb6308bb7318ab83289ba3388bb3488bc3587bd3786be3885bf3984c03a83c13b82c23c81c33d80c43e7fc5407ec6417dc7427cc8437bc9447aca457acb4679cc4778cc4977cd4a76ce4b75cf4c74d04d73d14e72d24f71d35171d45270d5536fd5546ed6556dd7566cd8576bd9586ada5a6ada5b69db5c68dc5d67dd5e66de5f65de6164df6263e06363e16462e26561e26660e3685fe4695ee56a5de56b5de66c5ce76e5be76f5ae87059e97158e97257ea7457eb7556eb7655ec7754ed7953ed7a52ee7b51ef7c51ef7e50f07f4ff0804ef1814df1834cf2844bf3854bf3874af48849f48948f58b47f58c46f68d45f68f44f79044f79143f79342f89441f89540f9973ff9983ef99a3efa9b3dfa9c3cfa9e3bfb9f3afba139fba238fca338fca537fca636fca835fca934fdab33fdac33fdae32fdaf31fdb130fdb22ffdb42ffdb52efeb72dfeb82cfeba2cfebb2bfebd2afebe2afec029fdc229fdc328fdc527fdc627fdc827fdca26fdcb26fccd25fcce25fcd025fcd225fbd324fbd524fbd724fad824fada24f9dc24f9dd25f8df25f8e125f7e225f7e425f6e626f6e826f5e926f5eb27f4ed27f3ee27f3f027f2f227f1f426f1f525f0f724f0f921"));
 exports.plasma = plasma;
-},{"../colors.js":"xz73"}],"ado2":[function(require,module,exports) {
+},{"../colors.js":"../node_modules/d3-scale-chromatic/src/colors.js"}],"../node_modules/d3-scale-chromatic/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23463,7 +23642,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./categorical/category10.js":"dTYe","./categorical/Accent.js":"o8vx","./categorical/Dark2.js":"regV","./categorical/Paired.js":"E9sC","./categorical/Pastel1.js":"RCRU","./categorical/Pastel2.js":"QfGF","./categorical/Set1.js":"IldB","./categorical/Set2.js":"KR9o","./categorical/Set3.js":"XNXw","./categorical/Tableau10.js":"FyyB","./diverging/BrBG.js":"ArEB","./diverging/PRGn.js":"kzYK","./diverging/PiYG.js":"PI8x","./diverging/PuOr.js":"h8TC","./diverging/RdBu.js":"i3rG","./diverging/RdGy.js":"WaJg","./diverging/RdYlBu.js":"JvsS","./diverging/RdYlGn.js":"K9lw","./diverging/Spectral.js":"rXym","./sequential-multi/BuGn.js":"KGBO","./sequential-multi/BuPu.js":"lAoh","./sequential-multi/GnBu.js":"ZoIf","./sequential-multi/OrRd.js":"SiOD","./sequential-multi/PuBuGn.js":"vp6S","./sequential-multi/PuBu.js":"Wfss","./sequential-multi/PuRd.js":"NZPG","./sequential-multi/RdPu.js":"fzkB","./sequential-multi/YlGnBu.js":"fL1Z","./sequential-multi/YlGn.js":"xEGO","./sequential-multi/YlOrBr.js":"BmdO","./sequential-multi/YlOrRd.js":"SHo5","./sequential-single/Blues.js":"jpg6","./sequential-single/Greens.js":"rjqF","./sequential-single/Greys.js":"x8Iu","./sequential-single/Purples.js":"MJdW","./sequential-single/Reds.js":"DiEh","./sequential-single/Oranges.js":"O9hI","./sequential-multi/cividis.js":"SaPT","./sequential-multi/cubehelix.js":"cI87","./sequential-multi/rainbow.js":"BkJF","./sequential-multi/sinebow.js":"ZXMu","./sequential-multi/turbo.js":"PX18","./sequential-multi/viridis.js":"SfG7"}],"ezXE":[function(require,module,exports) {
+},{"./categorical/category10.js":"../node_modules/d3-scale-chromatic/src/categorical/category10.js","./categorical/Accent.js":"../node_modules/d3-scale-chromatic/src/categorical/Accent.js","./categorical/Dark2.js":"../node_modules/d3-scale-chromatic/src/categorical/Dark2.js","./categorical/Paired.js":"../node_modules/d3-scale-chromatic/src/categorical/Paired.js","./categorical/Pastel1.js":"../node_modules/d3-scale-chromatic/src/categorical/Pastel1.js","./categorical/Pastel2.js":"../node_modules/d3-scale-chromatic/src/categorical/Pastel2.js","./categorical/Set1.js":"../node_modules/d3-scale-chromatic/src/categorical/Set1.js","./categorical/Set2.js":"../node_modules/d3-scale-chromatic/src/categorical/Set2.js","./categorical/Set3.js":"../node_modules/d3-scale-chromatic/src/categorical/Set3.js","./categorical/Tableau10.js":"../node_modules/d3-scale-chromatic/src/categorical/Tableau10.js","./diverging/BrBG.js":"../node_modules/d3-scale-chromatic/src/diverging/BrBG.js","./diverging/PRGn.js":"../node_modules/d3-scale-chromatic/src/diverging/PRGn.js","./diverging/PiYG.js":"../node_modules/d3-scale-chromatic/src/diverging/PiYG.js","./diverging/PuOr.js":"../node_modules/d3-scale-chromatic/src/diverging/PuOr.js","./diverging/RdBu.js":"../node_modules/d3-scale-chromatic/src/diverging/RdBu.js","./diverging/RdGy.js":"../node_modules/d3-scale-chromatic/src/diverging/RdGy.js","./diverging/RdYlBu.js":"../node_modules/d3-scale-chromatic/src/diverging/RdYlBu.js","./diverging/RdYlGn.js":"../node_modules/d3-scale-chromatic/src/diverging/RdYlGn.js","./diverging/Spectral.js":"../node_modules/d3-scale-chromatic/src/diverging/Spectral.js","./sequential-multi/BuGn.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/BuGn.js","./sequential-multi/BuPu.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/BuPu.js","./sequential-multi/GnBu.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/GnBu.js","./sequential-multi/OrRd.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/OrRd.js","./sequential-multi/PuBuGn.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/PuBuGn.js","./sequential-multi/PuBu.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/PuBu.js","./sequential-multi/PuRd.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/PuRd.js","./sequential-multi/RdPu.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/RdPu.js","./sequential-multi/YlGnBu.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/YlGnBu.js","./sequential-multi/YlGn.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/YlGn.js","./sequential-multi/YlOrBr.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/YlOrBr.js","./sequential-multi/YlOrRd.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/YlOrRd.js","./sequential-single/Blues.js":"../node_modules/d3-scale-chromatic/src/sequential-single/Blues.js","./sequential-single/Greens.js":"../node_modules/d3-scale-chromatic/src/sequential-single/Greens.js","./sequential-single/Greys.js":"../node_modules/d3-scale-chromatic/src/sequential-single/Greys.js","./sequential-single/Purples.js":"../node_modules/d3-scale-chromatic/src/sequential-single/Purples.js","./sequential-single/Reds.js":"../node_modules/d3-scale-chromatic/src/sequential-single/Reds.js","./sequential-single/Oranges.js":"../node_modules/d3-scale-chromatic/src/sequential-single/Oranges.js","./sequential-multi/cividis.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/cividis.js","./sequential-multi/cubehelix.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/cubehelix.js","./sequential-multi/rainbow.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/rainbow.js","./sequential-multi/sinebow.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/sinebow.js","./sequential-multi/turbo.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/turbo.js","./sequential-multi/viridis.js":"../node_modules/d3-scale-chromatic/src/sequential-multi/viridis.js"}],"../node_modules/d3-shape/src/constant.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23476,7 +23655,7 @@ function _default(x) {
     return x;
   };
 }
-},{}],"kIKs":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/math.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23515,7 +23694,7 @@ function acos(x) {
 function asin(x) {
   return x >= 1 ? halfPi : x <= -1 ? -halfPi : Math.asin(x);
 }
-},{}],"BL7I":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/arc.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23759,7 +23938,7 @@ function _default() {
 
   return arc;
 }
-},{"d3-path":"OTyq","./constant.js":"ezXE","./math.js":"kIKs"}],"L3Qx":[function(require,module,exports) {
+},{"d3-path":"../node_modules/d3-path/src/index.js","./constant.js":"../node_modules/d3-shape/src/constant.js","./math.js":"../node_modules/d3-shape/src/math.js"}],"../node_modules/d3-shape/src/curve/linear.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23809,7 +23988,7 @@ Linear.prototype = {
 function _default(context) {
   return new Linear(context);
 }
-},{}],"LnI9":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/point.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23825,7 +24004,7 @@ function x(p) {
 function y(p) {
   return p[1];
 }
-},{}],"KhHE":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/line.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23892,7 +24071,7 @@ function _default() {
 
   return line;
 }
-},{"d3-path":"OTyq","./constant.js":"ezXE","./curve/linear.js":"L3Qx","./point.js":"LnI9"}],"IYvJ":[function(require,module,exports) {
+},{"d3-path":"../node_modules/d3-path/src/index.js","./constant.js":"../node_modules/d3-shape/src/constant.js","./curve/linear.js":"../node_modules/d3-shape/src/curve/linear.js","./point.js":"../node_modules/d3-shape/src/point.js"}],"../node_modules/d3-shape/src/area.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24016,7 +24195,18 @@ function _default() {
 
   return area;
 }
-},{"d3-path":"OTyq","./constant.js":"ezXE","./curve/linear.js":"L3Qx","./line.js":"KhHE","./point.js":"LnI9"}],"idkR":[function(require,module,exports) {
+},{"d3-path":"../node_modules/d3-path/src/index.js","./constant.js":"../node_modules/d3-shape/src/constant.js","./curve/linear.js":"../node_modules/d3-shape/src/curve/linear.js","./line.js":"../node_modules/d3-shape/src/line.js","./point.js":"../node_modules/d3-shape/src/point.js"}],"../node_modules/d3-shape/src/descending.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(a, b) {
+  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
+}
+},{}],"../node_modules/d3-shape/src/identity.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24027,7 +24217,7 @@ exports.default = _default;
 function _default(d) {
   return d;
 }
-},{}],"bAZU":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/pie.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24121,7 +24311,7 @@ function _default() {
 
   return pie;
 }
-},{"./constant.js":"ezXE","./descending.js":"fBAz","./identity.js":"idkR","./math.js":"kIKs"}],"LARK":[function(require,module,exports) {
+},{"./constant.js":"../node_modules/d3-shape/src/constant.js","./descending.js":"../node_modules/d3-shape/src/descending.js","./identity.js":"../node_modules/d3-shape/src/identity.js","./math.js":"../node_modules/d3-shape/src/math.js"}],"../node_modules/d3-shape/src/curve/radial.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24167,7 +24357,7 @@ function curveRadial(curve) {
   radial._curve = curve;
   return radial;
 }
-},{"./linear.js":"L3Qx"}],"faWF":[function(require,module,exports) {
+},{"./linear.js":"../node_modules/d3-shape/src/curve/linear.js"}],"../node_modules/d3-shape/src/lineRadial.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24201,7 +24391,7 @@ function lineRadial(l) {
 function _default() {
   return lineRadial((0, _line.default)().curve(_radial.curveRadialLinear));
 }
-},{"./curve/radial.js":"LARK","./line.js":"KhHE"}],"T5gn":[function(require,module,exports) {
+},{"./curve/radial.js":"../node_modules/d3-shape/src/curve/radial.js","./line.js":"../node_modules/d3-shape/src/line.js"}],"../node_modules/d3-shape/src/areaRadial.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24253,7 +24443,7 @@ function _default() {
 
   return a;
 }
-},{"./curve/radial.js":"LARK","./area.js":"IYvJ","./lineRadial.js":"faWF"}],"vzjT":[function(require,module,exports) {
+},{"./curve/radial.js":"../node_modules/d3-shape/src/curve/radial.js","./area.js":"../node_modules/d3-shape/src/area.js","./lineRadial.js":"../node_modules/d3-shape/src/lineRadial.js"}],"../node_modules/d3-shape/src/pointRadial.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24264,7 +24454,16 @@ exports.default = _default;
 function _default(x, y) {
   return [(y = +y) * Math.cos(x -= Math.PI / 2), y * Math.sin(x)];
 }
-},{}],"npGN":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/array.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.slice = void 0;
+var slice = Array.prototype.slice;
+exports.slice = slice;
+},{}],"../node_modules/d3-shape/src/link/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24368,7 +24567,7 @@ function linkRadial() {
   l.radius = l.y, delete l.y;
   return l;
 }
-},{"d3-path":"OTyq","../array.js":"KXlw","../constant.js":"ezXE","../point.js":"LnI9","../pointRadial.js":"vzjT"}],"zjv7":[function(require,module,exports) {
+},{"d3-path":"../node_modules/d3-path/src/index.js","../array.js":"../node_modules/d3-shape/src/array.js","../constant.js":"../node_modules/d3-shape/src/constant.js","../point.js":"../node_modules/d3-shape/src/point.js","../pointRadial.js":"../node_modules/d3-shape/src/pointRadial.js"}],"../node_modules/d3-shape/src/symbol/circle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24386,7 +24585,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{"../math.js":"kIKs"}],"PTh9":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-shape/src/math.js"}],"../node_modules/d3-shape/src/symbol/cross.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24412,7 +24611,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{}],"fuDX":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/symbol/diamond.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24433,7 +24632,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{}],"L5Ql":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/symbol/star.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24467,7 +24666,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{"../math.js":"kIKs"}],"bj9s":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-shape/src/math.js"}],"../node_modules/d3-shape/src/symbol/square.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24482,7 +24681,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{}],"owZx":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/symbol/triangle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24500,7 +24699,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{}],"UZQY":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/symbol/wye.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24533,7 +24732,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{}],"bBhM":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/symbol.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24591,7 +24790,16 @@ function _default() {
 
   return symbol;
 }
-},{"d3-path":"OTyq","./symbol/circle.js":"zjv7","./symbol/cross.js":"PTh9","./symbol/diamond.js":"fuDX","./symbol/star.js":"L5Ql","./symbol/square.js":"bj9s","./symbol/triangle.js":"owZx","./symbol/wye.js":"UZQY","./constant.js":"ezXE"}],"cx05":[function(require,module,exports) {
+},{"d3-path":"../node_modules/d3-path/src/index.js","./symbol/circle.js":"../node_modules/d3-shape/src/symbol/circle.js","./symbol/cross.js":"../node_modules/d3-shape/src/symbol/cross.js","./symbol/diamond.js":"../node_modules/d3-shape/src/symbol/diamond.js","./symbol/star.js":"../node_modules/d3-shape/src/symbol/star.js","./symbol/square.js":"../node_modules/d3-shape/src/symbol/square.js","./symbol/triangle.js":"../node_modules/d3-shape/src/symbol/triangle.js","./symbol/wye.js":"../node_modules/d3-shape/src/symbol/wye.js","./constant.js":"../node_modules/d3-shape/src/constant.js"}],"../node_modules/d3-shape/src/noop.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default() {}
+},{}],"../node_modules/d3-shape/src/curve/basis.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24668,7 +24876,7 @@ Basis.prototype = {
 function _default(context) {
   return new Basis(context);
 }
-},{}],"FS5M":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/curve/basisClosed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24759,7 +24967,7 @@ BasisClosed.prototype = {
 function _default(context) {
   return new BasisClosed(context);
 }
-},{"../noop.js":"zOhu","./basis.js":"cx05"}],"feGb":[function(require,module,exports) {
+},{"../noop.js":"../node_modules/d3-shape/src/noop.js","./basis.js":"../node_modules/d3-shape/src/curve/basis.js"}],"../node_modules/d3-shape/src/curve/basisOpen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24824,7 +25032,7 @@ BasisOpen.prototype = {
 function _default(context) {
   return new BasisOpen(context);
 }
-},{"./basis.js":"cx05"}],"iAgm":[function(require,module,exports) {
+},{"./basis.js":"../node_modules/d3-shape/src/curve/basis.js"}],"../node_modules/d3-shape/src/curve/bundle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24890,7 +25098,7 @@ var _default = function custom(beta) {
 }(0.85);
 
 exports.default = _default;
-},{"./basis.js":"cx05"}],"DORS":[function(require,module,exports) {
+},{"./basis.js":"../node_modules/d3-shape/src/curve/basis.js"}],"../node_modules/d3-shape/src/curve/cardinal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24976,7 +25184,7 @@ var _default = function custom(tension) {
 }(0);
 
 exports.default = _default;
-},{}],"FUQi":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/curve/cardinalClosed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25076,7 +25284,7 @@ var _default = function custom(tension) {
 }(0);
 
 exports.default = _default;
-},{"../noop.js":"zOhu","./cardinal.js":"DORS"}],"iWbK":[function(require,module,exports) {
+},{"../noop.js":"../node_modules/d3-shape/src/noop.js","./cardinal.js":"../node_modules/d3-shape/src/curve/cardinal.js"}],"../node_modules/d3-shape/src/curve/cardinalOpen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25151,7 +25359,7 @@ var _default = function custom(tension) {
 }(0);
 
 exports.default = _default;
-},{"./cardinal.js":"DORS"}],"oFi9":[function(require,module,exports) {
+},{"./cardinal.js":"../node_modules/d3-shape/src/curve/cardinal.js"}],"../node_modules/d3-shape/src/curve/catmullRom.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25266,7 +25474,7 @@ var _default = function custom(alpha) {
 }(0.5);
 
 exports.default = _default;
-},{"../math.js":"kIKs","./cardinal.js":"DORS"}],"AW0P":[function(require,module,exports) {
+},{"../math.js":"../node_modules/d3-shape/src/math.js","./cardinal.js":"../node_modules/d3-shape/src/curve/cardinal.js"}],"../node_modules/d3-shape/src/curve/catmullRomClosed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25375,7 +25583,7 @@ var _default = function custom(alpha) {
 }(0.5);
 
 exports.default = _default;
-},{"./cardinalClosed.js":"FUQi","../noop.js":"zOhu","./catmullRom.js":"oFi9"}],"PGVM":[function(require,module,exports) {
+},{"./cardinalClosed.js":"../node_modules/d3-shape/src/curve/cardinalClosed.js","../noop.js":"../node_modules/d3-shape/src/noop.js","./catmullRom.js":"../node_modules/d3-shape/src/curve/catmullRom.js"}],"../node_modules/d3-shape/src/curve/catmullRomOpen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25459,7 +25667,7 @@ var _default = function custom(alpha) {
 }(0.5);
 
 exports.default = _default;
-},{"./cardinalOpen.js":"iWbK","./catmullRom.js":"oFi9"}],"c2vC":[function(require,module,exports) {
+},{"./cardinalOpen.js":"../node_modules/d3-shape/src/curve/cardinalOpen.js","./catmullRom.js":"../node_modules/d3-shape/src/curve/catmullRom.js"}],"../node_modules/d3-shape/src/curve/linearClosed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25493,7 +25701,7 @@ LinearClosed.prototype = {
 function _default(context) {
   return new LinearClosed(context);
 }
-},{"../noop.js":"zOhu"}],"DNx2":[function(require,module,exports) {
+},{"../noop.js":"../node_modules/d3-shape/src/noop.js"}],"../node_modules/d3-shape/src/curve/monotone.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25633,7 +25841,7 @@ function monotoneX(context) {
 function monotoneY(context) {
   return new MonotoneY(context);
 }
-},{}],"qyH2":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/curve/natural.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25716,7 +25924,7 @@ function controlPoints(x) {
 function _default(context) {
   return new Natural(context);
 }
-},{}],"SIad":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/curve/step.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25793,7 +26001,7 @@ function stepBefore(context) {
 function stepAfter(context) {
   return new Step(context, 1);
 }
-},{}],"jW6Y":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/offset/none.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25812,7 +26020,7 @@ function _default(series, order) {
     }
   }
 }
-},{}],"NTwk":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/order/none.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25828,7 +26036,7 @@ function _default(series) {
 
   return o;
 }
-},{}],"k9Ur":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/stack.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25899,7 +26107,7 @@ function _default() {
 
   return stack;
 }
-},{"./array.js":"KXlw","./constant.js":"ezXE","./offset/none.js":"jW6Y","./order/none.js":"NTwk"}],"WOsM":[function(require,module,exports) {
+},{"./array.js":"../node_modules/d3-shape/src/array.js","./constant.js":"../node_modules/d3-shape/src/constant.js","./offset/none.js":"../node_modules/d3-shape/src/offset/none.js","./order/none.js":"../node_modules/d3-shape/src/order/none.js"}],"../node_modules/d3-shape/src/offset/expand.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25922,7 +26130,7 @@ function _default(series, order) {
 
   (0, _none.default)(series, order);
 }
-},{"./none.js":"jW6Y"}],"PS7K":[function(require,module,exports) {
+},{"./none.js":"../node_modules/d3-shape/src/offset/none.js"}],"../node_modules/d3-shape/src/offset/diverging.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25945,7 +26153,7 @@ function _default(series, order) {
     }
   }
 }
-},{}],"UGaf":[function(require,module,exports) {
+},{}],"../node_modules/d3-shape/src/offset/silhouette.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25968,7 +26176,7 @@ function _default(series, order) {
 
   (0, _none.default)(series, order);
 }
-},{"./none.js":"jW6Y"}],"zv8R":[function(require,module,exports) {
+},{"./none.js":"../node_modules/d3-shape/src/offset/none.js"}],"../node_modules/d3-shape/src/offset/wiggle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26007,7 +26215,7 @@ function _default(series, order) {
   s0[j - 1][1] += s0[j - 1][0] = y;
   (0, _none.default)(series, order);
 }
-},{"./none.js":"jW6Y"}],"Uz9Z":[function(require,module,exports) {
+},{"./none.js":"../node_modules/d3-shape/src/offset/none.js"}],"../node_modules/d3-shape/src/order/appearance.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26037,7 +26245,7 @@ function peak(series) {
 
   return j;
 }
-},{"./none.js":"NTwk"}],"Z1jP":[function(require,module,exports) {
+},{"./none.js":"../node_modules/d3-shape/src/order/none.js"}],"../node_modules/d3-shape/src/order/ascending.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26067,7 +26275,7 @@ function sum(series) {
 
   return s;
 }
-},{"./none.js":"NTwk"}],"oyxb":[function(require,module,exports) {
+},{"./none.js":"../node_modules/d3-shape/src/order/none.js"}],"../node_modules/d3-shape/src/order/descending.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26082,7 +26290,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(series) {
   return (0, _ascending.default)(series).reverse();
 }
-},{"./ascending.js":"Z1jP"}],"cmz2":[function(require,module,exports) {
+},{"./ascending.js":"../node_modules/d3-shape/src/order/ascending.js"}],"../node_modules/d3-shape/src/order/insideOut.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26121,7 +26329,7 @@ function _default(series) {
 
   return bottoms.reverse().concat(tops);
 }
-},{"./appearance.js":"Uz9Z","./ascending.js":"Z1jP"}],"MoW7":[function(require,module,exports) {
+},{"./appearance.js":"../node_modules/d3-shape/src/order/appearance.js","./ascending.js":"../node_modules/d3-shape/src/order/ascending.js"}],"../node_modules/d3-shape/src/order/reverse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26136,7 +26344,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(series) {
   return (0, _none.default)(series).reverse();
 }
-},{"./none.js":"NTwk"}],"maww":[function(require,module,exports) {
+},{"./none.js":"../node_modules/d3-shape/src/order/none.js"}],"../node_modules/d3-shape/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26540,7 +26748,20 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./arc.js":"BL7I","./area.js":"IYvJ","./line.js":"KhHE","./pie.js":"bAZU","./areaRadial.js":"T5gn","./lineRadial.js":"faWF","./pointRadial.js":"vzjT","./link/index.js":"npGN","./symbol.js":"bBhM","./symbol/circle.js":"zjv7","./symbol/cross.js":"PTh9","./symbol/diamond.js":"fuDX","./symbol/square.js":"bj9s","./symbol/star.js":"L5Ql","./symbol/triangle.js":"owZx","./symbol/wye.js":"UZQY","./curve/basisClosed.js":"FS5M","./curve/basisOpen.js":"feGb","./curve/basis.js":"cx05","./curve/bundle.js":"iAgm","./curve/cardinalClosed.js":"FUQi","./curve/cardinalOpen.js":"iWbK","./curve/cardinal.js":"DORS","./curve/catmullRomClosed.js":"AW0P","./curve/catmullRomOpen.js":"PGVM","./curve/catmullRom.js":"oFi9","./curve/linearClosed.js":"c2vC","./curve/linear.js":"L3Qx","./curve/monotone.js":"DNx2","./curve/natural.js":"qyH2","./curve/step.js":"SIad","./stack.js":"k9Ur","./offset/expand.js":"WOsM","./offset/diverging.js":"PS7K","./offset/none.js":"jW6Y","./offset/silhouette.js":"UGaf","./offset/wiggle.js":"zv8R","./order/appearance.js":"Uz9Z","./order/ascending.js":"Z1jP","./order/descending.js":"oyxb","./order/insideOut.js":"cmz2","./order/none.js":"NTwk","./order/reverse.js":"MoW7"}],"Xind":[function(require,module,exports) {
+},{"./arc.js":"../node_modules/d3-shape/src/arc.js","./area.js":"../node_modules/d3-shape/src/area.js","./line.js":"../node_modules/d3-shape/src/line.js","./pie.js":"../node_modules/d3-shape/src/pie.js","./areaRadial.js":"../node_modules/d3-shape/src/areaRadial.js","./lineRadial.js":"../node_modules/d3-shape/src/lineRadial.js","./pointRadial.js":"../node_modules/d3-shape/src/pointRadial.js","./link/index.js":"../node_modules/d3-shape/src/link/index.js","./symbol.js":"../node_modules/d3-shape/src/symbol.js","./symbol/circle.js":"../node_modules/d3-shape/src/symbol/circle.js","./symbol/cross.js":"../node_modules/d3-shape/src/symbol/cross.js","./symbol/diamond.js":"../node_modules/d3-shape/src/symbol/diamond.js","./symbol/square.js":"../node_modules/d3-shape/src/symbol/square.js","./symbol/star.js":"../node_modules/d3-shape/src/symbol/star.js","./symbol/triangle.js":"../node_modules/d3-shape/src/symbol/triangle.js","./symbol/wye.js":"../node_modules/d3-shape/src/symbol/wye.js","./curve/basisClosed.js":"../node_modules/d3-shape/src/curve/basisClosed.js","./curve/basisOpen.js":"../node_modules/d3-shape/src/curve/basisOpen.js","./curve/basis.js":"../node_modules/d3-shape/src/curve/basis.js","./curve/bundle.js":"../node_modules/d3-shape/src/curve/bundle.js","./curve/cardinalClosed.js":"../node_modules/d3-shape/src/curve/cardinalClosed.js","./curve/cardinalOpen.js":"../node_modules/d3-shape/src/curve/cardinalOpen.js","./curve/cardinal.js":"../node_modules/d3-shape/src/curve/cardinal.js","./curve/catmullRomClosed.js":"../node_modules/d3-shape/src/curve/catmullRomClosed.js","./curve/catmullRomOpen.js":"../node_modules/d3-shape/src/curve/catmullRomOpen.js","./curve/catmullRom.js":"../node_modules/d3-shape/src/curve/catmullRom.js","./curve/linearClosed.js":"../node_modules/d3-shape/src/curve/linearClosed.js","./curve/linear.js":"../node_modules/d3-shape/src/curve/linear.js","./curve/monotone.js":"../node_modules/d3-shape/src/curve/monotone.js","./curve/natural.js":"../node_modules/d3-shape/src/curve/natural.js","./curve/step.js":"../node_modules/d3-shape/src/curve/step.js","./stack.js":"../node_modules/d3-shape/src/stack.js","./offset/expand.js":"../node_modules/d3-shape/src/offset/expand.js","./offset/diverging.js":"../node_modules/d3-shape/src/offset/diverging.js","./offset/none.js":"../node_modules/d3-shape/src/offset/none.js","./offset/silhouette.js":"../node_modules/d3-shape/src/offset/silhouette.js","./offset/wiggle.js":"../node_modules/d3-shape/src/offset/wiggle.js","./order/appearance.js":"../node_modules/d3-shape/src/order/appearance.js","./order/ascending.js":"../node_modules/d3-shape/src/order/ascending.js","./order/descending.js":"../node_modules/d3-shape/src/order/descending.js","./order/insideOut.js":"../node_modules/d3-shape/src/order/insideOut.js","./order/none.js":"../node_modules/d3-shape/src/order/none.js","./order/reverse.js":"../node_modules/d3-shape/src/order/reverse.js"}],"../node_modules/d3-voronoi/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-voronoi/src/point.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26556,7 +26777,7 @@ function x(d) {
 function y(d) {
   return d[1];
 }
-},{}],"getm":[function(require,module,exports) {
+},{}],"../node_modules/d3-voronoi/src/RedBlackTree.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26818,7 +27039,7 @@ function RedBlackFirst(node) {
 
 var _default = RedBlackTree;
 exports.default = _default;
-},{}],"R6Hk":[function(require,module,exports) {
+},{}],"../node_modules/d3-voronoi/src/Edge.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26995,7 +27216,7 @@ function clipEdges(x0, y0, x1, y1) {
     }
   }
 }
-},{"./Diagram":"ZmLv"}],"bFev":[function(require,module,exports) {
+},{"./Diagram":"../node_modules/d3-voronoi/src/Diagram.js"}],"../node_modules/d3-voronoi/src/Cell.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27136,7 +27357,7 @@ function clipCells(x0, y0, x1, y1) {
     }
   }
 }
-},{"./Edge":"R6Hk","./Diagram":"ZmLv"}],"Nay5":[function(require,module,exports) {
+},{"./Edge":"../node_modules/d3-voronoi/src/Edge.js","./Diagram":"../node_modules/d3-voronoi/src/Diagram.js"}],"../node_modules/d3-voronoi/src/Circle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27221,7 +27442,7 @@ function detachCircle(arc) {
     arc.circle = null;
   }
 }
-},{"./RedBlackTree":"getm","./Diagram":"ZmLv"}],"YRKg":[function(require,module,exports) {
+},{"./RedBlackTree":"../node_modules/d3-voronoi/src/RedBlackTree.js","./Diagram":"../node_modules/d3-voronoi/src/Diagram.js"}],"../node_modules/d3-voronoi/src/Beach.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27419,7 +27640,7 @@ function rightBreakPoint(arc, directrix) {
   var site = arc.site;
   return site[1] === directrix ? site[0] : Infinity;
 }
-},{"./RedBlackTree":"getm","./Cell":"bFev","./Circle":"Nay5","./Edge":"R6Hk","./Diagram":"ZmLv"}],"ZmLv":[function(require,module,exports) {
+},{"./RedBlackTree":"../node_modules/d3-voronoi/src/RedBlackTree.js","./Cell":"../node_modules/d3-voronoi/src/Cell.js","./Circle":"../node_modules/d3-voronoi/src/Circle.js","./Edge":"../node_modules/d3-voronoi/src/Edge.js","./Diagram":"../node_modules/d3-voronoi/src/Diagram.js"}],"../node_modules/d3-voronoi/src/Diagram.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27581,7 +27802,7 @@ Diagram.prototype = {
     return radius == null || d2 <= radius * radius ? cell.site : null;
   }
 };
-},{"./Beach":"YRKg","./Cell":"bFev","./Circle":"Nay5","./Edge":"R6Hk","./RedBlackTree":"getm"}],"huq3":[function(require,module,exports) {
+},{"./Beach":"../node_modules/d3-voronoi/src/Beach.js","./Cell":"../node_modules/d3-voronoi/src/Cell.js","./Circle":"../node_modules/d3-voronoi/src/Circle.js","./Edge":"../node_modules/d3-voronoi/src/Edge.js","./RedBlackTree":"../node_modules/d3-voronoi/src/RedBlackTree.js"}],"../node_modules/d3-voronoi/src/voronoi.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27645,7 +27866,7 @@ function _default() {
 
   return voronoi;
 }
-},{"./constant":"aCvo","./point":"Xind","./Diagram":"ZmLv"}],"rLIC":[function(require,module,exports) {
+},{"./constant":"../node_modules/d3-voronoi/src/constant.js","./point":"../node_modules/d3-voronoi/src/point.js","./Diagram":"../node_modules/d3-voronoi/src/Diagram.js"}],"../node_modules/d3-voronoi/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27661,7 +27882,20 @@ Object.defineProperty(exports, "voronoi", {
 var _voronoi = _interopRequireDefault(require("./voronoi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./voronoi":"huq3"}],"UMU7":[function(require,module,exports) {
+},{"./voronoi":"../node_modules/d3-voronoi/src/voronoi.js"}],"../node_modules/d3-zoom/src/constant.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return function () {
+    return x;
+  };
+}
+},{}],"../node_modules/d3-zoom/src/event.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27674,7 +27908,7 @@ function ZoomEvent(target, type, transform) {
   this.type = type;
   this.transform = transform;
 }
-},{}],"OLQI":[function(require,module,exports) {
+},{}],"../node_modules/d3-zoom/src/transform.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27735,7 +27969,27 @@ function transform(node) {
 
   return node.__zoom;
 }
-},{}],"LZWf":[function(require,module,exports) {
+},{}],"../node_modules/d3-zoom/src/noevent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.nopropagation = nopropagation;
+exports.default = _default;
+
+var _d3Selection = require("d3-selection");
+
+function nopropagation() {
+  _d3Selection.event.stopImmediatePropagation();
+}
+
+function _default() {
+  _d3Selection.event.preventDefault();
+
+  _d3Selection.event.stopImmediatePropagation();
+}
+},{"d3-selection":"../node_modules/d3-selection/src/index.js"}],"../node_modules/d3-zoom/src/zoom.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28176,7 +28430,7 @@ function _default() {
 
   return zoom;
 }
-},{"d3-dispatch":"D3zY","d3-drag":"kkdU","d3-interpolate":"k9aH","d3-selection":"ysDv","d3-transition":"UqVV","./constant.js":"aCvo","./event.js":"UMU7","./transform.js":"OLQI","./noevent.js":"BxLv"}],"MHdZ":[function(require,module,exports) {
+},{"d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-drag":"../node_modules/d3-drag/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","d3-transition":"../node_modules/d3-transition/src/index.js","./constant.js":"../node_modules/d3-zoom/src/constant.js","./event.js":"../node_modules/d3-zoom/src/event.js","./transform.js":"../node_modules/d3-zoom/src/transform.js","./noevent.js":"../node_modules/d3-zoom/src/noevent.js"}],"../node_modules/d3-zoom/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28210,7 +28464,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./zoom.js":"LZWf","./transform.js":"OLQI"}],"UzF0":[function(require,module,exports) {
+},{"./zoom.js":"../node_modules/d3-zoom/src/zoom.js","./transform.js":"../node_modules/d3-zoom/src/transform.js"}],"../node_modules/d3/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28630,7 +28884,18 @@ Object.keys(_d3Zoom).forEach(function (key) {
     }
   });
 });
-},{"./dist/package.js":"pT13","d3-array":"K0bd","d3-axis":"mp0m","d3-brush":"tkh5","d3-chord":"Iy8J","d3-collection":"S3hn","d3-color":"Peej","d3-contour":"SiBy","d3-dispatch":"D3zY","d3-drag":"kkdU","d3-dsv":"EC2w","d3-ease":"pJ11","d3-fetch":"grWT","d3-force":"oYRE","d3-format":"VuZR","d3-geo":"Ah6W","d3-hierarchy":"Kps6","d3-interpolate":"k9aH","d3-path":"OTyq","d3-polygon":"H15P","d3-quadtree":"lUbg","d3-random":"Gz2j","d3-scale":"zL2z","d3-scale-chromatic":"ado2","d3-selection":"ysDv","d3-shape":"maww","d3-time":"hQYG","d3-time-format":"UYpZ","d3-timer":"rdzS","d3-transition":"UqVV","d3-voronoi":"rLIC","d3-zoom":"MHdZ"}],"tLiE":[function(require,module,exports) {
+},{"./dist/package.js":"../node_modules/d3/dist/package.js","d3-array":"../node_modules/d3-array/src/index.js","d3-axis":"../node_modules/d3-axis/src/index.js","d3-brush":"../node_modules/d3-brush/src/index.js","d3-chord":"../node_modules/d3-chord/src/index.js","d3-collection":"../node_modules/d3-collection/src/index.js","d3-color":"../node_modules/d3-color/src/index.js","d3-contour":"../node_modules/d3-contour/src/index.js","d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-drag":"../node_modules/d3-drag/src/index.js","d3-dsv":"../node_modules/d3-dsv/src/index.js","d3-ease":"../node_modules/d3-ease/src/index.js","d3-fetch":"../node_modules/d3-fetch/src/index.js","d3-force":"../node_modules/d3-force/src/index.js","d3-format":"../node_modules/d3-format/src/index.js","d3-geo":"../node_modules/d3-geo/src/index.js","d3-hierarchy":"../node_modules/d3-hierarchy/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-path":"../node_modules/d3-path/src/index.js","d3-polygon":"../node_modules/d3-polygon/src/index.js","d3-quadtree":"../node_modules/d3-quadtree/src/index.js","d3-random":"../node_modules/d3-random/src/index.js","d3-scale":"../node_modules/d3-scale/src/index.js","d3-scale-chromatic":"../node_modules/d3-scale-chromatic/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","d3-shape":"../node_modules/d3-shape/src/index.js","d3-time":"../node_modules/d3-time/src/index.js","d3-time-format":"../node_modules/d3-time-format/src/index.js","d3-timer":"../node_modules/d3-timer/src/index.js","d3-transition":"../node_modules/d3-transition/src/index.js","d3-voronoi":"../node_modules/d3-voronoi/src/index.js","d3-zoom":"../node_modules/d3-zoom/src/index.js"}],"../node_modules/topojson/node_modules/topojson-client/src/identity.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return x;
+}
+},{}],"../node_modules/topojson/node_modules/topojson-client/src/transform.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28663,7 +28928,7 @@ function _default(transform) {
     return output;
   };
 }
-},{"./identity":"NNW9"}],"QFe3":[function(require,module,exports) {
+},{"./identity":"../node_modules/topojson/node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson/node_modules/topojson-client/src/bbox.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28727,7 +28992,7 @@ function _default(topology) {
 
   return [x0, y0, x1, y1];
 }
-},{"./transform":"tLiE"}],"mcLe":[function(require,module,exports) {
+},{"./transform":"../node_modules/topojson/node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson/node_modules/topojson-client/src/reverse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28742,7 +29007,7 @@ function _default(array, n) {
 
   while (i < --j) t = array[i], array[i++] = array[j], array[j] = t;
 }
-},{}],"ZVw6":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-client/src/feature.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28878,7 +29143,7 @@ function object(topology, o) {
 
   return geometry(o);
 }
-},{"./reverse":"mcLe","./transform":"tLiE"}],"VX7n":[function(require,module,exports) {
+},{"./reverse":"../node_modules/topojson/node_modules/topojson-client/src/reverse.js","./transform":"../node_modules/topojson/node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson/node_modules/topojson-client/src/stitch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28968,7 +29233,7 @@ function _default(topology, arcs) {
   });
   return fragments;
 }
-},{}],"hObq":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-client/src/mesh.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29050,7 +29315,7 @@ function extractArcs(topology, object, filter) {
   });
   return arcs;
 }
-},{"./feature":"ZVw6","./stitch":"VX7n"}],"F38e":[function(require,module,exports) {
+},{"./feature":"../node_modules/topojson/node_modules/topojson-client/src/feature.js","./stitch":"../node_modules/topojson/node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson/node_modules/topojson-client/src/merge.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29176,7 +29441,7 @@ function mergeArcs(topology, objects) {
     })
   };
 }
-},{"./feature":"ZVw6","./stitch":"VX7n"}],"rtqF":[function(require,module,exports) {
+},{"./feature":"../node_modules/topojson/node_modules/topojson-client/src/feature.js","./stitch":"../node_modules/topojson/node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson/node_modules/topojson-client/src/bisect.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29195,7 +29460,7 @@ function _default(a, x) {
 
   return lo;
 }
-},{}],"zCwm":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-client/src/neighbors.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29260,7 +29525,7 @@ function _default(objects) {
 
   return neighbors;
 }
-},{"./bisect":"rtqF"}],"Wm8Z":[function(require,module,exports) {
+},{"./bisect":"../node_modules/topojson/node_modules/topojson-client/src/bisect.js"}],"../node_modules/topojson/node_modules/topojson-client/src/untransform.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29295,7 +29560,7 @@ function _default(transform) {
     return output;
   };
 }
-},{"./identity":"NNW9"}],"dmF3":[function(require,module,exports) {
+},{"./identity":"../node_modules/topojson/node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson/node_modules/topojson-client/src/quantize.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29401,7 +29666,7 @@ function _default(topology, transform) {
     arcs: topology.arcs.map(quantizeArc)
   };
 }
-},{"./bbox":"QFe3","./untransform":"Wm8Z"}],"AjpF":[function(require,module,exports) {
+},{"./bbox":"../node_modules/topojson/node_modules/topojson-client/src/bbox.js","./untransform":"../node_modules/topojson/node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson/node_modules/topojson-client/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29489,7 +29754,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./src/bbox":"QFe3","./src/feature":"ZVw6","./src/mesh":"hObq","./src/merge":"F38e","./src/neighbors":"zCwm","./src/quantize":"dmF3","./src/transform":"tLiE","./src/untransform":"Wm8Z"}],"pHq8":[function(require,module,exports) {
+},{"./src/bbox":"../node_modules/topojson/node_modules/topojson-client/src/bbox.js","./src/feature":"../node_modules/topojson/node_modules/topojson-client/src/feature.js","./src/mesh":"../node_modules/topojson/node_modules/topojson-client/src/mesh.js","./src/merge":"../node_modules/topojson/node_modules/topojson-client/src/merge.js","./src/neighbors":"../node_modules/topojson/node_modules/topojson-client/src/neighbors.js","./src/quantize":"../node_modules/topojson/node_modules/topojson-client/src/quantize.js","./src/transform":"../node_modules/topojson/node_modules/topojson-client/src/transform.js","./src/untransform":"../node_modules/topojson/node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson/node_modules/topojson-server/src/bounds.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29555,7 +29820,7 @@ function _default(objects) {
 
   return x1 >= x0 && y1 >= y0 ? [x0, y0, x1, y1] : undefined;
 }
-},{}],"d18m":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/hashset.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29622,7 +29887,7 @@ function _default(size, hash, equal, type, empty) {
     values: values
   };
 }
-},{}],"iAMa":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29709,7 +29974,7 @@ function _default(size, hash, equal, keyType, keyEmpty, valueType) {
     keys: keys
   };
 }
-},{}],"TA1b":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/point-equal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29720,7 +29985,7 @@ exports.default = _default;
 function _default(pointA, pointB) {
   return pointA[0] === pointB[0] && pointA[1] === pointB[1];
 }
-},{}],"nNr1":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/point-hash.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29739,7 +30004,7 @@ function _default(point) {
   hash = hash << 5 ^ hash >> 7 ^ uints[2] ^ uints[3];
   return hash & 0x7fffffff;
 }
-},{}],"aget":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/join.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29874,7 +30139,7 @@ function _default(topology) {
 
   return junctionByPoint;
 }
-},{"./hash/hashset":"d18m","./hash/hashmap":"iAMa","./hash/point-equal":"TA1b","./hash/point-hash":"nNr1"}],"BXUi":[function(require,module,exports) {
+},{"./hash/hashset":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashset.js","./hash/hashmap":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js","./hash/point-equal":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-equal.js","./hash/point-hash":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-hash.js"}],"../node_modules/topojson/node_modules/topojson-server/src/cut.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29956,7 +30221,7 @@ function reverse(array, start, end) {
     t = array[start], array[start] = array[end], array[end] = t;
   }
 }
-},{"./join":"aget"}],"kX6f":[function(require,module,exports) {
+},{"./join":"../node_modules/topojson/node_modules/topojson-server/src/join.js"}],"../node_modules/topojson/node_modules/topojson-server/src/dedup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30180,7 +30445,7 @@ function _default(topology) {
 
   return topology;
 }
-},{"./hash/hashmap":"iAMa","./hash/point-equal":"TA1b","./hash/point-hash":"nNr1"}],"QlU7":[function(require,module,exports) {
+},{"./hash/hashmap":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js","./hash/point-equal":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-equal.js","./hash/point-hash":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-hash.js"}],"../node_modules/topojson/node_modules/topojson-server/src/delta.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30218,7 +30483,7 @@ function _default(arcs) {
 
   return arcs;
 }
-},{}],"EWAB":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/extract.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30309,7 +30574,7 @@ function _default(objects) {
     objects: objects
   };
 }
-},{}],"G6yj":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/geometry.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30378,7 +30643,7 @@ function geomifyGeometry(input) {
   if (input.bbox != null) output.bbox = input.bbox;
   return output;
 }
-},{}],"xniY":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/prequantize.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30473,7 +30738,7 @@ function _default(objects, bbox, n) {
     translate: [x0, y0]
   };
 }
-},{}],"xRbf":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-server/src/topology.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30585,7 +30850,7 @@ function equalArc(arcA, arcB) {
   if (jb < ib) t = ib, ib = jb, jb = t;
   return ia === ib && ja === jb;
 }
-},{"./bounds":"pHq8","./cut":"BXUi","./dedup":"kX6f","./delta":"QlU7","./extract":"EWAB","./geometry":"G6yj","./hash/hashmap":"iAMa","./prequantize":"xniY"}],"p5nm":[function(require,module,exports) {
+},{"./bounds":"../node_modules/topojson/node_modules/topojson-server/src/bounds.js","./cut":"../node_modules/topojson/node_modules/topojson-server/src/cut.js","./dedup":"../node_modules/topojson/node_modules/topojson-server/src/dedup.js","./delta":"../node_modules/topojson/node_modules/topojson-server/src/delta.js","./extract":"../node_modules/topojson/node_modules/topojson-server/src/extract.js","./geometry":"../node_modules/topojson/node_modules/topojson-server/src/geometry.js","./hash/hashmap":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js","./prequantize":"../node_modules/topojson/node_modules/topojson-server/src/prequantize.js"}],"../node_modules/topojson/node_modules/topojson-server/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30601,7 +30866,7 @@ Object.defineProperty(exports, "topology", {
 var _topology = _interopRequireDefault(require("./src/topology"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./src/topology":"xRbf"}],"r1t0":[function(require,module,exports) {
+},{"./src/topology":"../node_modules/topojson/node_modules/topojson-server/src/topology.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/prune.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30744,7 +31009,7 @@ function _default(topology) {
     arcs: newArcs
   };
 }
-},{}],"K3Tz":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/filter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30849,7 +31114,7 @@ function filterIdentity(x) {
 function filterNotNull(geometry) {
   return geometry.type != null;
 }
-},{"./prune":"r1t0"}],"lQU1":[function(require,module,exports) {
+},{"./prune":"../node_modules/topojson/node_modules/topojson-simplify/src/prune.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttached.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30904,7 +31169,7 @@ function _default(topology) {
     return false;
   };
 }
-},{}],"fQZC":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30931,7 +31196,7 @@ function planarRingArea(ring) {
 
   return Math.abs(area) / 2;
 }
-},{}],"FAIo":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/filterWeight.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30953,7 +31218,7 @@ function _default(topology, minWeight, weight) {
     }).geometry.coordinates[0], interior) >= minWeight;
   };
 }
-},{"topojson-client":"AjpF","./planar":"fQZC"}],"yCNq":[function(require,module,exports) {
+},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","./planar":"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttachedWeight.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30974,7 +31239,7 @@ function _default(topology, minWeight, weight) {
     return a(ring, interior) || w(ring, interior);
   };
 }
-},{"./filterAttached":"lQU1","./filterWeight":"FAIo"}],"lzeo":[function(require,module,exports) {
+},{"./filterAttached":"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttached.js","./filterWeight":"../node_modules/topojson/node_modules/topojson-simplify/src/filterWeight.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/heap.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31039,7 +31304,7 @@ function _default() {
 
   return heap;
 }
-},{}],"klLS":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/presimplify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31125,7 +31390,7 @@ function _default(topology, weight) {
     arcs: arcs
   };
 }
-},{"topojson-client":"AjpF","./heap":"lzeo","./planar":"fQZC"}],"IXqH":[function(require,module,exports) {
+},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","./heap":"../node_modules/topojson/node_modules/topojson-simplify/src/heap.js","./planar":"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/quantile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31161,7 +31426,7 @@ function quantile(array, p) {
 function descending(a, b) {
   return b - a;
 }
-},{}],"CtH3":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/simplify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31197,7 +31462,7 @@ function _default(topology, minWeight) {
     arcs: arcs
   };
 }
-},{}],"ucD5":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/spherical.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31258,7 +31523,7 @@ function sphericalRingArea(ring, interior) {
 function sphericalTriangleArea(t) {
   return abs(halfArea(t, false)) * 2;
 }
-},{}],"J5dP":[function(require,module,exports) {
+},{}],"../node_modules/topojson/node_modules/topojson-simplify/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31350,7 +31615,7 @@ var _simplify = _interopRequireDefault(require("./src/simplify"));
 var _spherical = require("./src/spherical");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./src/filter":"K3Tz","./src/filterAttached":"lQU1","./src/filterAttachedWeight":"yCNq","./src/filterWeight":"FAIo","./src/planar":"fQZC","./src/presimplify":"klLS","./src/quantile":"IXqH","./src/simplify":"CtH3","./src/spherical":"ucD5"}],"Ftz0":[function(require,module,exports) {
+},{"./src/filter":"../node_modules/topojson/node_modules/topojson-simplify/src/filter.js","./src/filterAttached":"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttached.js","./src/filterAttachedWeight":"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttachedWeight.js","./src/filterWeight":"../node_modules/topojson/node_modules/topojson-simplify/src/filterWeight.js","./src/planar":"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js","./src/presimplify":"../node_modules/topojson/node_modules/topojson-simplify/src/presimplify.js","./src/quantile":"../node_modules/topojson/node_modules/topojson-simplify/src/quantile.js","./src/simplify":"../node_modules/topojson/node_modules/topojson-simplify/src/simplify.js","./src/spherical":"../node_modules/topojson/node_modules/topojson-simplify/src/spherical.js"}],"../node_modules/topojson/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31392,11 +31657,11 @@ Object.keys(_topojsonSimplify).forEach(function (key) {
     }
   });
 });
-},{"topojson-client":"AjpF","topojson-server":"p5nm","topojson-simplify":"J5dP"}],"Yauf":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/FP_county_winners.c998690c.csv";
-},{}],"ON0T":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/FP_state_winners.75bb9904.csv";
-},{}],"qZWC":[function(require,module,exports) {
+},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","topojson-server":"../node_modules/topojson/node_modules/topojson-server/index.js","topojson-simplify":"../node_modules/topojson/node_modules/topojson-simplify/index.js"}],"data/FP_county_winners.csv":[function(require,module,exports) {
+module.exports = "/FP_county_winners.04cf4f60.csv";
+},{}],"FP_state_winners.csv":[function(require,module,exports) {
+module.exports = "/FP_state_winners.5507198d.csv";
+},{}],"sections.js":[function(require,module,exports) {
 // JavaScript Document
 var d3 = require('d3');
 
@@ -31509,7 +31774,7 @@ function scroller() {
 
 var scrollVis = function scrollVis() {
   // constants to define the size and margins of the vis area.
-  var width = 600;
+  var width = 900;
   var height = 520;
   var margin = {
     top: 0,
@@ -31536,8 +31801,9 @@ var scrollVis = function scrollVis() {
   var state_csv = require('./FP_state_winners.csv'); // dictionaries to store state and county info
 
 
-  var stateInfo = {};
-  var stateWinners = {};
+  var stateInfo = {}; //  var stateWinners = {};
+
+  var stateWinners = [];
   var countyInfo = {};
   var countyWinners = {};
   var years = [2000, 2004, 2008, 2012, 2016];
@@ -31550,11 +31816,7 @@ var scrollVis = function scrollVis() {
   var chart = function chart(selection) {
     selection.each(function () {
       // create svg
-      svg = d3.select(this).selectAll('svg'); //      svg = d3.select(this).selectAll('svg').data([wordData]);
-
-      var svgE = svg.enter().append('svg'); // @v4 use merge to combine enter and existing selection
-
-      svg = svg.merge(svgE); // give svg a width and height
+      svg = d3.select(this).append('svg'); // give svg a width and height
 
       svg.attr('width', width + margin.left + margin.right);
       svg.attr('height', height + margin.top + margin.bottom);
@@ -31581,41 +31843,85 @@ var scrollVis = function scrollVis() {
 
 
   var setupVis = function setupVis(stateInfo, stateWinners, countyInfo, countyWinners, years) {
-    var projection = d3.geoAlbersUsa().scale(1100).translate([600 / 2, 520 / 2]);
+    var projection = d3.geoAlbersUsa().scale(900).translate([width / 2, height / 2]);
     var path = d3.geoPath().projection(projection);
     d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function (json) {
       var states = topo.feature(json, json.objects.states);
+      var state_map = g.selectAll('path').data(states.features);
+      var state_mapE = state_map.enter().append('path').classed('map', true);
+      state_map = state_map.merge(state_mapE).attr("id", function (d) {
+        return "c" + d.id;
+      }).attr("class", function (d) {
+        var state = d.properties.name.replace(/\s/g, '');
+        var temp = stateWinners.find(function (x) {
+          return x.id === d.id;
+        });
 
-      for (var i = 0; i < years.length; i++) {
-        console.log(years[i]);
-        var class_name = years[i].toString() + "map";
-        var winner = stateWinners[years[i]];
-        var state_map = g.selectAll('path').data(states.features);
-        var state_mapE = state_map.enter().append('path').classed(class_name, true);
-        state_map = state_map.merge(state_mapE).attr("id", function (d) {
-          return "c" + d.id;
-        }).attr("class", function (d) {
-          var temp = winner.find(function (x) {
-            return x.id === d.id;
-          });
+        if (temp) {
+          var ret = "map states" + state;
 
-          if (temp) {
-            var ret = "states";
-            ret += " " + temp.winner_name;
-            return ret;
-          }
+          for (var i = 0; i <= 4; i++) {
+            ret += " " + temp.winner_name[i];
+          } //            ret +=  " " + temp.winner_name;
 
-          ;
-        }).attr('d', path) //          .on("click", zoomToState)
-        .append('title').text(function (d) {
-          var arr = stateInfo[year][d.id];
 
-          if (arr) {
-            return stateInfo[year][d.id][0] + "\n" + stateInfo[year][d.id][1] + "\n" + stateInfo[year][d.id][2] + "%";
-          }
-        }).attr('opacity', 0);
-      }
-    });
+          console.log(ret);
+          return ret;
+        }
+
+        ;
+      }).attr('d', path).attr('stroke', 'black').attr('opacity', 0) //        .on("click", zoomToState)
+      .append('title').text(function (d) {
+        var temp = stateInfo["2000"];
+        var arr = temp[d.id];
+
+        if (arr) {
+          return temp[d.id][0] + "\n" + temp[d.id][1] + "\n" + temp[d.id][2] + "%";
+        }
+      });
+    }); //	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
+    //      var states = topo.feature(json, json.objects.states);
+    //	  for (var i = 0; i < years.length; i++) {
+    //		var year = years[i].toString();
+    //		console.log('drawmap' + year);
+    //		var class_name = "map" + year;
+    ////		console.log('state info', stateInfo);
+    ////		console.log('state info year', stateInfo[year]);
+    //		var winner = stateWinners[year];
+    //		var state_map = g.selectAll('path').data(states.features);
+    //		var state_mapE = state_map.enter()
+    //		  .append('path')
+    ////		  .classed(class_name, true);
+    //		state_map = state_map.merge(state_mapE)
+    //		  .attr("id", function (d) { 
+    //            return  "c" + d.id;})
+    //          .attr("class",function (d) {
+    //			var state = d.properties.name.replace(/\s/g,'');
+    //            var temp = winner.find((x) => x.id === d.id);
+    //            if (temp) {
+    ////			  console.log(temp);
+    ////			  console.log(temp.id, d.id);
+    //              var ret = "years" + year + " states" + state;
+    //              ret +=  " " + temp.winner_name;
+    //			  console.log(ret);
+    //              return ret;
+    //            };
+    //          })
+    //          .attr('d', path)
+    ////          .on("click", zoomToState)
+    //          .append('title')
+    //          .text(function (d) {
+    //		    var temp = stateInfo[year];
+    //            var arr = temp[d.id];
+    //            if (arr) {
+    //              return temp[d.id][0] + "\n" + 
+    //                temp[d.id][1] + "\n" + 
+    //                temp[d.id][2] + "%";
+    //            }  
+    //          })
+    //		  .attr('opacity', 0);	
+    //	  }
+    ////	});
   };
   /**
    * setupSections - each section is activated by a separate function. Here we associate these functions to 
@@ -31647,51 +31953,122 @@ var scrollVis = function scrollVis() {
 
 
   function result_2000() {
-    g.selectAll('.2004map').transition().duration(0).attr('opacity', 0);
-    g.selectAll('.2000map').transition().duration(500).attr('opacity', 1.0);
+    console.log('result2000');
+    g.selectAll(".map").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".republican2000TRUE").transition('color').duration(500).style("fill", "red");
+    g.selectAll(".republican2000FALSE").transition('color').duration(500).style("fill", "lightcoral");
+    g.selectAll(".democrat2000TRUE").transition('color').duration(500).style("fill", "blue");
+    g.selectAll(".democrat2000FALSE").transition('color').duration(500).style("fill", "steelblue");
+    g.selectAll(".map").select('title').text(function (d) {
+      var arr = stateInfo["2000"][d.id];
+
+      if (arr) {
+        return stateInfo["2000"][d.id][0] + "\n" + stateInfo["2000"][d.id][1] + "\n" + stateInfo["2000"][d.id][2] + "%";
+      }
+    });
   }
 
   function result_2004() {
-    g.selectAll('.2000map').transition().duration(0).attr('opacity', 0);
-    g.selectAll('.2004map').transition().duration(500).attr('opacity', 1.0);
-    g.selectAll('.2008map').transition().duration(0).attr('opacity', 0);
+    console.log('result2004');
+    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".republican2004TRUE").transition('color').duration(500).style("fill", "red");
+    g.selectAll(".republican2004FALSE").transition('color').duration(500).style("fill", "lightcoral");
+    g.selectAll(".democrat2004TRUE").transition('color').duration(500).style("fill", "blue");
+    g.selectAll(".democrat2004FALSE").transition('color').duration(500).style("fill", "steelblue");
+    g.selectAll(".map").select('title').text(function (d) {
+      var arr = stateInfo["2004"][d.id];
+
+      if (arr) {
+        return stateInfo["2004"][d.id][0] + "\n" + stateInfo["2004"][d.id][1] + "\n" + stateInfo["2004"][d.id][2] + "%";
+      }
+    });
   }
 
   function result_2008() {
-    g.selectAll('.2004map').transition().duration(0).attr('opacity', 0);
-    g.selectAll('.2008map').transition().duration(500).attr('opacity', 1.0);
-    g.selectAll('.2012map').transition().duration(0).attr('opacity', 0);
+    console.log('result2008');
+    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".republican2008TRUE").transition('color').duration(500).style("fill", "red");
+    g.selectAll(".republican2008FALSE").transition('color').duration(500).style("fill", "lightcoral");
+    g.selectAll(".democrat2008TRUE").transition('color').duration(500).style("fill", "blue");
+    g.selectAll(".democrat2008FALSE").transition('color').duration(500).style("fill", "steelblue");
+    g.selectAll(".map").select('title').text(function (d) {
+      var arr = stateInfo["2008"][d.id];
+
+      if (arr) {
+        return stateInfo["2008"][d.id][0] + "\n" + stateInfo["2008"][d.id][1] + "\n" + stateInfo["2008"][d.id][2] + "%";
+      }
+    });
   }
 
   function result_2012() {
-    g.selectAll('.2008map').transition().duration(0).attr('opacity', 0);
-    g.selectAll('.2012map').transition().duration(500).attr('opacity', 1.0);
-    g.selectAll('.2016map').transition().duration(0).attr('opacity', 0);
+    console.log('result2012');
+    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".republican2012TRUE").transition('color').duration(500).style("fill", "red");
+    g.selectAll(".republican2012FALSE").transition('color').duration(500).style("fill", "lightcoral");
+    g.selectAll(".democrat2012TRUE").transition('color').duration(500).style("fill", "blue");
+    g.selectAll(".democrat2012FALSE").transition('color').duration(500).style("fill", "steelblue");
+    g.selectAll(".map").select('title').text(function (d) {
+      var arr = stateInfo["2012"][d.id];
+
+      if (arr) {
+        return stateInfo["2012"][d.id][0] + "\n" + stateInfo["2012"][d.id][1] + "\n" + stateInfo["2012"][d.id][2] + "%";
+      }
+    });
   }
 
   function result_2016() {
-    g.selectAll('.2012map').transition().duration(0).attr('opacity', 0);
-    g.selectAll('.2016map').transition().duration(500).attr('opacity', 1.0); //	g.selectAll('.2008map')
-    //      .transition()
-    //      .duration(0)
-    //      .attr('opacity', 0);
+    console.log('result2016');
+    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".republican2016TRUE").transition('color').duration(500).style("fill", "red");
+    g.selectAll(".republican2016FALSE").transition('color').duration(500).style("fill", "lightcoral");
+    g.selectAll(".democrat2016TRUE").transition('color').duration(500).style("fill", "blue");
+    g.selectAll(".democrat2016FALSE").transition('color').duration(500).style("fill", "steelblue");
+    g.selectAll(".map").select('title').text(function (d) {
+      var arr = stateInfo["2016"][d.id];
+
+      if (arr) {
+        return stateInfo["2016"][d.id][0] + "\n" + stateInfo["2016"][d.id][1] + "\n" + stateInfo["2016"][d.id][2] + "%";
+      }
+    });
   }
 
-  function swing_2016() {}
+  function swing_2016() {
+    console.log('swing2016');
+    g.selectAll(".map").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".republican2016TRUE").transition('color').duration(500).style("fill", "red");
+    g.selectAll(".republican2016FALSE").transition('color').duration(500).style("fill", "black");
+    g.selectAll(".democrat2016TRUE").transition('color').duration(500).style("fill", "blue");
+    g.selectAll(".democrat2016FALSE").transition('color').duration(500).style("fill", "black");
+  }
 
-  function florida() {}
+  function florida() {
+    console.log('florida');
+    g.selectAll(".map").transition().duration(500).attr('opacity', 0);
+  }
 
-  function iowa() {}
+  function iowa() {
+    console.log('iowa');
+  }
 
-  function michigan() {}
+  function michigan() {
+    console.log('michigan');
+  }
 
-  function ohio() {}
+  function ohio() {
+    console.log('ohio');
+  }
 
-  function pennsylvania() {}
+  function pennsylvania() {
+    console.log('pennsylvania');
+  }
 
-  function wisconsin() {}
+  function wisconsin() {
+    console.log('wisconsin');
+  }
 
-  function prediction_2020() {}
+  function prediction_2020() {
+    console.log('prediction2020');
+  }
   /**
    * DATA FUNCTIONS
    *
@@ -31702,7 +32079,8 @@ var scrollVis = function scrollVis() {
   function getStateInfo() {
     d3.csv(state_csv).then(function (data) {
       for (var j = 0; j < years.length; j++) {
-        var year = years[j];
+        console.log('info' + years[j].toString());
+        var year = years[j].toString();
         stateInfo[year] = {};
 
         for (var i = 0; i < data.length; i++) {
@@ -31712,8 +32090,8 @@ var scrollVis = function scrollVis() {
             temp_id = "0".concat(temp_id);
           }
 
-          var yper = year.toString() + "_percent";
-          var ycan = year.toString() + "_cand";
+          var yper = year + "_percent";
+          var ycan = year + "_cand";
           var percent = (parseFloat(data[i][yper]) * 100).toPrecision(3);
           stateInfo[year][temp_id] = [data[i]["state_po"], data[i][ycan], percent];
         }
@@ -31723,27 +32101,25 @@ var scrollVis = function scrollVis() {
 
   function getStateWinners() {
     d3.csv(state_csv).then(function (data) {
-      for (var j = 0; j < years.length; j++) {
-        var year = years[j];
-        var winner = [];
+      //	  for (var j = 0; j < years.length; j++) {
+      //	    var year = years[j].toString();
+      //		stateWinners[year] = [];  
+      for (var i = 0; i < data.length; i++) {
+        var temp_id = Math.trunc(data[i].FIPS).toString();
 
-        for (var i = 0; i < data.length; i++) {
-          var temp_id = Math.trunc(data[i].FIPS).toString();
+        if (temp_id.length == 1) {
+          temp_id = "0".concat(temp_id);
+        } //		  var ypar = "party" + year;
+        //		  var yswi = "Switch_" + (years[j] - 4).toString() + "_" + year;
+        //		  stateWinners[year].push({id:temp_id,winner_name:data[i][ypar] + " " + data[i][yswi]}); 
 
-          if (temp_id.length == 1) {
-            temp_id = "0".concat(temp_id);
-          }
 
-          var ypar = "party" + year.toString();
-          var yswi = "Switch_" + (year - 4).toString() + "_" + year.toString();
-          winner.push({
-            id: temp_id,
-            winner_name: data[i][ypar] + " " + data[i][yswi]
-          });
-        }
+        stateWinners.push({
+          id: temp_id,
+          winner_name: [data[i]["party2000"] + "2000" + data[i]["Switch_1996_2000"], data[i]["party2004"] + "2004" + data[i]["Switch_2000_2004"], data[i]["party2008"] + "2008" + data[i]["Switch_2004_2008"], data[i]["party2012"] + "2012" + data[i]["Switch_2008_2012"], data[i]["party2016"] + "2016" + data[i]["Switch_2012_2016"]]
+        });
+      } //	  }
 
-        stateWinners[year] = winner;
-      }
     });
   }
 
@@ -31770,10 +32146,17 @@ var scrollVis = function scrollVis() {
 
   return chart;
 };
+/**
+ * display - called once data has been loaded. sets up the scroller and displays the visualization.
+ *
+ * @param data - loaded tsv data
+ */
+
 
 function display() {
   // create a new plot and display it
-  var plot = scrollVis();
+  var plot = scrollVis(); //  console.log(plot);
+
   d3.select('#vis').call(plot); // setup scroll functionality
 
   var scroll = scroller().container(d3.select('#graphic')); // pass in .step selection as the steps
@@ -31790,6 +32173,211 @@ function display() {
   });
 }
 
-display();
-},{"d3":"UzF0","topojson":"Ftz0","./data/FP_county_winners.csv":"Yauf","./FP_state_winners.csv":"ON0T"}]},{},["qZWC"], null)
-//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/sections.f8521130.js.map
+display(); //window.addEventListener("load",display);
+//d3.csv('./FP_state_winners.csv', display);
+},{"d3":"../node_modules/d3/index.js","topojson":"../node_modules/topojson/index.js","./data/FP_county_winners.csv":"data/FP_county_winners.csv","./FP_state_winners.csv":"FP_state_winners.csv"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var global = arguments[3];
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || function () {});
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
+  };
+  module.bundle.hotData = null;
+}
+
+module.bundle.Module = Module;
+var checkedAssets, assetsToAccept;
+var parent = module.bundle.parent;
+
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = "" || location.hostname;
+  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59205" + '/');
+
+  ws.onmessage = function (event) {
+    checkedAssets = {};
+    assetsToAccept = [];
+    var data = JSON.parse(event.data);
+
+    if (data.type === 'update') {
+      var handled = false;
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
+          if (didAccept) {
+            handled = true;
+          }
+        }
+      }); // Enable HMR for CSS by default.
+
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
+      });
+
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
+      }
+    }
+
+    if (data.type === 'reload') {
+      ws.close();
+
+      ws.onclose = function () {
+        location.reload();
+      };
+    }
+
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+      removeErrorOverlay();
+    }
+
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data);
+      document.body.appendChild(overlay);
+    }
+  };
+}
+
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
+
+  if (overlay) {
+    overlay.remove();
+  }
+}
+
+function createErrorOverlay(data) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
+
+  var message = document.createElement('div');
+  var stackTrace = document.createElement('pre');
+  message.innerText = data.error.message;
+  stackTrace.innerText = data.error.stack;
+  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+  return overlay;
+}
+
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return [];
+  }
+
+  var parents = [];
+  var k, d, dep;
+
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(k);
+      }
+    }
+  }
+
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+
+  return parents;
+}
+
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+
+function hmrAcceptCheck(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (!modules[id] && bundle.parent) {
+    return hmrAcceptCheck(bundle.parent, id);
+  }
+
+  if (checkedAssets[id]) {
+    return;
+  }
+
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
+
+function hmrAcceptRun(bundle, id) {
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+
+  if (cached) {
+    cached.hot.data = bundle.hotData;
+  }
+
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      cb();
+    });
+
+    return true;
+  }
+}
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","sections.js"], null)
+//# sourceMappingURL=/sections.51723cae.js.map

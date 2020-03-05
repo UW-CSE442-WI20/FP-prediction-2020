@@ -93,7 +93,7 @@ function scroller() {
  */
 var scrollVis = function () {
   // constants to define the size and margins of the vis area.
-  var width = 600;
+  var width = 900;
   var height = 520;
   var margin = { top: 0, left: 20, bottom: 40, right: 10 };
   // Keep track of which visualization we are on and which was the last index activated. When user scrolls
@@ -114,7 +114,8 @@ var scrollVis = function () {
   var state_csv = require('./FP_state_winners.csv');
   // dictionaries to store state and county info
   var stateInfo = {};
-  var stateWinners = {};
+//  var stateWinners = {};
+  var stateWinners = [];
   var countyInfo = {};
   var countyWinners = {};
   var years = [2000,2004,2008,2012,2016];
@@ -126,11 +127,7 @@ var scrollVis = function () {
   var chart = function (selection) {
     selection.each(function () {
       // create svg
-	  svg = d3.select(this).selectAll('svg');
-//      svg = d3.select(this).selectAll('svg').data([wordData]);
-      var svgE = svg.enter().append('svg');
-      // @v4 use merge to combine enter and existing selection
-      svg = svg.merge(svgE);
+	  svg = d3.select(this).append('svg');
 	  // give svg a width and height
       svg.attr('width', width + margin.left + margin.right);
       svg.attr('height', height + margin.top + margin.bottom);
@@ -157,43 +154,88 @@ var scrollVis = function () {
    * @param years - 
    */
   var setupVis = function (stateInfo, stateWinners, countyInfo, countyWinners, years) {
-	var projection = d3.geoAlbersUsa().scale(1100).translate([600 / 2, 520 / 2]);
+	var projection = d3.geoAlbersUsa().scale(900).translate([width / 2, height / 2]);
     var path = d3.geoPath().projection(projection);
 	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
       var states = topo.feature(json, json.objects.states);
-	  for (var i = 0; i < years.length; i++) {
-		console.log(years[i]);
-		var class_name = years[i].toString() + "map"
-		var winner = stateWinners[years[i]];
-		var state_map = g.selectAll('path').data(states.features);
-		var state_mapE = state_map.enter()
-		  .append('path')
-		  .classed(class_name, true);
-		state_map = state_map.merge(state_mapE)
-		  .attr("id", function (d) { 
-            return  "c" + d.id;})
-          .attr("class",function (d) {
-            var temp = winner.find(x => x.id === d.id);
-            if (temp) {
-              var ret = "states";
-              ret +=  " " + temp.winner_name;
-              return ret;
-            };
-          })
-          .attr('d', path)
-//          .on("click", zoomToState)
-          .append('title')
-          .text(function (d) {
-            var arr = stateInfo[year][d.id];
-            if (arr) {
-              return stateInfo[year][d.id][0] + "\n" + 
-                stateInfo[year][d.id][1] + "\n" + 
-                stateInfo[year][d.id][2] + "%";
-            }  
-          })
-		  .attr('opacity', 0);	
-	  }
-	});
+	  var state_map = g.selectAll('path').data(states.features);
+	  var state_mapE = state_map.enter()
+	    .append('path')
+	    .classed('map', true);
+	  state_map = state_map.merge(state_mapE)
+	    .attr("id", function (d) { 
+          return  "c" + d.id;})
+        .attr("class",function (d) {
+ 		  var state = d.properties.name.replace(/\s/g,'');
+          var temp = stateWinners.find((x) => x.id === d.id);
+          if (temp) {
+            var ret = "map states" + state;
+			for (var i = 0; i <= 4; i++) {
+              ret +=  " " + temp.winner_name[i];
+            }
+//            ret +=  " " + temp.winner_name;
+			console.log(ret);
+            return ret;
+          };
+        })
+        .attr('d', path)
+		.attr('stroke', 'black')
+        .attr('opacity', 0)
+//        .on("click", zoomToState)
+        .append('title')
+        .text(function (d) {
+	      var temp = stateInfo["2000"];
+          var arr = temp[d.id];
+          if (arr) {
+            return temp[d.id][0] + "\n" + 
+              temp[d.id][1] + "\n" + 
+              temp[d.id][2] + "%";
+          }  
+        });	
+	});  
+//	d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
+//      var states = topo.feature(json, json.objects.states);
+//	  for (var i = 0; i < years.length; i++) {
+//		var year = years[i].toString();
+//		console.log('drawmap' + year);
+//		var class_name = "map" + year;
+////		console.log('state info', stateInfo);
+////		console.log('state info year', stateInfo[year]);
+//		var winner = stateWinners[year];
+//		var state_map = g.selectAll('path').data(states.features);
+//		var state_mapE = state_map.enter()
+//		  .append('path')
+////		  .classed(class_name, true);
+//		state_map = state_map.merge(state_mapE)
+//		  .attr("id", function (d) { 
+//            return  "c" + d.id;})
+//          .attr("class",function (d) {
+//			var state = d.properties.name.replace(/\s/g,'');
+//            var temp = winner.find((x) => x.id === d.id);
+//            if (temp) {
+////			  console.log(temp);
+////			  console.log(temp.id, d.id);
+//              var ret = "years" + year + " states" + state;
+//              ret +=  " " + temp.winner_name;
+//			  console.log(ret);
+//              return ret;
+//            };
+//          })
+//          .attr('d', path)
+////          .on("click", zoomToState)
+//          .append('title')
+//          .text(function (d) {
+//		    var temp = stateInfo[year];
+//            var arr = temp[d.id];
+//            if (arr) {
+//              return temp[d.id][0] + "\n" + 
+//                temp[d.id][1] + "\n" + 
+//                temp[d.id][2] + "%";
+//            }  
+//          })
+//		  .attr('opacity', 0);	
+//	  }
+////	});
   }
 
   /**
@@ -223,88 +265,120 @@ var scrollVis = function () {
    * These will be called when their section is scrolled to.
    */
   function result_2000() {
-	g.selectAll('.2004map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.2000map')
-      .transition()
-      .duration(500)
-      .attr('opacity', 1.0)
+	console.log('result2000')
+	g.selectAll(".map").transition().duration(500).attr('opacity', 1.0)
+	g.selectAll(".republican2000TRUE").transition('color').duration(500).style("fill", "red");
+	g.selectAll(".republican2000FALSE").transition('color').duration(500).style("fill", "lightcoral");
+	g.selectAll(".democrat2000TRUE").transition('color').duration(500).style("fill", "blue");
+	g.selectAll(".democrat2000FALSE").transition('color').duration(500).style("fill", "steelblue");
+	g.selectAll(".map").select('title')
+         .text(function (d) {
+           let arr = stateInfo["2000"][d.id];
+           if (arr) {
+            return stateInfo["2000"][d.id][0] + "\n" + 
+				stateInfo["2000"][d.id][1] + "\n" + 
+				stateInfo["2000"][d.id][2] + "%";
+           }  
+         });
   }
   function result_2004() {
-	g.selectAll('.2000map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.2004map')
-      .transition()
-      .duration(500)
-      .attr('opacity', 1.0)
-	  
-	g.selectAll('.2008map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
+	console.log('result2004')
+	g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+	g.selectAll(".republican2004TRUE").transition('color').duration(500).style("fill", "red");
+	g.selectAll(".republican2004FALSE").transition('color').duration(500).style("fill", "lightcoral");
+	g.selectAll(".democrat2004TRUE").transition('color').duration(500).style("fill", "blue");
+	g.selectAll(".democrat2004FALSE").transition('color').duration(500).style("fill", "steelblue");
+	g.selectAll(".map").select('title')
+         .text(function (d) {
+           let arr = stateInfo["2004"][d.id];
+           if (arr) {
+            return stateInfo["2004"][d.id][0] + "\n" + 
+				stateInfo["2004"][d.id][1] + "\n" + 
+				stateInfo["2004"][d.id][2] + "%";
+           }  
+         });
   }
   function result_2008() {
-	g.selectAll('.2004map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.2008map')
-      .transition()
-      .duration(500)
-      .attr('opacity', 1.0)
-	  
-	g.selectAll('.2012map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
+	console.log('result2008')
+	g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+	g.selectAll(".republican2008TRUE").transition('color').duration(500).style("fill", "red");
+	g.selectAll(".republican2008FALSE").transition('color').duration(500).style("fill", "lightcoral");
+	g.selectAll(".democrat2008TRUE").transition('color').duration(500).style("fill", "blue");
+	g.selectAll(".democrat2008FALSE").transition('color').duration(500).style("fill", "steelblue");
+	g.selectAll(".map").select('title')
+         .text(function (d) {
+           let arr = stateInfo["2008"][d.id];
+           if (arr) {
+            return stateInfo["2008"][d.id][0] + "\n" + 
+				stateInfo["2008"][d.id][1] + "\n" + 
+				stateInfo["2008"][d.id][2] + "%";
+           }  
+         });
   }
   function result_2012() {
-	g.selectAll('.2008map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.2012map')
-      .transition()
-      .duration(500)
-      .attr('opacity', 1.0)
-	  
-	g.selectAll('.2016map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
+	console.log('result2012')
+	g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+	g.selectAll(".republican2012TRUE").transition('color').duration(500).style("fill", "red");
+	g.selectAll(".republican2012FALSE").transition('color').duration(500).style("fill", "lightcoral");
+	g.selectAll(".democrat2012TRUE").transition('color').duration(500).style("fill", "blue");
+	g.selectAll(".democrat2012FALSE").transition('color').duration(500).style("fill", "steelblue");
+	g.selectAll(".map").select('title')
+         .text(function (d) {
+           let arr = stateInfo["2012"][d.id];
+           if (arr) {
+            return stateInfo["2012"][d.id][0] + "\n" + 
+				stateInfo["2012"][d.id][1] + "\n" + 
+				stateInfo["2012"][d.id][2] + "%";
+           }  
+         });  
   }
   function result_2016() {
-	g.selectAll('.2012map')
-      .transition()
-      .duration(0)
-      .attr('opacity', 0);
-
-    g.selectAll('.2016map')
-      .transition()
-      .duration(500)
-      .attr('opacity', 1.0)
-	  
-//	g.selectAll('.2008map')
-//      .transition()
-//      .duration(0)
-//      .attr('opacity', 0);
+	console.log('result2016')
+	g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+	g.selectAll(".republican2016TRUE").transition('color').duration(500).style("fill", "red");
+	g.selectAll(".republican2016FALSE").transition('color').duration(500).style("fill", "lightcoral");
+	g.selectAll(".democrat2016TRUE").transition('color').duration(500).style("fill", "blue");
+	g.selectAll(".democrat2016FALSE").transition('color').duration(500).style("fill", "steelblue");
+	g.selectAll(".map").select('title')
+         .text(function (d) {
+           let arr = stateInfo["2016"][d.id];
+           if (arr) {
+            return stateInfo["2016"][d.id][0] + "\n" + 
+				stateInfo["2016"][d.id][1] + "\n" + 
+				stateInfo["2016"][d.id][2] + "%";
+           }  
+         });
   }
-  function swing_2016() {}
-  function florida() {}
-  function iowa() {}
-  function michigan() {}
-  function ohio() {}
-  function pennsylvania() {}
-  function wisconsin() {}
-  function prediction_2020() {}
+  function swing_2016() {
+	console.log('swing2016');
+	g.selectAll(".map").transition().duration(500).attr('opacity', 1.0);
+	g.selectAll(".republican2016TRUE").transition('color').duration(500).style("fill", "red");
+	g.selectAll(".republican2016FALSE").transition('color').duration(500).style("fill", "black");
+	g.selectAll(".democrat2016TRUE").transition('color').duration(500).style("fill", "blue");
+	g.selectAll(".democrat2016FALSE").transition('color').duration(500).style("fill", "black");
+  }
+  function florida() {
+	console.log('florida');
+	g.selectAll(".map").transition().duration(500).attr('opacity', 0);
+  }
+  function iowa() {
+	  console.log('iowa');
+  }
+  function michigan() {
+	  console.log('michigan');
+  }
+  function ohio() {
+	  console.log('ohio');
+  }
+  function pennsylvania() {
+	  console.log('pennsylvania');
+  }
+  function wisconsin() {
+	  console.log('wisconsin');
+  }
+  function prediction_2020() {
+	  console.log('prediction2020');
+  }
 	
   /**
    * DATA FUNCTIONS
@@ -314,15 +388,16 @@ var scrollVis = function () {
   function getStateInfo() {
     d3.csv(state_csv).then(function(data) {
 	  for (var j = 0; j < years.length; j++) {
-		var year = years[j];
+		console.log('info' + years[j].toString())
+		var year = years[j].toString();
         stateInfo[year] = {};
         for (var i = 0; i < data.length; i++) {
           var temp_id = Math.trunc(data[i].FIPS).toString(); 
           if (temp_id.length == 1) {
             temp_id = "0".concat(temp_id);
           }
-		  var yper = year.toString() + "_percent"
-		  var ycan = year.toString() + "_cand"
+		  var yper = year + "_percent"
+		  var ycan = year + "_cand"
           var percent = (parseFloat(data[i][yper]) * 100).toPrecision(3);
 	   	  stateInfo[year][temp_id] = [data[i]["state_po"],data[i][ycan],percent];
         }	
@@ -331,20 +406,21 @@ var scrollVis = function () {
   }
   function getStateWinners() {
     d3.csv(state_csv).then(function(data) {
-	  for (var j = 0; j < years.length; j++) { 
-	    var year = years[j];
-	    var winner = [];
+//	  for (var j = 0; j < years.length; j++) {
+//	    var year = years[j].toString();
+//		stateWinners[year] = [];  
         for (var i = 0; i < data.length; i++) {
           var temp_id = Math.trunc(data[i].FIPS).toString(); 
           if (temp_id.length == 1) {
             temp_id = "0".concat(temp_id);
           }
-		  var ypar = "party" + year.toString();
-		  var yswi = "Switch_" + (year - 4).toString() + "_" + year.toString();
-          winner.push({id:temp_id,winner_name:data[i][ypar] + " " + data[i][yswi]}); 
+//		  var ypar = "party" + year;
+//		  var yswi = "Switch_" + (years[j] - 4).toString() + "_" + year;
+//		  stateWinners[year].push({id:temp_id,winner_name:data[i][ypar] + " " + data[i][yswi]}); 
+		  stateWinners.push({id:temp_id,winner_name:[data[i]["party2000"] + "2000" + data[i]["Switch_1996_2000"],data[i]["party2004"] + "2004" + data[i]["Switch_2000_2004"],data[i]["party2008"] + "2008" + data[i]["Switch_2004_2008"],data[i]["party2012"] + "2012" + data[i]["Switch_2008_2012"],data[i]["party2016"] + "2016" + data[i]["Switch_2012_2016"]]});  
+
         } 
-	    stateWinners[year] = winner;
-	  }
+//	  }
     })
   }
   function getCountyInfo() {}
@@ -369,11 +445,16 @@ var scrollVis = function () {
   return chart;
 };
 
+/**
+ * display - called once data has been loaded. sets up the scroller and displays the visualization.
+ *
+ * @param data - loaded tsv data
+ */
 function display() {
   // create a new plot and display it
   var plot = scrollVis();
-  d3.select('#vis')
-    .call(plot);
+//  console.log(plot);
+  d3.select('#vis').call(plot);
   // setup scroll functionality
   var scroll = scroller().container(d3.select('#graphic'));
   // pass in .step selection as the steps
@@ -389,3 +470,5 @@ function display() {
 }
 
 display();
+//window.addEventListener("load",display);
+//d3.csv('./FP_state_winners.csv', display);
