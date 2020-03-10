@@ -84,4 +84,26 @@
 	fill: gray;
 }
 
-/*# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.82fcb37f.css.map */
+body { font: 12px Arial;}
+
+path { 
+    stroke: white;
+/*    stroke-width: 2;*/
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+/*# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.0ceba6a9.css.map */
