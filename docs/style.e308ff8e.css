@@ -4,9 +4,11 @@
   width: 890px;
 }
 
+/*
 .stateMap, .polling, .countyData {
     display: none;
 }
+*/
 
 /*
 h1 {
@@ -23,23 +25,6 @@ h1 {
   height: 70%;
   margin-bottom: 50px;  
 }
-
-.republican {
-    fill: crimson;
-}
-
-.democrat {
-    fill: blue;
-}
-
-.republican.TRUE {
-    fill: pink;
-}
-
-.democrat.TRUE {
-    fill:lightblue;
-}
-
 .states:hover {
     fill:grey;
 }

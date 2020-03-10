@@ -31657,8 +31657,8 @@ Object.keys(_topojsonSimplify).forEach(function (key) {
     }
   });
 });
-},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","topojson-server":"../node_modules/topojson/node_modules/topojson-server/index.js","topojson-simplify":"../node_modules/topojson/node_modules/topojson-simplify/index.js"}],"data/FP_county_winners.csv":[function(require,module,exports) {
-module.exports = "/FP_county_winners.04cf4f60.csv";
+},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","topojson-server":"../node_modules/topojson/node_modules/topojson-server/index.js","topojson-simplify":"../node_modules/topojson/node_modules/topojson-simplify/index.js"}],"FP_county_winners.csv":[function(require,module,exports) {
+module.exports = "/FP_county_winners.29242c6a.csv";
 },{}],"FP_state_winners.csv":[function(require,module,exports) {
 module.exports = "/FP_state_winners.5507198d.csv";
 },{}],"sections.js":[function(require,module,exports) {
@@ -31781,7 +31781,9 @@ var scrollVis = function scrollVis() {
     left: 20,
     bottom: 40,
     right: 10
-  }; // Keep track of which visualization we are on and which was the last index activated. When user scrolls
+  };
+  var centered;
+  var afterZoom; // Keep track of which visualization we are on and which was the last index activated. When user scrolls
   // quickly, we want to call all the activate functions that they pass.
 
   var lastIndex = -1;
@@ -31796,7 +31798,7 @@ var scrollVis = function scrollVis() {
   //  var path = d3.geoPath().projection(projection);
   // file paths to data files
 
-  var county_csv = require('./data/FP_county_winners.csv');
+  var county_csv = require('./FP_county_winners.csv');
 
   var state_csv = require('./FP_state_winners.csv'); // dictionaries to store state and county info
 
@@ -31804,9 +31806,12 @@ var scrollVis = function scrollVis() {
   var stateInfo = {}; //  var stateWinners = {};
 
   var stateWinners = [];
-  var countyInfo = {};
-  var countyWinners = {};
+  var countyInfo = {}; //  var countyWinners = {};
+
+  var countyWinners = [];
   var years = [2000, 2004, 2008, 2012, 2016];
+  var projection = d3.geoAlbersUsa().scale(900).translate([width / 2, height / 2]);
+  var path = d3.geoPath().projection(projection);
   /**
    * chart
    *
@@ -31844,13 +31849,40 @@ var scrollVis = function scrollVis() {
 
   var setupVis = function setupVis(stateInfo, stateWinners, countyInfo, countyWinners, years) {
     // title
-    g.append('text').attr('class', 'title').attr('x', width / 3).attr('y', height / 3).text('Prediction 2020').attr('opacity', 0);
-    var projection = d3.geoAlbersUsa().scale(900).translate([width / 2, height / 2]);
-    var path = d3.geoPath().projection(projection);
+    g.append('text').attr('class', 'title').attr('x', width / 3).attr('y', height / 3).text('Prediction 2020').attr('opacity', 0); //	var projection = d3.geoAlbersUsa().scale(900).translate([width / 2, height / 2]);
+    //    var path = d3.geoPath().projection(projection);
+
     d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function (json) {
+      var counties = topo.feature(json, json.objects.counties);
+      var county_map = g.append('g').selectAll('path').data(counties.features);
+      console.log(counties.features);
+      var county_mapE = county_map.enter().append('path').classed('countyMap', true);
+      county_map = county_map.merge(county_mapE).attr("id", function (d) {
+        return "c" + d.id;
+      }).attr("class", function (d) {
+        var county = d.properties.name.replace(/\s/g, '');
+        var temp = countyWinners.find(function (x) {
+          return x.id === d.id;
+        });
+
+        if (temp) {
+          var ret = "countyMap counties " + county;
+
+          for (var i = 0; i <= 4; i++) {
+            ret += " " + temp.winner_name[i];
+          }
+
+          console.log(ret);
+          return ret;
+        }
+
+        ;
+      }).attr('d', path).attr('stroke', 'black').attr('opacity', 0).on("click", reset).append('title').text(function (d) {
+        return "";
+      });
       var states = topo.feature(json, json.objects.states);
-      var state_map = g.selectAll('path').data(states.features);
-      var state_mapE = state_map.enter().append('path').classed('map', true);
+      var state_map = g.append('g').selectAll('path').data(states.features);
+      var state_mapE = state_map.enter().append('path').classed('stateMap', true);
       state_map = state_map.merge(state_mapE).attr("id", function (d) {
         return "c" + d.id;
       }).attr("class", function (d) {
@@ -31860,7 +31892,7 @@ var scrollVis = function scrollVis() {
         });
 
         if (temp) {
-          var ret = "map states" + state;
+          var ret = "stateMap states " + state;
 
           for (var i = 0; i <= 4; i++) {
             ret += " " + temp.winner_name[i];
@@ -31872,25 +31904,10 @@ var scrollVis = function scrollVis() {
         }
 
         ;
-      }).attr('d', path).attr('stroke', 'black').attr('opacity', 0) //        .on("click", zoomToState)
-      .append('title').text(function (d) {
+      }).attr('d', path).attr('stroke', 'black').attr('opacity', 0).on("click", zoomToState).append('title').text(function (d) {
         return "";
-      }); //        .text(function (d) {
-      //	      var temp = stateInfo["2000"];
-      //          var arr = temp[d.id];
-      //          if (arr) {
-      //            return temp[d.id][0] + "\n" + 
-      //              temp[d.id][1] + "\n" + 
-      //              temp[d.id][2] + "%";
-      //          }  
-      //        });	
+      });
     });
-    g.append('svg:image').attr('xlink:href', './Florida.png').attr('class', 'florida').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
-    g.append('svg:image').attr('xlink:href', './Iowa.png').attr('class', 'iowa').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
-    g.append('svg:image').attr('xlink:href', './Michigan.png').attr('class', 'michigan').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
-    g.append('svg:image').attr('xlink:href', './Ohio.png').attr('class', 'ohio').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
-    g.append('svg:image').attr('xlink:href', './Pennsylvania.png').attr('class', 'pennsylvania').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
-    g.append('svg:image').attr('xlink:href', './Wisconsin.png').attr('class', 'wisconsin').attr('height', '300').attr('width', '300').attr('x', width / 3).attr('y', height / 3).attr('opacity', 0);
   };
   /**
    * setupSections - each section is activated by a separate function. Here we associate these functions to 
@@ -31924,38 +31941,50 @@ var scrollVis = function scrollVis() {
 
   function show_title() {
     console.log('showTitle');
-    g.selectAll(".map").select('title').text(function (d) {
+    g.selectAll(".stateMap").select('title').text(function (d) {
       return "";
     });
-    g.selectAll(".map").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".stateMap").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".countyMap").select('title').text(function (d) {
+      return "";
+    });
+    g.selectAll(".countyMap").transition().duration(500).attr('opacity', 0);
     g.selectAll('.title').transition().duration(500).attr('opacity', 1.0);
   }
 
   function result_2000() {
     console.log('result2000');
     g.selectAll('.title').transition().duration(500).attr('opacity', 0);
-    g.selectAll(".map").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".stateMap").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".countyMap").transition().duration(500).attr('opacity', 1.0);
     g.selectAll(".republican2000TRUE").transition('color').duration(500).style("fill", "red");
     g.selectAll(".republican2000FALSE").transition('color').duration(500).style("fill", "lightcoral");
     g.selectAll(".democrat2000TRUE").transition('color').duration(500).style("fill", "blue");
     g.selectAll(".democrat2000FALSE").transition('color').duration(500).style("fill", "steelblue");
-    g.selectAll(".map").select('title').text(function (d) {
+    g.selectAll(".stateMap").select('title').text(function (d) {
       var arr = stateInfo["2000"][d.id];
 
       if (arr) {
         return stateInfo["2000"][d.id][0] + "\n" + stateInfo["2000"][d.id][1] + "\n" + stateInfo["2000"][d.id][2] + "%";
       }
     });
+    g.selectAll(".countyMap").select('title').text(function (d) {
+      var arr = countyInfo["2000"][d.id];
+
+      if (arr) {
+        return countyInfo["2000"][d.id][0] + "\n" + countyInfo["2000"][d.id][1] + "\n" + countyInfo["2000"][d.id][2] + "%";
+      }
+    });
   }
 
   function result_2004() {
     console.log('result2004');
-    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".stateMap").transition().duration(0).attr('opacity', 1.0);
     g.selectAll(".republican2004TRUE").transition('color').duration(500).style("fill", "red");
     g.selectAll(".republican2004FALSE").transition('color').duration(500).style("fill", "lightcoral");
     g.selectAll(".democrat2004TRUE").transition('color').duration(500).style("fill", "blue");
     g.selectAll(".democrat2004FALSE").transition('color').duration(500).style("fill", "steelblue");
-    g.selectAll(".map").select('title').text(function (d) {
+    g.selectAll(".stateMap").select('title').text(function (d) {
       var arr = stateInfo["2004"][d.id];
 
       if (arr) {
@@ -31966,12 +31995,12 @@ var scrollVis = function scrollVis() {
 
   function result_2008() {
     console.log('result2008');
-    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".stateMap").transition().duration(0).attr('opacity', 1.0);
     g.selectAll(".republican2008TRUE").transition('color').duration(500).style("fill", "red");
     g.selectAll(".republican2008FALSE").transition('color').duration(500).style("fill", "lightcoral");
     g.selectAll(".democrat2008TRUE").transition('color').duration(500).style("fill", "blue");
     g.selectAll(".democrat2008FALSE").transition('color').duration(500).style("fill", "steelblue");
-    g.selectAll(".map").select('title').text(function (d) {
+    g.selectAll(".stateMap").select('title').text(function (d) {
       var arr = stateInfo["2008"][d.id];
 
       if (arr) {
@@ -31982,12 +32011,12 @@ var scrollVis = function scrollVis() {
 
   function result_2012() {
     console.log('result2012');
-    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".stateMap").transition().duration(0).attr('opacity', 1.0);
     g.selectAll(".republican2012TRUE").transition('color').duration(500).style("fill", "red");
     g.selectAll(".republican2012FALSE").transition('color').duration(500).style("fill", "lightcoral");
     g.selectAll(".democrat2012TRUE").transition('color').duration(500).style("fill", "blue");
     g.selectAll(".democrat2012FALSE").transition('color').duration(500).style("fill", "steelblue");
-    g.selectAll(".map").select('title').text(function (d) {
+    g.selectAll(".stateMap").select('title').text(function (d) {
       var arr = stateInfo["2012"][d.id];
 
       if (arr) {
@@ -31998,12 +32027,12 @@ var scrollVis = function scrollVis() {
 
   function result_2016() {
     console.log('result2016');
-    g.selectAll(".map").transition().duration(0).attr('opacity', 1.0);
+    g.selectAll(".stateMap").transition().duration(0).attr('opacity', 1.0);
     g.selectAll(".republican2016TRUE").transition('color').duration(500).style("fill", "red");
     g.selectAll(".republican2016FALSE").transition('color').duration(500).style("fill", "lightcoral");
     g.selectAll(".democrat2016TRUE").transition('color').duration(500).style("fill", "blue");
     g.selectAll(".democrat2016FALSE").transition('color').duration(500).style("fill", "steelblue");
-    g.selectAll(".map").select('title').text(function (d) {
+    g.selectAll(".stateMap").select('title').text(function (d) {
       var arr = stateInfo["2016"][d.id];
 
       if (arr) {
@@ -32014,7 +32043,7 @@ var scrollVis = function scrollVis() {
 
   function swing_2016() {
     console.log('swing2016');
-    g.selectAll(".map").transition().duration(500).attr('opacity', 1.0);
+    g.selectAll(".stateMap").transition().duration(500).attr('opacity', 1.0);
     g.selectAll(".republican2016TRUE").transition('color').duration(500).style("fill", "red");
     g.selectAll(".republican2016FALSE").transition('color').duration(500).style("fill", "black");
     g.selectAll(".democrat2016TRUE").transition('color').duration(500).style("fill", "blue");
@@ -32024,10 +32053,10 @@ var scrollVis = function scrollVis() {
 
   function florida() {
     console.log('florida');
-    g.selectAll(".map").select('title').text(function (d) {
+    g.selectAll(".stateMap").select('title').text(function (d) {
       return "";
     });
-    g.selectAll(".map").transition().duration(500).attr('opacity', 0);
+    g.selectAll(".stateMap").transition().duration(500).attr('opacity', 0);
     g.selectAll(".florida").transition().duration(500).attr('opacity', 1.0);
     g.selectAll(".iowa").transition().duration(500).attr('opacity', 0);
   }
@@ -32080,7 +32109,7 @@ var scrollVis = function scrollVis() {
   function getStateInfo() {
     d3.csv(state_csv).then(function (data) {
       for (var j = 0; j < years.length; j++) {
-        console.log('info' + years[j].toString());
+        console.log('stateInfo' + years[j].toString());
         var year = years[j].toString();
         stateInfo[year] = {};
 
@@ -32102,31 +32131,110 @@ var scrollVis = function scrollVis() {
 
   function getStateWinners() {
     d3.csv(state_csv).then(function (data) {
-      //	  for (var j = 0; j < years.length; j++) {
-      //	    var year = years[j].toString();
-      //		stateWinners[year] = [];  
       for (var i = 0; i < data.length; i++) {
         var temp_id = Math.trunc(data[i].FIPS).toString();
 
         if (temp_id.length == 1) {
           temp_id = "0".concat(temp_id);
-        } //		  var ypar = "party" + year;
-        //		  var yswi = "Switch_" + (years[j] - 4).toString() + "_" + year;
-        //		  stateWinners[year].push({id:temp_id,winner_name:data[i][ypar] + " " + data[i][yswi]}); 
-
+        }
 
         stateWinners.push({
           id: temp_id,
           winner_name: [data[i]["party2000"] + "2000" + data[i]["Switch_1996_2000"], data[i]["party2004"] + "2004" + data[i]["Switch_2000_2004"], data[i]["party2008"] + "2008" + data[i]["Switch_2004_2008"], data[i]["party2012"] + "2012" + data[i]["Switch_2008_2012"], data[i]["party2016"] + "2016" + data[i]["Switch_2012_2016"]]
         });
-      } //	  }
-
+      }
     });
   }
 
-  function getCountyInfo() {}
+  function getCountyInfo() {
+    d3.csv(state_csv).then(function (data) {
+      for (var j = 0; j < years.length; j++) {
+        console.log('countyInfo' + years[j].toString());
+        var year = years[j].toString();
+        stateInfo[year] = {};
 
-  function getCountyWinners() {}
+        for (var i = 0; i < data.length; i++) {
+          var temp_id = Math.trunc(data[i].FIPS).toString();
+
+          if (temp_id.length == 4) {
+            temp_id = "0".concat(temp_id);
+          }
+
+          var yper = year + "_percent";
+          var ycan = year + "_cand";
+          var percent = (parseFloat(data[i][yper]) * 100).toPrecision(3);
+          stateInfo[year][temp_id] = [data[i]["county"], data[i][ycan], percent];
+        }
+      }
+    });
+  }
+
+  function getCountyWinners() {
+    d3.csv(state_csv).then(function (data) {
+      for (var i = 0; i < data.length; i++) {
+        var temp_id = Math.trunc(data[i].FIPS).toString();
+
+        if (temp_id.length == 4) {
+          temp_id = "0".concat(temp_id);
+        }
+
+        countyWinners.push({
+          id: temp_id,
+          winner_name: [data[i]["party2000"] + "2000" + data[i]["Switch_1996_2000"], data[i]["party2004"] + "2004" + data[i]["Switch_2000_2004"], data[i]["party2008"] + "2008" + data[i]["Switch_2004_2008"], data[i]["party2012"] + "2012" + data[i]["Switch_2008_2012"], data[i]["party2016"] + "2016" + data[i]["Switch_2012_2016"]]
+        });
+      }
+    });
+  }
+
+  function zoomToState(d) {
+    console.log("zoom to state");
+    /**
+     * code adopted from https://bl.ocks.org/mbostock/2206590
+     */
+
+    var state = this.classList[1];
+    var x, y, k;
+
+    if (d && centered !== d) {
+      var centroid = path.centroid(d);
+      x = centroid[0];
+      y = centroid[1];
+      k = 4;
+      centered = d;
+    } else {
+      x = width / 2;
+      y = height / 2;
+      k = 1;
+      centered = null;
+    }
+
+    g.selectAll("path").classed("active", centered && function (d) {
+      return d === centered;
+    });
+    g.transition().duration(750).attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")").style("stroke-width", 1.5 / k + "px"); //   g.selectAll("path2")
+    //      .classed("active", centered && function(d) { return d === centered; });
+    //
+    //   g.transition()
+    //      .duration(750)
+    //      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+    //      .style("stroke-width", 1.5 / k + "px");
+
+    g.selectAll(".stateMap").style("opacity", 0); //	 g.selectAll(".countyMap").style("opacity", 1);
+    //     d3.selectAll(".countyMap").style("visibility", "visible");
+    //     g.selectAll(".counties").style("opacity", 1);
+    //     d3.selectAll("." + state).style("opacity", 1);
+    // select only counties in the clicked state
+    // filter counties with 
+  }
+
+  function reset() {
+    console.log("reset"); //d3.selectAll(".counties").style("opacity", 0);
+    //d3.select("#stateview").style("opacity", 1);
+    //d3.select("#countyview").style("visibility", "hidden");
+    //    d3.select("#countyview").style("visibility", "hidden");
+
+    d3.select("#stateview").style("opacity", 1);
+  }
   /**
    * activate
    *
@@ -32176,7 +32284,7 @@ function display() {
 
 display(); //window.addEventListener("load",display);
 //d3.csv('./FP_state_winners.csv', display);
-},{"d3":"../node_modules/d3/index.js","topojson":"../node_modules/topojson/index.js","./data/FP_county_winners.csv":"data/FP_county_winners.csv","./FP_state_winners.csv":"FP_state_winners.csv"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"d3":"../node_modules/d3/index.js","topojson":"../node_modules/topojson/index.js","./FP_county_winners.csv":"FP_county_winners.csv","./FP_state_winners.csv":"FP_state_winners.csv"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -32204,7 +32312,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61368" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
