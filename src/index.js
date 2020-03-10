@@ -307,19 +307,19 @@ var scrollVis = function () {
 		g.selectAll(".republican2000TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "red");
+			.style("fill", "#e60000");
 		g.selectAll(".republican2000FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "lightcoral");
+			.style("fill", "#ff8080");
 		g.selectAll(".democrat2000TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "blue");
+			.style("fill", "#0066cc");
 		g.selectAll(".democrat2000FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "steelblue");
+			.style("fill", "#4da6ff");
 		
 		g.selectAll(".states")
 			.select('title')
@@ -349,19 +349,19 @@ var scrollVis = function () {
 		g.selectAll(".republican2004TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "red");
+			.style("fill", "#e60000");
 		g.selectAll(".republican2004FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "lightcoral");
+			.style("fill", "#ff8080");
 		g.selectAll(".democrat2004TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "blue");
+			.style("fill", "#0066cc");
 		g.selectAll(".democrat2004FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "steelblue");
+			.style("fill", "#4da6ff");
 		
 		g.selectAll(".states")
 			.select('title')
@@ -390,19 +390,19 @@ var scrollVis = function () {
 		g.selectAll(".republican2008TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "red");
+			.style("fill", "#e60000");
 		g.selectAll(".republican2008FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "lightcoral");
+			.style("fill", "#ff8080");
 		g.selectAll(".democrat2008TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "blue");
+			.style("fill", "#0066cc");
 		g.selectAll(".democrat2008FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "steelblue");
+			.style("fill", "#4da6ff");
 		
 		g.selectAll(".states")
 			.select('title')
@@ -431,19 +431,19 @@ var scrollVis = function () {
 		g.selectAll(".republican2012TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "red");
+			.style("fill", "#e60000");
 		g.selectAll(".republican2012FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "lightcoral");
+			.style("fill", "#ff8080");
 		g.selectAll(".democrat2012TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "blue");
+			.style("fill", "#0066cc");
 		g.selectAll(".democrat2012FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "steelblue");
+			.style("fill", "#4da6ff");
 		
 		g.selectAll(".states")
 			.select('title')
@@ -472,19 +472,19 @@ var scrollVis = function () {
 		g.selectAll(".republican2016TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "red");
+			.style("fill", "#e60000");  // dark red
 		g.selectAll(".republican2016FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "lightcoral");
+			.style("fill", "#ff8080"); // light coral
 		g.selectAll(".democrat2016TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "blue");
+			.style("fill", "#0066cc"); // blue
 		g.selectAll(".democrat2016FALSE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "steelblue");
+			.style("fill", "#4da6ff"); // light blue
 		
 		g.selectAll(".states")
 			.select('title')
@@ -526,7 +526,7 @@ var scrollVis = function () {
 		g.selectAll(".republican2016TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "red");
+			.style("fill", "#e60000");
 		g.selectAll(".republican2016FALSE")
 			.transition('color')
 			.duration(500)
@@ -534,7 +534,7 @@ var scrollVis = function () {
 		g.selectAll(".democrat2016TRUE")
 			.transition('color')
 			.duration(500)
-			.style("fill", "blue");
+			.style("fill", "#0066cc");
 		g.selectAll(".democrat2016FALSE")
 			.transition('color')
 			.duration(500)
@@ -584,6 +584,7 @@ var scrollVis = function () {
 			.select('title')
 			.text(function(d) { return "" });
 	}
+	
 	function iowa() { console.log("iowa"); }
 	function michigan() { console.log("michigan"); }
 	function ohio() { console.log("ohio"); }
