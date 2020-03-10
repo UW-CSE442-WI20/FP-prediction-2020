@@ -91,10 +91,14 @@ function scroller() {
  */
 var scrollVis = function () {
 	var margin = {
-		top: 10,
-		bottom: 10,
-		left: 10,
-		right:10
+//		top: 10,
+//		bottom: 10,
+//		left: 10,
+//		right:10
+		top: 30,
+		bottom: 70,
+		left: 50,
+		right: 20
 	}, width = 890
 		, width = width - margin.left - margin.right
 		, mapRatio = 0.5
@@ -107,10 +111,41 @@ var scrollVis = function () {
 	var g = null;
 	var activateFunctions = [];
 	
+	// Parse the date
+	var parseDate = d3.timeParse("%m/%d/%y");
+	
+	// Set the ranges
+	var x = d3.scaleTime().range([0, width]);
+	var y = d3.scaleLinear().range([height, 0]);
+
+	// Define the axes
+	var xAxis = d3.axisBottom(x);
+	var yAxis = d3.axisLeft(y);
+	
+	// Define the line
+	var percentline = d3.line()	
+		.x(function(d) { return x(d.date); })
+		.y(function(d) { return y(d.pct); });
+	
 	var county_csv = require('./FP_county_winners.csv');
 	var state_csv = require('./FP_state_winners.csv');
 	var county_csv = require('./FP_county_winners.csv');
 	var state_csv = require('./FP_state_winners.csv');
+	
+	var fl_biden = require('./FL_biden_v_trump.csv');
+	var fl_sanders = require('./FL_sanders_v_trump.csv');
+	var io_biden = require('./IO_biden_v_trump.csv');
+	var io_sanders = require('./IO_sanders_v_trump.csv');
+	var mi_biden = require('./MI_biden_v_trump.csv');
+	var mi_sanders = require('./MI_sanders_v_trump.csv');
+	var oh_biden = require('./OH_biden_v_trump.csv');
+	var oh_sanders = require('./OH_sanders_v_trump.csv');
+	var pa_biden = require('./PA_biden_v_trump.csv');
+	var pa_sanders = require('./PA_sanders_v_trump.csv');
+	var wi_biden = require('./WI_biden_v_trump.csv');
+	var wi_sanders = require('./WI_sanders_v_trump.csv');
+	
+	var polls = [fl_biden, fl_sanders, io_biden, io_sanders, mi_biden, mi_sanders, oh_biden, oh_sanders, pa_biden, pa_sanders, wi_biden, wi_sanders];
 	
 	var stateInfo = {};
 	var countyInfo = {};
@@ -227,6 +262,71 @@ var scrollVis = function () {
 				.attr("d", path)
 				.style("opacity", 0);
 		});
+		
+		polls.forEach(function(d) {
+			d3.csv(d).then(function(data) {
+				data.forEach(function(d) {
+					d.date = parseDate(d.date);
+					d.pct = +d.pct;
+				});
+
+				x.domain(d3.extent(data, function(d) { return d.date; }));
+				y.domain([d3.min(data, function(d) { return d.pct; }) - 2, 
+						  d3.max(data, function(d) { return d.pct; }) + 2]);
+
+				var dataNest = d3.nest()
+					.key(function(d) {return d.answer;})
+					.entries(data);
+
+				var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+				legendSpace = width/dataNest.length;
+
+				dataNest.forEach(function(d,i) {
+					g.append("path")
+						.attr("class", "line " + data[0].state + data[0].answer)
+						.style("stroke", function() {
+							return d.color = color(d.key);
+						})
+						.attr("id", 'tag'+d.key.replace(/\s+/g, ''))
+						.attr("d", percentline(d.values))
+						.style("opacity", 0);
+
+					g.append("text")
+						.attr("x", (legendSpace/2)+i*legendSpace)  // space legend
+						.attr("y", height + (margin.bottom/2)+ 5)
+						.attr("class", "legend " + data[0].state + data[0].answer)    // style the legend
+						.style("fill", function() { // Add the colours dynamically
+							return d.color = color(d.key); })
+						.on("click", function(){
+							// Determine if current line is visible 
+							var active   = d.active ? false : true,
+							newOpacity = active ? 0 : 1; 
+							// Hide or show the elements based on the ID
+							d3.select("#tag"+d.key.replace(/\s+/g, ''))
+								.transition().duration(100) 
+								.style("opacity", newOpacity); 
+							// Update whether or not the elements are active
+							d.active = active;
+							})  
+						.text(d.key)
+						.style("opacity", 0);
+				});
+				
+				// Add the X Axis
+				g.append("g")
+					.attr("class", "x axis " + data[0].state + data[0].answer)
+					.attr("transform", "translate(0," + height + ")")
+					.call(xAxis)
+					.style("opacity", 0);
+
+				// Add the Y Axis
+				g.append("g")
+					.attr("class", "y axis " + data[0].state + data[0].answer)
+					.call(yAxis)
+					.style("opacity", 0);
+			});
+		});
 	};
 	
 	/**
@@ -241,13 +341,19 @@ var scrollVis = function () {
 		activateFunctions[4] = result_2012;
 		activateFunctions[5] = result_2016;
 		activateFunctions[6] = swing_2016;
-		activateFunctions[7] = florida;
-		activateFunctions[8] = iowa;
-		activateFunctions[9] = michigan;
-		activateFunctions[10] = ohio;
-		activateFunctions[11] = pennsylvania;
-		activateFunctions[12] = wisconsin;
-		activateFunctions[13] = prediction_2020;
+		activateFunctions[7] = florida_biden;
+		activateFunctions[8] = florida_sanders;
+		activateFunctions[9] = iowa_biden;
+		activateFunctions[10] = iowa_sanders;
+		activateFunctions[11] = michigan_biden;
+		activateFunctions[12] = michigan_sanders;
+		activateFunctions[13] = ohio_biden;
+		activateFunctions[14] = ohio_sanders;
+		activateFunctions[15] = pennsylvania_biden;
+		activateFunctions[16] = pennsylvania_sanders;
+		activateFunctions[17] = wisconsin_biden;
+		activateFunctions[18] = wisconsin_sanders;
+		activateFunctions[19] = prediction_2020;
 	};
 	
 	/**
@@ -560,9 +666,18 @@ var scrollVis = function () {
 						countyInfo["2004"][d.id][2] + "%";
 				}  
 		});
+		
+		g.selectAll(".FloridaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axisFloridaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
 	}
-	function florida() { 
-		console.log("florida"); 
+	function florida_biden() { 
+		console.log("florida_biden"); 
 		
 		g.selectAll(".states")
 			.transition()
@@ -583,14 +698,405 @@ var scrollVis = function () {
 		g.selectAll(".counties")
 			.select('title')
 			.text(function(d) { return "" });
+		
+		g.selectAll(".FloridaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".FloridaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".FloridaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".FloridaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
 	}
 	
-	function iowa() { console.log("iowa"); }
-	function michigan() { console.log("michigan"); }
-	function ohio() { console.log("ohio"); }
-	function pennsylvania() { console.log("pennsylvania"); }
-	function wisconsin() { console.log("wisconsin"); }
-	function prediction_2020() { console.log("prediction_2020"); }
+	function florida_sanders() {
+		console.log("florida_sanders");
+		
+		g.selectAll(".FloridaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".FloridaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".FloridaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".FloridaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".IowaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".IowaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function iowa_biden() { 
+		console.log("iowa_biden"); 
+		
+		g.selectAll(".FloridaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".FloridaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".IowaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".IowaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".IowaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".IowaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function iowa_sanders() {
+		console.log("iowa_sanders");
+		
+		g.selectAll(".IowaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".IowaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".IowaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".IowaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".MichiganBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".MichiganBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function michigan_biden() { 
+		console.log("michigan_biden");
+		
+		g.selectAll(".IowaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".IowaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".MichiganBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".MichiganBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".MichiganSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".MichiganSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function michigan_sanders() {
+		console.log("michigan_sanders");
+		
+		g.selectAll(".MichiganBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".MichiganBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".MichiganSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".MichiganSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".OhioBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".OhioBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function ohio_biden() { 
+		console.log("ohio_biden"); 
+		
+		g.selectAll(".MichiganSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".MichiganSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".OhioBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".OhioBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".OhioSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".OhioSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function ohio_sanders() {
+		console.log("ohio_sanders");
+		
+		g.selectAll(".OhioBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".OhioBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".OhioSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".OhioSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".PennsylvaniaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".PennsylvaniaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function pennsylvania_biden() { 
+		console.log("pennsylvania_biden"); 
+		
+		g.selectAll(".OhioSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".OhioSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".PennsylvaniaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".PennsylvaniaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".PennsylvaniaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".PennsylvaniaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function pennsylvania_sanders() {
+		console.log("pennsylvania_sanders");
+		
+		g.selectAll(".PennsylvaniaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".PennsylvaniaBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".PennsylvaniaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".PennsylvaniaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".WisconsinBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".WisconsinBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function wisconsin_biden() { 
+		console.log("wisconsin_biden"); 
+		
+		g.selectAll(".PennsylvaniaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".PennsylvaniaSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".WisconsinBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".WisconsinBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		
+		g.selectAll(".WisconsinSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".WisconsinSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function wisconsin_sanders() { 
+		console.log("wisconsin_sanders");
+		
+		g.selectAll(".WisconsinBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".WisconsinBiden")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll(".WisconsinSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+		g.selectAll(".axis")
+			.selectAll(".WisconsinSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+	}
+	
+	function prediction_2020() { 
+		console.log("prediction_2020"); 
+		
+		g.selectAll(".WisconsinSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll(".axis")
+			.selectAll(".WisconsinSanders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
 	
 	/**
 	 * DATA FUNCTIONS
