@@ -162,6 +162,8 @@ var scrollVis = function () {
 	
 	var polls = [fl_biden_sanders, fl_biden_trump, fl_sanders_trump, ia_biden_sanders, ia_biden_trump, ia_sanders_trump, mi_biden_sanders, mi_biden_trump, mi_sanders_trump, oh_biden_sanders, oh_biden_trump, oh_sanders_trump, pa_biden_sanders, pa_biden_trump, pa_sanders_trump, wi_biden_sanders, wi_biden_trump, wi_sanders_trump];
 	
+	var classnames = ["fl_biden_sanders", "fl_biden_trump", "fl_sanders_trump", "ia_biden_sanders", "ia_biden_trump", "ia_sanders_trump", "mi_biden_sanders", "mi_biden_trump", "mi_sanders_trump", "oh_biden_sanders", "oh_biden_trump", "oh_sanders_trump", "pa_biden_sanders", "pa_biden_trump", "pa_sanders_trump", "wi_biden_sanders", "wi_biden_trump", "wi_sanders_trump"];
+	
 	var stateInfo = {};
 	var countyInfo = {};
 	var stateWinners = []; 
@@ -278,9 +280,12 @@ var scrollVis = function () {
 				.style("opacity", 0);
 		});
 		
+		var i = 0;
 		polls.forEach(function(d) {
 			d3.tsv(d).then(function(data) {
-				var classname = d.toString().slice(1,15);
+//				var classname = d.toString(); //.slice(1,15);
+				var classname = classnames[i];
+				i++;
 				console.log(classname);
 				
 				color.domain(d3.keys(data[0]).filter(function(key) {
@@ -485,7 +490,6 @@ var scrollVis = function () {
 	 * These will be called when their section is scrolled to.
 	 */
 	function show_title() { 
-		console.log("show_title"); 
 		g.selectAll('.title')
 			.transition()
 			.duration(500)
@@ -513,8 +517,6 @@ var scrollVis = function () {
 	}
 	
 	function result_2000() { 
-		console.log("result_2000"); 
-		
 		g.selectAll('.title')
 			.transition()
 			.duration(500)
@@ -573,8 +575,6 @@ var scrollVis = function () {
 	}
 	
 	function result_2004() { 
-		console.log("result_2004"); 
-		
 		g.selectAll(".republican2004TRUE")
 			.transition('color')
 			.duration(500)
@@ -615,8 +615,6 @@ var scrollVis = function () {
 	}
 	
 	function result_2008() { 
-		console.log("result_2008"); 
-		
 		g.selectAll(".republican2008TRUE")
 			.transition('color')
 			.duration(500)
@@ -656,9 +654,7 @@ var scrollVis = function () {
 		});
 	}
 	
-	function result_2012() { 
-		console.log("result_2012"); 
-		
+	function result_2012() {
 		g.selectAll(".republican2012TRUE")
 			.transition('color')
 			.duration(500)
@@ -699,8 +695,6 @@ var scrollVis = function () {
 	}
 	
 	function result_2016() { 
-		console.log("result_2016"); 
-		
 		g.selectAll(".republican2016TRUE")
 			.transition('color')
 			.duration(500)
@@ -741,8 +735,6 @@ var scrollVis = function () {
 	}
 	
 	function swing_2016() { 
-		console.log("swing_2016");
-		
 		g.selectAll(".states")
 			.transition()
 			.duration(500)
@@ -794,7 +786,7 @@ var scrollVis = function () {
 				}  
 		});
 		
-		g.selectAll(".fl_biden_sande")
+		g.selectAll(".fl_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -802,15 +794,13 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".fl_sanders_tru")
+		g.selectAll(".fl_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 	}
 	
 	function florida() { 
-		console.log("florida"); 
-		
 		g.selectAll(".states")
 			.transition()
 			.duration(500)
@@ -831,14 +821,14 @@ var scrollVis = function () {
 			.select('title')
 			.text(function(d) { return "" });
 		
-		g.selectAll(".fl_biden_sande")
+		g.selectAll(".fl_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
 		
 		d3.select("#fl_biden_sanders")
 			.on("click", function(d,i) {
-				g.selectAll(".fl_biden_sande")
+				g.selectAll(".fl_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
@@ -846,14 +836,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".fl_sanders_tru")
+				g.selectAll(".fl_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#fl_biden_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".fl_biden_sande")
+				g.selectAll(".fl_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -861,14 +851,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
-				g.selectAll(".fl_sanders_tru")
+				g.selectAll(".fl_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#fl_sanders_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".fl_biden_sande")
+				g.selectAll(".fl_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -876,13 +866,13 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".fl_sanders_tru")
+				g.selectAll(".fl_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
 			}); 
 		
-		g.selectAll(".ia_biden_sande")
+		g.selectAll(".ia_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -890,16 +880,14 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".ia_sanders_tru")
+		g.selectAll(".ia_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 	}
 	
 	function iowa() { 
-		console.log("iowa"); 
-		
-		g.selectAll(".fl_biden_sande")
+		g.selectAll(".fl_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -907,19 +895,19 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".fl_sanders_tru")
+		g.selectAll(".fl_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 		
-		g.selectAll(".ia_biden_sande")
+		g.selectAll(".ia_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
 		
 		d3.select("#io_biden_sanders")
 			.on("click", function(d,i) {
-				g.selectAll(".ia_biden_sande")
+				g.selectAll(".ia_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
@@ -927,14 +915,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".ia_sanders_tru")
+				g.selectAll(".ia_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#io_biden_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".ia_biden_sande")
+				g.selectAll(".ia_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -942,14 +930,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
-				g.selectAll(".ia_sanders_tru")
+				g.selectAll(".ia_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#io_sanders_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".ia_biden_sande")
+				g.selectAll(".ia_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -957,13 +945,13 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".ia_sanders_tru")
+				g.selectAll(".ia_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
 			}); 
 		
-		g.selectAll(".mi_biden_sande")
+		g.selectAll(".mi_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -971,16 +959,14 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".mi_sanders_tru")
+		g.selectAll(".mi_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 	}
 	
 	function michigan() { 
-		console.log("michigan");
-		
-		g.selectAll(".ia_biden_sande")
+		g.selectAll(".ia_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -988,19 +974,19 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".ia_sanders_tru")
+		g.selectAll(".ia_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 		
-		g.selectAll(".mi_biden_sande")
+		g.selectAll(".mi_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
 		
 		d3.select("#mi_biden_sanders")
 			.on("click", function(d,i) {
-				g.selectAll(".mi_biden_sande")
+				g.selectAll(".mi_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
@@ -1008,14 +994,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".mi_sanders_tru")
+				g.selectAll(".mi_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#mi_biden_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".mi_biden_sande")
+				g.selectAll(".mi_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1023,14 +1009,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
-				g.selectAll(".mi_sanders_tru")
+				g.selectAll(".mi_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#mi_sanders_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".mi_biden_sande")
+				g.selectAll(".mi_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1038,13 +1024,13 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".mi_sanders_tru")
+				g.selectAll(".mi_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
 			});   
 		
-		g.selectAll(".oh_biden_sande")
+		g.selectAll(".oh_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1052,16 +1038,14 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".oh_sanders_tru")
+		g.selectAll(".oh_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 	}
 	
 	function ohio() { 
-		console.log("ohio");
-		
-		g.selectAll(".mi_biden_sande")
+		g.selectAll(".mi_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1069,19 +1053,19 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".mi_sanders_tru")
+		g.selectAll(".mi_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 		
-		g.selectAll(".oh_biden_sande")
+		g.selectAll(".oh_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
 		
 		d3.select("#oh_biden_sanders")
 			.on("click", function(d,i) {
-				g.selectAll(".oh_biden_sande")
+				g.selectAll(".oh_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
@@ -1089,14 +1073,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".oh_sanders_tru")
+				g.selectAll(".oh_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#oh_biden_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".oh_biden_sande")
+				g.selectAll(".oh_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1104,14 +1088,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
-				g.selectAll(".oh_sanders_tru")
+				g.selectAll(".oh_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#oh_sanders_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".oh_biden_sande")
+				g.selectAll(".oh_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1119,13 +1103,13 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".oh_sanders_tru")
+				g.selectAll(".oh_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
 			}); 
 		
-		g.selectAll(".pa_biden_sande")
+		g.selectAll(".pa_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1133,16 +1117,14 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".pa_sanders_tru")
+		g.selectAll(".pa_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 	}
 	
 	function pennsylvania() { 
-		console.log("pennsylvania");
-		
-		g.selectAll(".oh_biden_sande")
+		g.selectAll(".oh_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1150,19 +1132,19 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".oh_sanders_tru")
+		g.selectAll(".oh_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 		
-		g.selectAll(".pa_biden_sande")
+		g.selectAll(".pa_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
 		
 		d3.select("#pa_biden_sanders")
 			.on("click", function(d,i) {
-				g.selectAll(".pa_biden_sande")
+				g.selectAll(".pa_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
@@ -1170,14 +1152,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".pa_sanders_tru")
+				g.selectAll(".pa_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#pa_biden_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".pa_biden_sande")
+				g.selectAll(".pa_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1185,14 +1167,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
-				g.selectAll(".pa_sanders_tru")
+				g.selectAll(".pa_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#pa_sanders_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".pa_biden_sande")
+				g.selectAll(".pa_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1200,13 +1182,13 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".pa_sanders_tru")
+				g.selectAll(".pa_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
 			}); 
 		
-		g.selectAll(".wi_biden_sande")
+		g.selectAll(".wi_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1214,16 +1196,14 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".wi_sanders_tru")
+		g.selectAll(".wi_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 	}
 	
 	function wisconsin() { 
-		console.log("wisconsin");
-		
-		g.selectAll(".pa_biden_sande")
+		g.selectAll(".pa_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1231,19 +1211,19 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".pa_sanders_tru")
+		g.selectAll(".pa_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
 		
-		g.selectAll(".wi_biden_sande")
+		g.selectAll(".wi_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
 		
 		d3.select("#wi_biden_sanders")
 			.on("click", function(d,i) {
-				g.selectAll(".wi_biden_sande")
+				g.selectAll(".wi_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
@@ -1251,14 +1231,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".wi_sanders_tru")
+				g.selectAll(".wi_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#wi_biden_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".wi_biden_sande")
+				g.selectAll(".wi_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1266,14 +1246,14 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
-				g.selectAll(".wi_sanders_tru")
+				g.selectAll(".wi_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
 			});   
 		d3.select("#wi_sanders_trump")
 			.on("click", function(d,i) {
-				g.selectAll(".wi_biden_sande")
+				g.selectAll(".wi_biden_sanders")
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
@@ -1281,7 +1261,7 @@ var scrollVis = function () {
 					.transition()
 					.duration(500)
 					.style("opacity", 0);
-				g.selectAll(".wi_sanders_tru")
+				g.selectAll(".wi_sanders_trump")
 					.transition()
 					.duration(500)
 					.style("opacity", 1);
@@ -1291,7 +1271,7 @@ var scrollVis = function () {
 	function prediction_2020() { 
 		console.log("prediction_2020"); 
 		
-		g.selectAll(".wi_biden_sande")
+		g.selectAll(".wi_biden_sanders")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1299,7 +1279,7 @@ var scrollVis = function () {
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".wi_sanders_tru")
+		g.selectAll(".wi_sanders_trump")
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
