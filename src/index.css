@@ -20,18 +20,24 @@
 .step {
   margin-bottom: 200px;
   font-family: "TiemposTextWeb-Regular","Georgia";
-  font-size: 16px;
+  font-size: 15px;
   line-height: 23px;
   color: #767678;
 }
 
 #sections .title {
-  font-family: Arial,Helvetica,"san-serif";
-  font-size: 16px;
+  font-family: "TiemposTextWeb-Regular","Georgia";
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 2px;
   color: #262626;
   line-height: 1.2em;
+}
+
+.button {
+  font-family: "TiemposTextWeb-Regular","Georgia";
+  font-size: 15px;
+  color: #767678;
 }
 
 #extra-space {
