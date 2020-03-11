@@ -1,5 +1,9 @@
 // JavaScript Document
 
+// Scroller code adapted from https://github.com/vlandham/scroll_demo
+// Map code adapted from http://bl.ocks.org/ElefHead/ebff082d41ef8b9658059c408096f782
+// Line graph code adapted from https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
+
 var d3 = require('d3')
 var topo = require('topojson');
 
@@ -119,14 +123,14 @@ var scrollVis = function () {
 	var yAxis = d3.axisLeft(y);
 	
 	var color = d3.scaleOrdinal(d3.schemeCategory10)
-	.range(['#00AA61', '#7E50DB']); 
+		.range(['#27AE60', '#7D3C98']); 
 	
 	// Define the line
 	var percentline = d3.line()	
 		.x(function(d) { return x(d.date); })
 		.y(function(d) { return y(d.pct); });
 	var line = d3.line()
-		.curve(d3.curveBasis)
+		.curve(d3.curveCatmullRom.alpha(0.5))
 		.x(function(d) {
 			return x(d.date);
 		})
@@ -220,7 +224,7 @@ var scrollVis = function () {
 		// title
 		g.append("text")
 			.attr("class", "title")
-			.attr("x", width / 3)
+			.attr("x", width / 2)
 			.attr("y", height / 3)
 			.text("Prediction 2020")
 			.style("opacity", 0);
@@ -280,13 +284,19 @@ var scrollVis = function () {
 				.style("opacity", 0);
 		});
 		
+		// transition
+		g.append("text")
+			.attr("class", "lookahead")
+			.attr("x", width / 2)
+			.attr("y", height / 3)
+			.text("A look ahead")
+			.style("opacity", 0);
+		
 		var i = 0;
 		polls.forEach(function(d) {
 			d3.tsv(d).then(function(data) {
-//				var classname = d.toString(); //.slice(1,15);
 				var classname = classnames[i];
 				i++;
-				console.log(classname);
 				
 				color.domain(d3.keys(data[0]).filter(function(key) {
 					return key !== "date";
@@ -315,12 +325,12 @@ var scrollVis = function () {
 				y.domain([
 					d3.min(candidates, function(c) {
 						return d3.min(c.values, function(v) {
-							return v.percent;
+							return v.percent - 1;
 						});
 					}),
 					d3.max(candidates, function(c) {
 						return d3.max(c.values, function(v) {
-							return v.percent;
+							return v.percent + 1;
 						});
 					})
 				]);
@@ -377,11 +387,11 @@ var scrollVis = function () {
 					.attr("class", "mouse-over-effects " + classname)
 					.attr("opacity", 0);
 				
-				mouseG.append("path") // this is the black vertical line to follow mouse
-					.attr("class", "mouse-line " + classname)
-					.style("stroke", "black")
-					.style("stroke-width", "1px")
-					.style("opacity", "0");
+//				mouseG.append("path") // this is the black vertical line to follow mouse
+//					.attr("class", "mouse-line " + classname)
+//					.style("stroke", "black")
+//					.style("stroke-width", "1px")
+//					.style("opacity", "0");
 				
 				var lines = document.getElementsByClassName('line');
 				
@@ -461,6 +471,22 @@ var scrollVis = function () {
 					});
 			});
 		});
+		
+		// summary
+		g.append("text")
+			.attr("class", "summary")
+			.attr("x", width / 2)
+			.attr("y", height / 3)
+			.text("Summary")
+			.style("opacity", 0);
+		
+		// prediction
+		g.append("text")
+			.attr("class", "prediction")
+			.attr("x", width / 2)
+			.attr("y", height / 3)
+			.text("Bye Bye Trump, 2020")
+			.style("opacity", 0);
 	};
 	
 	/**
@@ -475,13 +501,20 @@ var scrollVis = function () {
 		activateFunctions[4] = result_2012;
 		activateFunctions[5] = result_2016;
 		activateFunctions[6] = swing_2016;
-		activateFunctions[7] = florida;
-		activateFunctions[8] = iowa;
-		activateFunctions[9] = michigan;
-		activateFunctions[10] = ohio;
-		activateFunctions[11] = pennsylvania;
-		activateFunctions[12] = wisconsin;
-		activateFunctions[13] = prediction_2020;
+		activateFunctions[7] = transition;
+		activateFunctions[8] = florida;
+		activateFunctions[9] = iowa;
+		activateFunctions[10] = michigan;
+		activateFunctions[11] = ohio;
+		activateFunctions[12] = pennsylvania;
+		activateFunctions[13] = wisconsin;
+		activateFunctions[14] = summary1;
+		activateFunctions[15] = summary2;
+		activateFunctions[16] = summary3;
+		activateFunctions[17] = summary4;
+		activateFunctions[18] = build_anticipation;
+		activateFunctions[19] = prediction_2020;
+		activateFunctions[20] = references;
 	};
 	
 	/**
@@ -735,15 +768,22 @@ var scrollVis = function () {
 	}
 	
 	function swing_2016() { 
-		g.selectAll(".states")
+		g.selectAll("#counties")
+			.attr("display", "inline");
+		g.selectAll("#states")
+			.attr("display", "inline");
+		g.selectAll("#state-borders")
+			.attr("display", "inline");
+		
+		g.selectAll("#states")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
-		g.selectAll(".counties")
+		g.selectAll("#counties")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
-		g.selectAll(".state-borders")
+		g.selectAll("#state-borders")
 			.transition()
 			.duration(500)
 			.style("opacity", 1);
@@ -768,23 +808,62 @@ var scrollVis = function () {
 		g.selectAll(".states")
 			.select('title')
 			.text(function (d) {
-				let arr = stateInfo["2004"][d.id];
+				let arr = stateInfo["2016"][d.id];
 				if (arr) {
-					return stateInfo["2004"][d.id][0] + "\n" + 
-						stateInfo["2004"][d.id][1] + "\n" + 
-						stateInfo["2004"][d.id][2] + "%";
+					return stateInfo["2016"][d.id][0] + "\n" + 
+						stateInfo["2016"][d.id][1] + "\n" + 
+						stateInfo["2016"][d.id][2] + "%";
 				}  
 		});
 		g.selectAll(".counties")
 			.select('title')
 			.text(function (d) {
-				let arr = countyInfo["2004"][d.id];
+				let arr = countyInfo["2016"][d.id];
 				if (arr) {
-					return countyInfo["2004"][d.id][0] + "\n" + 
-						countyInfo["2004"][d.id][1] + "\n" + 
-						countyInfo["2004"][d.id][2] + "%";
+					return countyInfo["2016"][d.id][0] + "\n" + 
+						countyInfo["2016"][d.id][1] + "\n" + 
+						countyInfo["2016"][d.id][2] + "%";
 				}  
 		});
+		
+		g.selectAll('.lookahead')
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function transition() {
+		g.selectAll("#states")
+			.attr("display", "none");
+		g.selectAll("#counties")
+			.attr("display", "none");
+		g.selectAll("#state-borders")
+			.attr("display", "none");
+		g.selectAll("#states")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		g.selectAll("#state-borders")
+			.transition()
+			.duration(500)
+			.style("opacity", 0)
+			.style("display", "none");
+		g.selectAll("#counties")
+			.transition()
+			.duration(500)
+			.style("opacity", 0)
+			.style("display", "none");
+		g.selectAll(".states")
+			.select('title')
+			.text(function(d) { return "" });
+		g.selectAll(".counties")
+			.select('title')
+			.text(function(d) { return "" });
+		
+		g.selectAll('.lookahead')
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
 		
 		g.selectAll(".fl_biden_sanders")
 			.transition()
@@ -801,25 +880,10 @@ var scrollVis = function () {
 	}
 	
 	function florida() { 
-		g.selectAll(".states")
+		g.selectAll('.lookahead')
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
-		g.selectAll(".state-borders")
-			.transition()
-			.duration(500)
-			.style("opacity", 0);
-		g.selectAll(".counties")
-			.transition()
-			.duration(500)
-			.style("opacity", 0);
-		
-		g.selectAll(".states")
-			.select('title')
-			.text(function(d) { return "" });
-		g.selectAll(".counties")
-			.select('title')
-			.text(function(d) { return "" });
 		
 		g.selectAll(".fl_biden_sanders")
 			.transition()
@@ -1266,11 +1330,14 @@ var scrollVis = function () {
 					.duration(500)
 					.style("opacity", 1);
 			}); 
+		
+		g.selectAll('.summary')
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
 	}
 	
-	function prediction_2020() { 
-		console.log("prediction_2020"); 
-		
+	function summary1() {
 		g.selectAll(".wi_biden_sanders")
 			.transition()
 			.duration(500)
@@ -1280,6 +1347,48 @@ var scrollVis = function () {
 			.duration(500)
 			.style("opacity", 0);
 		g.selectAll(".wi_sanders_trump")
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll('.summary')
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+	}
+	
+	function summary2() {}
+	
+	function summary3() {}
+	
+	function summary4() {
+		g.selectAll('.summary')
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+	}
+	
+	function build_anticipation() {
+		g.selectAll('.summary')
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+		
+		g.selectAll('.prediction')
+			.transition()
+			.duration(500)
+			.style("opacity", 0);
+	}
+	
+	function prediction_2020() { 
+		g.selectAll('.prediction')
+			.transition()
+			.duration(500)
+			.style("opacity", 1);
+	}
+	
+	function references() {
+		g.selectAll('.prediction')
 			.transition()
 			.duration(500)
 			.style("opacity", 0);
@@ -1361,6 +1470,9 @@ var scrollVis = function () {
 
 		active.classed("active", false);
 		active = d3.select(this).classed("active", true);
+//		active.transition()
+//			.duration(500)
+//			.attr("display", "none");
 
 		var bounds = path.bounds(d),
 			dx = bounds[1][0] - bounds[0][0],
@@ -1377,6 +1489,9 @@ var scrollVis = function () {
 	}
 	
 	function reset() {
+//		active.transition()
+//			.duration(500)
+//			.attr("display", "block");
 		active.classed("active", false);
 		active = d3.select(null);
 

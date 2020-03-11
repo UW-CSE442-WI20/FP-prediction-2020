@@ -1,16 +1,16 @@
 .container {
-  position: center;
   width: 890px;
 }
 
 #graphic {
   padding-top: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 #sections {
   position: relative;
   display: inline-block;
-  margin-left: 60px;
   width: 250px;
   top: 0px;
   z-index: 90;
@@ -62,7 +62,7 @@
   margin-left: 0;
 }
 
-#vis .title {
+#vis .title, .lookahead, .summary, .prediction {
   font-family: Arial,Helvetica,"san-serif";
   font-size:80px;
   text-anchor: middle;
@@ -71,10 +71,6 @@
 .background {
 	fill: none;
 	pointer-events: all;
-}
-
-#states {
-	fill: #aaa;
 }
 
 #states .active {
@@ -106,7 +102,6 @@ body {
 
 path { 
     stroke: white;
-/*    stroke-width: 2;*/
     fill: none;
 }
 
@@ -117,29 +112,8 @@ path {
   shape-rendering: crispEdges;
 }
 
-/*
-.x.axis path {
-  display: none;
-}
-*/
-
 .line {
   fill: none;
   stroke: steelblue;
   stroke-width: 1.5px;
 }
-
-/*
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-.legend {
-    font-size: 16px;
-    font-weight: bold;
-    text-anchor: middle;
-}*/
