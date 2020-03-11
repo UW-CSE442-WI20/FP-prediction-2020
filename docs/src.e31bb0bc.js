@@ -31995,19 +31995,13 @@ var scrollVis = function scrollVis() {
     activateFunctions[4] = result_2012;
     activateFunctions[5] = result_2016;
     activateFunctions[6] = swing_2016;
-    activateFunctions[7] = florida_biden;
-    activateFunctions[8] = florida_sanders;
-    activateFunctions[9] = iowa_biden;
-    activateFunctions[10] = iowa_sanders;
-    activateFunctions[11] = michigan_biden;
-    activateFunctions[12] = michigan_sanders;
-    activateFunctions[13] = ohio_biden;
-    activateFunctions[14] = ohio_sanders;
-    activateFunctions[15] = pennsylvania_biden;
-    activateFunctions[16] = pennsylvania_sanders;
-    activateFunctions[17] = wisconsin_biden;
-    activateFunctions[18] = wisconsin_sanders;
-    activateFunctions[19] = prediction_2020;
+    activateFunctions[7] = florida;
+    activateFunctions[8] = iowa;
+    activateFunctions[9] = michigan;
+    activateFunctions[10] = ohio;
+    activateFunctions[11] = pennsylvania;
+    activateFunctions[12] = wisconsin;
+    activateFunctions[13] = prediction_2020;
   };
   /**
    * ACTIVATE FUNCTIONS
@@ -32175,8 +32169,8 @@ var scrollVis = function scrollVis() {
     g.selectAll(".axisFloridaBiden").transition().duration(500).style("opacity", 0);
   }
 
-  function florida_biden() {
-    console.log("florida_biden");
+  function florida() {
+    console.log("florida");
     g.selectAll(".states").transition().duration(500).style("opacity", 0);
     g.selectAll(".state-borders").transition().duration(500).style("opacity", 0);
     g.selectAll(".counties").transition().duration(500).style("opacity", 0);
@@ -32186,122 +32180,162 @@ var scrollVis = function scrollVis() {
     g.selectAll(".counties").select('title').text(function (d) {
       return "";
     });
-    g.selectAll(".FloridaBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".FloridaBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".FloridaSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".FloridaSanders").transition().duration(500).style("opacity", 0);
+    d3.select("#fl_biden_sanders").on("click", function (d, i) {
+      console.log("fl_biden_sanders");
+    });
+    d3.select("#fl_biden_trump").on("click", function (d, i) {
+      g.selectAll(".FloridaBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".FloridaBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".FloridaSanders").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".FloridaSanders").transition().duration(500).style("opacity", 0);
+    });
+    d3.select("#fl_sanders_trump").on("click", function (d, i) {
+      g.selectAll(".FloridaBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".FloridaBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".FloridaSanders").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".FloridaSanders").transition().duration(500).style("opacity", 1);
+    });
+    g.selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".IowaSander").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".IowaSanders").transition().duration(500).style("opacity", 0);
   }
 
-  function florida_sanders() {
-    console.log("florida_sanders");
+  function iowa() {
+    console.log("iowa");
     g.selectAll(".FloridaBiden").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".FloridaBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".FloridaSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".FloridaSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
-  }
-
-  function iowa_biden() {
-    console.log("iowa_biden");
     g.selectAll(".FloridaSanders").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".FloridaSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".IowaBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".IowaBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".IowaSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".IowaSanders").transition().duration(500).style("opacity", 0);
+    d3.select("#io_biden_sanders").on("click", function (d, i) {
+      console.log("io_biden_sanders");
+    });
+    d3.select("#io_biden_trump").on("click", function (d, i) {
+      g.selectAll(".IowaBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".IowaBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".IowaSanders").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".IowaSanders").transition().duration(500).style("opacity", 0);
+    });
+    d3.select("#io_sanders_trump").on("click", function (d, i) {
+      g.selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".IowaSanders").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".IowaSanders").transition().duration(500).style("opacity", 1);
+    });
+    g.selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
   }
 
-  function iowa_sanders() {
-    console.log("iowa_sanders");
+  function michigan() {
+    console.log("michigan");
     g.selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".IowaBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".IowaSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".IowaSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
-  }
-
-  function michigan_biden() {
-    console.log("michigan_biden");
     g.selectAll(".IowaSanders").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".IowaSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".MichiganBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".MichiganBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
+    d3.select("#mi_biden_sanders").on("click", function (d, i) {
+      console.log("mi_biden_sanders");
+    });
+    d3.select("#mi_biden_trump").on("click", function (d, i) {
+      g.selectAll(".MichiganBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".MichiganBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
+    });
+    d3.select("#mi_sanders_trump").on("click", function (d, i) {
+      g.selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".MichiganSanders").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".MichiganSanders").transition().duration(500).style("opacity", 1);
+    });
+    g.selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
   }
 
-  function michigan_sanders() {
-    console.log("michigan_sanders");
+  function ohio() {
+    console.log("ohio");
     g.selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".MichiganBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".MichiganSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".MichiganSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
-  }
-
-  function ohio_biden() {
-    console.log("ohio_biden");
     g.selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".MichiganSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".OhioBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".OhioBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
+    d3.select("#oh_biden_sanders").on("click", function (d, i) {
+      console.log("oh_biden_sanders");
+    });
+    d3.select("#oh_biden_trump").on("click", function (d, i) {
+      g.selectAll(".OhioBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".OhioBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
+    });
+    d3.select("#oh_sanders_trump").on("click", function (d, i) {
+      g.selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".OhioSanders").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".OhioSanders").transition().duration(500).style("opacity", 1);
+    });
+    g.selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
   }
 
-  function ohio_sanders() {
-    console.log("ohio_sanders");
+  function pennsylvania() {
+    console.log("pennsylvania");
     g.selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".OhioBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".OhioSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".OhioSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
-  }
-
-  function pennsylvania_biden() {
-    console.log("pennsylvania_biden");
     g.selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".OhioSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
-  }
-
-  function pennsylvania_sanders() {
-    console.log("pennsylvania_sanders");
-    g.selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 1);
+    d3.select("#pa_biden_sanders").on("click", function (d, i) {
+      console.log("pa_biden_sanders");
+    });
+    d3.select("#pa_biden_trump").on("click", function (d, i) {
+      g.selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
+    });
+    d3.select("#pa_sanders_trump").on("click", function (d, i) {
+      g.selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 1);
+    });
     g.selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
-  }
-
-  function wisconsin_biden() {
-    console.log("wisconsin_biden");
-    g.selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
-    g.selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 1);
     g.selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 0);
   }
 
-  function wisconsin_sanders() {
-    console.log("wisconsin_sanders");
-    g.selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".axis").selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
-    g.selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 1);
-    g.selectAll(".axis").selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 1);
+  function wisconsin() {
+    console.log("wisconsin");
+    g.selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".PennsylvaniaBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".PennsylvaniaSanders").transition().duration(500).style("opacity", 0);
+    d3.select("#wi_biden_sanders").on("click", function (d, i) {
+      console.log("wi_biden_sanders");
+    });
+    d3.select("#wi_biden_trump").on("click", function (d, i) {
+      g.selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 1);
+      g.selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 0);
+    });
+    d3.select("#wi_sanders_trump").on("click", function (d, i) {
+      g.selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".axis").selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
+      g.selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 1);
+      g.selectAll(".axis").selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 1);
+    });
   }
 
   function prediction_2020() {
     console.log("prediction_2020");
+    g.selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
+    g.selectAll(".axis").selectAll(".WisconsinBiden").transition().duration(500).style("opacity", 0);
     g.selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 0);
     g.selectAll(".axis").selectAll(".WisconsinSanders").transition().duration(500).style("opacity", 0);
   }
@@ -32480,7 +32514,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55690" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59321" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
