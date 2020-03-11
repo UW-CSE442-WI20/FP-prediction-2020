@@ -38,6 +38,16 @@
   font-family: "TiemposTextWeb-Regular","Georgia";
   font-size: 15px;
   color: #767678;
+  border-radius: 4px;
+  background-color: #555555;
+  color: #fff;
+  padding: 5px 25px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+	background-color: #fff;
+	color: #555555;
 }
 
 #extra-space {
@@ -90,7 +100,9 @@
 	fill: gray;
 }
 
-body { font: 12px Arial;}
+body { 
+	font: 12px Arial;
+}
 
 path { 
     stroke: white;
@@ -98,6 +110,26 @@ path {
     fill: none;
 }
 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*
+.x.axis path {
+  display: none;
+}
+*/
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+/*
 .axis path,
 .axis line {
     fill: none;
@@ -110,6 +142,7 @@ path {
     font-size: 16px;
     font-weight: bold;
     text-anchor: middle;
-}
+}*/
 
-/*# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.7e56fe4c.css.map */
+
+/*# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.6bb6ea5e.css.map */
