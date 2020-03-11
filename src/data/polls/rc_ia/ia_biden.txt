@@ -1,7 +1,0 @@
-NY Times/Siena	1/20 - 1/23	1689 RV	2.8	46	44	Trump +2
-PPP (D)	12/29 - 12/31	964 RV	3.2	49	46	Trump +3
-Emerson	12/7 - 12/10	1043 RV	3.0	49	45	Trump +4
-NY Times/Siena	10/25 - 10/30	1435 RV	3.1	45	44	Trump +1
-Emerson	10/13 - 10/16	888 RV	3.2	51	49	Trump +2
-Emerson	3/21 - 3/24	708 RV	3.6	47	53	Biden +6
-Emerson	1/30 - 2/2	831 RV	3.4	49	51	Biden +2

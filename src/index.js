@@ -91,14 +91,6 @@ function scroller() {
  */
 var scrollVis = function () {
 	var margin = {
-//		top: 10,
-//		bottom: 10,
-//		left: 10,
-//		right:10
-//		top: 30,
-//		bottom: 70,
-//		left: 50,
-//		right: 20
 		top: 20,
         right: 80,
         bottom: 30,
@@ -149,41 +141,26 @@ var scrollVis = function () {
 	var county_csv = require('./FP_county_winners.csv');
 	var state_csv = require('./FP_state_winners.csv');
 	
-	var fl_biden = require('./FL_biden_v_trump.csv');
-	var fl_sanders = require('./FL_sanders_v_trump.csv');
-	var io_biden = require('./IO_biden_v_trump.csv');
-	var io_sanders = require('./IO_sanders_v_trump.csv');
-	var mi_biden = require('./MI_biden_v_trump.csv');
-	var mi_sanders = require('./MI_sanders_v_trump.csv');
-	var oh_biden = require('./OH_biden_v_trump.csv');
-	var oh_sanders = require('./OH_sanders_v_trump.csv');
-	var pa_biden = require('./PA_biden_v_trump.csv');
-	var pa_sanders = require('./PA_sanders_v_trump.csv');
-	var wi_biden = require('./WI_biden_v_trump.csv');
-	var wi_sanders = require('./WI_sanders_v_trump.csv');
+	var fl_biden_sanders = require('./fl_biden_sanders.tsv');
+	var fl_biden_trump = require('./fl_biden_trump.tsv');
+	var fl_sanders_trump = require('./fl_sanders_trump.tsv');
+	var ia_biden_sanders = require('./ia_biden_sanders.tsv');
+	var ia_biden_trump = require('./ia_biden_trump.tsv');
+	var ia_sanders_trump = require('./ia_sanders_trump.tsv');
+	var mi_biden_sanders = require('./mi_biden_sanders.tsv');
+	var mi_biden_trump = require('./mi_biden_trump.tsv');
+	var mi_sanders_trump = require('./mi_sanders_trump.tsv');
+	var oh_biden_sanders = require('./oh_biden_sanders.tsv');
+	var oh_biden_trump = require('./oh_biden_trump.tsv');
+	var oh_sanders_trump = require('./oh_sanders_trump.tsv');
+	var pa_biden_sanders = require('./pa_biden_sanders.tsv');
+	var pa_biden_trump = require('./pa_biden_trump.tsv');
+	var pa_sanders_trump = require('./pa_sanders_trump.tsv');
+	var wi_biden_sanders = require('./wi_biden_sanders.tsv');
+	var wi_biden_trump = require('./wi_biden_trump.tsv');
+	var wi_sanders_trump = require('./wi_sanders_trump.tsv');
 	
-	var fl_biden_sanders = require('./data/fl_biden_sanders.tsv');
-	var fl_biden_trump = require('./data/fl_biden_trump.tsv');
-	var fl_sanders_trump = require('./data/fl_sanders_trump.tsv');
-	var ia_biden_sanders = require('./data/ia_biden_sanders.tsv');
-	var ia_biden_trump = require('./data/ia_biden_trump.tsv');
-	var ia_sanders_trump = require('./data/ia_sanders_trump.tsv');
-	var mi_biden_sanders = require('./data/mi_biden_sanders.tsv');
-	var mi_biden_trump = require('./data/mi_biden_trump.tsv');
-	var mi_sanders_trump = require('./data/mi_sanders_trump.tsv');
-	var oh_biden_sanders = require('./data/oh_biden_sanders.tsv');
-	var oh_biden_trump = require('./data/oh_biden_trump.tsv');
-	var oh_sanders_trump = require('./data/oh_sanders_trump.tsv');
-	var pa_biden_sanders = require('./data/pa_biden_sanders.tsv');
-	var pa_biden_trump = require('./data/pa_biden_trump.tsv');
-	var pa_sanders_trump = require('./data/pa_sanders_trump.tsv');
-	var wi_biden_sanders = require('./data/wi_biden_sanders.tsv');
-	var wi_biden_trump = require('./data/wi_biden_trump.tsv');
-	var wi_sanders_trump = require('./data/wi_sanders_trump.tsv');
-	
-	var polls2 = [fl_biden_sanders, fl_biden_trump, fl_sanders_trump, ia_biden_sanders, ia_biden_trump, ia_sanders_trump, mi_biden_sanders, mi_biden_trump, mi_sanders_trump, oh_biden_sanders, oh_biden_trump, oh_sanders_trump, pa_biden_sanders, pa_biden_trump, pa_sanders_trump, wi_biden_sanders, wi_biden_trump, wi_sanders_trump];
-	
-	var polls = [fl_biden, fl_sanders, io_biden, io_sanders, mi_biden, mi_sanders, oh_biden, oh_sanders, pa_biden, pa_sanders, wi_biden, wi_sanders];
+	var polls = [fl_biden_sanders, fl_biden_trump, fl_sanders_trump, ia_biden_sanders, ia_biden_trump, ia_sanders_trump, mi_biden_sanders, mi_biden_trump, mi_sanders_trump, oh_biden_sanders, oh_biden_trump, oh_sanders_trump, pa_biden_sanders, pa_biden_trump, pa_sanders_trump, wi_biden_sanders, wi_biden_trump, wi_sanders_trump];
 	
 	var stateInfo = {};
 	var countyInfo = {};
@@ -191,8 +168,6 @@ var scrollVis = function () {
 	var countyWinners = [];
 	
 	var years = [2000,2004,2008,2012,2016];
-	var states = ['fl','ia','mi','oh','pa','wi'];
-	var contests = ['biden_sanders','biden_trump','sanders_trump'];
 	
 	var projection = d3.geoAlbersUsa()
 	.translate([width /2 , height / 2])
@@ -303,7 +278,7 @@ var scrollVis = function () {
 				.style("opacity", 0);
 		});
 		
-		polls2.forEach(function(d) {
+		polls.forEach(function(d) {
 			d3.tsv(d).then(function(data) {
 				var classname = d.toString().slice(1,15);
 				console.log(classname);
@@ -344,33 +319,6 @@ var scrollVis = function () {
 						});
 					})
 				]);
-				
-//				var legend = g.selectAll('g')
-//					.data(candidates)
-//					.enter()
-//					.append('g')
-//					.attr('class', 'legend ' + classname)
-//					.style("opacity", 0);
-//				
-//				legend.append('rect')
-//					.attr('x', width + LEGEND_LOCATION)
-//					.attr('y', function(d, i) {
-//						return i * 20;
-//					})
-//					.attr('width', 10)
-//					.attr('height', 10)
-//					.style('fill', function(d) {
-//						return color(d.name);
-//					});
-//				
-//				legend.append('text')
-//					.attr('x', width  + (LEGEND_LOCATION + 15))
-//					.attr('y', function(d, i) {
-//						return (i * 20) + 9;
-//					})
-//					.text(function(d) {
-//						return d.name;
-//					});
 				
 				g.append("g")
 					.attr("class", "x axis " + classname)
@@ -481,7 +429,6 @@ var scrollVis = function () {
 						});
 						d3.selectAll(".mouse-per-line")
 							.attr("transform", function(d, i) {
-//								console.log(width/mouse[0])
 								var xDate = x.invert(mouse[0]),
 									bisect = d3.bisector(function(d) { return d.date; }).right,
 									idx = bisect(d.values, xDate);
@@ -509,71 +456,6 @@ var scrollVis = function () {
 					});
 			});
 		});
-		
-//		polls.forEach(function(d) {
-//			d3.csv(d).then(function(data) {
-//				data.forEach(function(d) {
-//					d.date = parseDate(d.date);
-//					d.pct = +d.pct;
-//				});
-//
-//				x.domain(d3.extent(data, function(d) { return d.date; }));
-//				y.domain([d3.min(data, function(d) { return d.pct; }) - 2, 
-//						  d3.max(data, function(d) { return d.pct; }) + 2]);
-//
-//				var dataNest = d3.nest()
-//					.key(function(d) {return d.answer;})
-//					.entries(data);
-//
-//				var color = d3.scaleOrdinal(d3.schemeCategory10);
-//
-//				legendSpace = width/dataNest.length;
-//
-//				dataNest.forEach(function(d,i) {
-//					g.append("path")
-//						.attr("class", "line " + data[0].state + data[0].answer)
-//						.style("stroke", function() {
-//							return d.color = color(d.key);
-//						})
-//						.attr("id", 'tag'+d.key.replace(/\s+/g, ''))
-//						.attr("d", percentline(d.values))
-//						.style("opacity", 0);
-//
-//					g.append("text")
-//						.attr("x", (legendSpace/2)+i*legendSpace)  // space legend
-//						.attr("y", height + (margin.bottom/2)+ 5)
-//						.attr("class", "legend " + data[0].state + data[0].answer)    // style the legend
-//						.style("fill", function() { // Add the colours dynamically
-//							return d.color = color(d.key); })
-//						.on("click", function(){
-//							// Determine if current line is visible 
-//							var active   = d.active ? false : true,
-//							newOpacity = active ? 0 : 1; 
-//							// Hide or show the elements based on the ID
-//							d3.select("#tag"+d.key.replace(/\s+/g, ''))
-//								.transition().duration(100) 
-//								.style("opacity", newOpacity); 
-//							// Update whether or not the elements are active
-//							d.active = active;
-//							})  
-//						.text(d.key)
-//						.style("opacity", 0);
-//				});
-//				
-//				// Add the X Axis
-//				g.append("g")
-//					.attr("class", "x axis " + data[0].state + data[0].answer)
-//					.attr("transform", "translate(0," + height + ")")
-//					.call(xAxis)
-//					.style("opacity", 0);
-//
-//				// Add the Y Axis
-//				g.append("g")
-//					.attr("class", "y axis " + data[0].state + data[0].answer)
-//					.call(yAxis)
-//					.style("opacity", 0);
-//			});
-//		});
 	};
 	
 	/**
@@ -1431,7 +1313,6 @@ var scrollVis = function () {
 	function getStateInfo() {
 		d3.csv(state_csv).then(function(data) {
 			for (var j = 0; j < years.length; j++) {
-//				console.log('stateInfo' + years[j].toString())
 				var year = years[j].toString();
 				stateInfo[year] = {};
 				for (var i = 0; i < data.length; i++) {
@@ -1451,7 +1332,6 @@ var scrollVis = function () {
 	function getCountyInfo() {
 		d3.csv(county_csv).then(function(data) {
 			for (var j = 0; j < years.length; j++) {
-//				console.log('countyInfo' + years[j].toString())
 				var year = years[j].toString();
 				countyInfo[year] = {};
 				for (var i = 0; i < data.length; i++) {

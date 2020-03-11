@@ -31396,65 +31396,41 @@ Object.keys(_topojsonSimplify).forEach(function (key) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/FP_county_winners.0cf09ab6.csv";
 },{}],"ON0T":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/FP_state_winners.1b1feed6.csv";
-},{}],"azxR":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/FL_biden_v_trump.cbe0f90b.csv";
-},{}],"RpCU":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/FL_sanders_v_trump.15f33ebe.csv";
-},{}],"LITE":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/IO_biden_v_trump.b9c741aa.csv";
-},{}],"cAn9":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/IO_sanders_v_trump.767cdc39.csv";
-},{}],"Nrv1":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/MI_biden_v_trump.0b69e43c.csv";
-},{}],"dNFL":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/MI_sanders_v_trump.4da72a53.csv";
-},{}],"jd3x":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/OH_biden_v_trump.2ebba8c4.csv";
-},{}],"rCVe":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/OH_sanders_v_trump.655a9a87.csv";
-},{}],"U6SD":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/PA_biden_v_trump.2fe1fbc0.csv";
-},{}],"R2CO":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/PA_sanders_v_trump.e611414d.csv";
-},{}],"yKW1":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/WI_biden_v_trump.790a58d4.csv";
-},{}],"MxG4":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/WI_sanders_v_trump.e8da9911.csv";
-},{}],"nzMl":[function(require,module,exports) {
+},{}],"Q3IT":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_biden_sanders.dce065c8.tsv";
-},{}],"RH4m":[function(require,module,exports) {
+},{}],"i5tU":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_biden_trump.7305aaf5.tsv";
-},{}],"JlaN":[function(require,module,exports) {
+},{}],"wtFs":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_sanders_trump.65715918.tsv";
-},{}],"bmV0":[function(require,module,exports) {
+},{}],"j2lO":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_biden_sanders.e7e9fa88.tsv";
-},{}],"eiJl":[function(require,module,exports) {
+},{}],"CkYy":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_biden_trump.74d4323b.tsv";
-},{}],"YYVI":[function(require,module,exports) {
+},{}],"ebq7":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_sanders_trump.079208c6.tsv";
-},{}],"xQQb":[function(require,module,exports) {
+},{}],"woXn":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_biden_sanders.670e8351.tsv";
-},{}],"E7IQ":[function(require,module,exports) {
+},{}],"NCL4":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_biden_trump.eed3b083.tsv";
-},{}],"VKGZ":[function(require,module,exports) {
+},{}],"FIW2":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_sanders_trump.23f7f9ac.tsv";
-},{}],"DXXg":[function(require,module,exports) {
+},{}],"xZni":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_biden_sanders.c035003a.tsv";
-},{}],"GBbr":[function(require,module,exports) {
+},{}],"BkHL":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_biden_trump.f3adb65d.tsv";
-},{}],"w2N7":[function(require,module,exports) {
+},{}],"Ucmo":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_sanders_trump.7f9a6061.tsv";
-},{}],"Jqd0":[function(require,module,exports) {
+},{}],"pak7":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_biden_sanders.3ddc3bb3.tsv";
-},{}],"gHzm":[function(require,module,exports) {
+},{}],"TFvM":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_biden_trump.5f08f688.tsv";
-},{}],"QdSt":[function(require,module,exports) {
+},{}],"DBXT":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_sanders_trump.b5dd13b6.tsv";
-},{}],"lPZt":[function(require,module,exports) {
+},{}],"yNYL":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_biden_sanders.d4085672.tsv";
-},{}],"T8Dy":[function(require,module,exports) {
+},{}],"CYH7":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_biden_trump.5de56595.tsv";
-},{}],"SvLl":[function(require,module,exports) {
+},{}],"trNw":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_sanders_trump.fe55b497.tsv";
 },{}],"Focm":[function(require,module,exports) {
 // JavaScript Document
@@ -31559,14 +31535,6 @@ function scroller() {
 
 var scrollVis = function scrollVis() {
   var margin = {
-    //		top: 10,
-    //		bottom: 10,
-    //		left: 10,
-    //		right:10
-    //		top: 30,
-    //		bottom: 70,
-    //		left: 50,
-    //		right: 20
     top: 20,
     right: 80,
     bottom: 30,
@@ -31612,75 +31580,48 @@ var scrollVis = function scrollVis() {
 
   var state_csv = require('./FP_state_winners.csv');
 
-  var fl_biden = require('./FL_biden_v_trump.csv');
+  var fl_biden_sanders = require('./fl_biden_sanders.tsv');
 
-  var fl_sanders = require('./FL_sanders_v_trump.csv');
+  var fl_biden_trump = require('./fl_biden_trump.tsv');
 
-  var io_biden = require('./IO_biden_v_trump.csv');
+  var fl_sanders_trump = require('./fl_sanders_trump.tsv');
 
-  var io_sanders = require('./IO_sanders_v_trump.csv');
+  var ia_biden_sanders = require('./ia_biden_sanders.tsv');
 
-  var mi_biden = require('./MI_biden_v_trump.csv');
+  var ia_biden_trump = require('./ia_biden_trump.tsv');
 
-  var mi_sanders = require('./MI_sanders_v_trump.csv');
+  var ia_sanders_trump = require('./ia_sanders_trump.tsv');
 
-  var oh_biden = require('./OH_biden_v_trump.csv');
+  var mi_biden_sanders = require('./mi_biden_sanders.tsv');
 
-  var oh_sanders = require('./OH_sanders_v_trump.csv');
+  var mi_biden_trump = require('./mi_biden_trump.tsv');
 
-  var pa_biden = require('./PA_biden_v_trump.csv');
+  var mi_sanders_trump = require('./mi_sanders_trump.tsv');
 
-  var pa_sanders = require('./PA_sanders_v_trump.csv');
+  var oh_biden_sanders = require('./oh_biden_sanders.tsv');
 
-  var wi_biden = require('./WI_biden_v_trump.csv');
+  var oh_biden_trump = require('./oh_biden_trump.tsv');
 
-  var wi_sanders = require('./WI_sanders_v_trump.csv');
+  var oh_sanders_trump = require('./oh_sanders_trump.tsv');
 
-  var fl_biden_sanders = require('./data/fl_biden_sanders.tsv');
+  var pa_biden_sanders = require('./pa_biden_sanders.tsv');
 
-  var fl_biden_trump = require('./data/fl_biden_trump.tsv');
+  var pa_biden_trump = require('./pa_biden_trump.tsv');
 
-  var fl_sanders_trump = require('./data/fl_sanders_trump.tsv');
+  var pa_sanders_trump = require('./pa_sanders_trump.tsv');
 
-  var ia_biden_sanders = require('./data/ia_biden_sanders.tsv');
+  var wi_biden_sanders = require('./wi_biden_sanders.tsv');
 
-  var ia_biden_trump = require('./data/ia_biden_trump.tsv');
+  var wi_biden_trump = require('./wi_biden_trump.tsv');
 
-  var ia_sanders_trump = require('./data/ia_sanders_trump.tsv');
+  var wi_sanders_trump = require('./wi_sanders_trump.tsv');
 
-  var mi_biden_sanders = require('./data/mi_biden_sanders.tsv');
-
-  var mi_biden_trump = require('./data/mi_biden_trump.tsv');
-
-  var mi_sanders_trump = require('./data/mi_sanders_trump.tsv');
-
-  var oh_biden_sanders = require('./data/oh_biden_sanders.tsv');
-
-  var oh_biden_trump = require('./data/oh_biden_trump.tsv');
-
-  var oh_sanders_trump = require('./data/oh_sanders_trump.tsv');
-
-  var pa_biden_sanders = require('./data/pa_biden_sanders.tsv');
-
-  var pa_biden_trump = require('./data/pa_biden_trump.tsv');
-
-  var pa_sanders_trump = require('./data/pa_sanders_trump.tsv');
-
-  var wi_biden_sanders = require('./data/wi_biden_sanders.tsv');
-
-  var wi_biden_trump = require('./data/wi_biden_trump.tsv');
-
-  var wi_sanders_trump = require('./data/wi_sanders_trump.tsv');
-
-  var polls2 = [fl_biden_sanders, fl_biden_trump, fl_sanders_trump, ia_biden_sanders, ia_biden_trump, ia_sanders_trump, mi_biden_sanders, mi_biden_trump, mi_sanders_trump, oh_biden_sanders, oh_biden_trump, oh_sanders_trump, pa_biden_sanders, pa_biden_trump, pa_sanders_trump, wi_biden_sanders, wi_biden_trump, wi_sanders_trump];
-  var polls = [fl_biden, fl_sanders, io_biden, io_sanders, mi_biden, mi_sanders, oh_biden, oh_sanders, pa_biden, pa_sanders, wi_biden, wi_sanders];
+  var polls = [fl_biden_sanders, fl_biden_trump, fl_sanders_trump, ia_biden_sanders, ia_biden_trump, ia_sanders_trump, mi_biden_sanders, mi_biden_trump, mi_sanders_trump, oh_biden_sanders, oh_biden_trump, oh_sanders_trump, pa_biden_sanders, pa_biden_trump, pa_sanders_trump, wi_biden_sanders, wi_biden_trump, wi_sanders_trump];
   var stateInfo = {};
   var countyInfo = {};
   var stateWinners = [];
   var countyWinners = [];
   var years = [2000, 2004, 2008, 2012, 2016];
-  var states = ['fl', 'ia', 'mi', 'oh', 'pa', 'wi'];
-  var contests = ['biden_sanders', 'biden_trump', 'sanders_trump'];
   var projection = d3.geoAlbersUsa().translate([width / 2, height / 2]).scale(width);
   var path = d3.geoPath().projection(projection);
   /**
@@ -31757,7 +31698,7 @@ var scrollVis = function scrollVis() {
         return a !== b;
       })).attr("id", "state-borders").attr("class", "state-borders").attr("d", path).style("opacity", 0);
     });
-    polls2.forEach(function (d) {
+    polls.forEach(function (d) {
       d3.tsv(d).then(function (data) {
         var classname = d.toString().slice(1, 15);
         console.log(classname);
@@ -31789,33 +31730,7 @@ var scrollVis = function scrollVis() {
           return d3.max(c.values, function (v) {
             return v.percent;
           });
-        })]); //				var legend = g.selectAll('g')
-        //					.data(candidates)
-        //					.enter()
-        //					.append('g')
-        //					.attr('class', 'legend ' + classname)
-        //					.style("opacity", 0);
-        //				
-        //				legend.append('rect')
-        //					.attr('x', width + LEGEND_LOCATION)
-        //					.attr('y', function(d, i) {
-        //						return i * 20;
-        //					})
-        //					.attr('width', 10)
-        //					.attr('height', 10)
-        //					.style('fill', function(d) {
-        //						return color(d.name);
-        //					});
-        //				
-        //				legend.append('text')
-        //					.attr('x', width  + (LEGEND_LOCATION + 15))
-        //					.attr('y', function(d, i) {
-        //						return (i * 20) + 9;
-        //					})
-        //					.text(function(d) {
-        //						return d.name;
-        //					});
-
+        })]);
         g.append("g").attr("class", "x axis " + classname).attr("transform", "translate(0," + height + ")").call(xAxis).style("opacity", 0);
         g.append("g").attr("class", "y axis " + classname).call(yAxis).style("opacity", 0).append("text").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", ".71em").style("text-anchor", "end").text("Polling Percent");
         var candidate = g.selectAll(".candidates").data(candidates).enter().append("g").attr("class", "candidate " + classname).style("opacity", 0);
@@ -31865,7 +31780,6 @@ var scrollVis = function scrollVis() {
             return d;
           });
           d3.selectAll(".mouse-per-line").attr("transform", function (d, i) {
-            //								console.log(width/mouse[0])
             var xDate = x.invert(mouse[0]),
                 bisect = d3.bisector(function (d) {
               return d.date;
@@ -31891,70 +31805,7 @@ var scrollVis = function scrollVis() {
           });
         });
       });
-    }); //		polls.forEach(function(d) {
-    //			d3.csv(d).then(function(data) {
-    //				data.forEach(function(d) {
-    //					d.date = parseDate(d.date);
-    //					d.pct = +d.pct;
-    //				});
-    //
-    //				x.domain(d3.extent(data, function(d) { return d.date; }));
-    //				y.domain([d3.min(data, function(d) { return d.pct; }) - 2, 
-    //						  d3.max(data, function(d) { return d.pct; }) + 2]);
-    //
-    //				var dataNest = d3.nest()
-    //					.key(function(d) {return d.answer;})
-    //					.entries(data);
-    //
-    //				var color = d3.scaleOrdinal(d3.schemeCategory10);
-    //
-    //				legendSpace = width/dataNest.length;
-    //
-    //				dataNest.forEach(function(d,i) {
-    //					g.append("path")
-    //						.attr("class", "line " + data[0].state + data[0].answer)
-    //						.style("stroke", function() {
-    //							return d.color = color(d.key);
-    //						})
-    //						.attr("id", 'tag'+d.key.replace(/\s+/g, ''))
-    //						.attr("d", percentline(d.values))
-    //						.style("opacity", 0);
-    //
-    //					g.append("text")
-    //						.attr("x", (legendSpace/2)+i*legendSpace)  // space legend
-    //						.attr("y", height + (margin.bottom/2)+ 5)
-    //						.attr("class", "legend " + data[0].state + data[0].answer)    // style the legend
-    //						.style("fill", function() { // Add the colours dynamically
-    //							return d.color = color(d.key); })
-    //						.on("click", function(){
-    //							// Determine if current line is visible 
-    //							var active   = d.active ? false : true,
-    //							newOpacity = active ? 0 : 1; 
-    //							// Hide or show the elements based on the ID
-    //							d3.select("#tag"+d.key.replace(/\s+/g, ''))
-    //								.transition().duration(100) 
-    //								.style("opacity", newOpacity); 
-    //							// Update whether or not the elements are active
-    //							d.active = active;
-    //							})  
-    //						.text(d.key)
-    //						.style("opacity", 0);
-    //				});
-    //				
-    //				// Add the X Axis
-    //				g.append("g")
-    //					.attr("class", "x axis " + data[0].state + data[0].answer)
-    //					.attr("transform", "translate(0," + height + ")")
-    //					.call(xAxis)
-    //					.style("opacity", 0);
-    //
-    //				// Add the Y Axis
-    //				g.append("g")
-    //					.attr("class", "y axis " + data[0].state + data[0].answer)
-    //					.call(yAxis)
-    //					.style("opacity", 0);
-    //			});
-    //		});
+    });
   };
   /**
    * setupSections - each section is activated by a separate function. Here we associate these functions to 
@@ -32320,7 +32171,6 @@ var scrollVis = function scrollVis() {
   function getStateInfo() {
     d3.csv(state_csv).then(function (data) {
       for (var j = 0; j < years.length; j++) {
-        //				console.log('stateInfo' + years[j].toString())
         var year = years[j].toString();
         stateInfo[year] = {};
 
@@ -32343,7 +32193,6 @@ var scrollVis = function scrollVis() {
   function getCountyInfo() {
     d3.csv(county_csv).then(function (data) {
       for (var j = 0; j < years.length; j++) {
-        //				console.log('countyInfo' + years[j].toString())
         var year = years[j].toString();
         countyInfo[year] = {};
 
@@ -32457,5 +32306,5 @@ function display() {
 }
 
 display();
-},{"d3":"UzF0","topojson":"Ftz0","./FP_county_winners.csv":"lKn7","./FP_state_winners.csv":"ON0T","./FL_biden_v_trump.csv":"azxR","./FL_sanders_v_trump.csv":"RpCU","./IO_biden_v_trump.csv":"LITE","./IO_sanders_v_trump.csv":"cAn9","./MI_biden_v_trump.csv":"Nrv1","./MI_sanders_v_trump.csv":"dNFL","./OH_biden_v_trump.csv":"jd3x","./OH_sanders_v_trump.csv":"rCVe","./PA_biden_v_trump.csv":"U6SD","./PA_sanders_v_trump.csv":"R2CO","./WI_biden_v_trump.csv":"yKW1","./WI_sanders_v_trump.csv":"MxG4","./data/fl_biden_sanders.tsv":"nzMl","./data/fl_biden_trump.tsv":"RH4m","./data/fl_sanders_trump.tsv":"JlaN","./data/ia_biden_sanders.tsv":"bmV0","./data/ia_biden_trump.tsv":"eiJl","./data/ia_sanders_trump.tsv":"YYVI","./data/mi_biden_sanders.tsv":"xQQb","./data/mi_biden_trump.tsv":"E7IQ","./data/mi_sanders_trump.tsv":"VKGZ","./data/oh_biden_sanders.tsv":"DXXg","./data/oh_biden_trump.tsv":"GBbr","./data/oh_sanders_trump.tsv":"w2N7","./data/pa_biden_sanders.tsv":"Jqd0","./data/pa_biden_trump.tsv":"gHzm","./data/pa_sanders_trump.tsv":"QdSt","./data/wi_biden_sanders.tsv":"lPZt","./data/wi_biden_trump.tsv":"T8Dy","./data/wi_sanders_trump.tsv":"SvLl"}]},{},["Focm"], null)
-//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.4996d7a8.js.map
+},{"d3":"UzF0","topojson":"Ftz0","./FP_county_winners.csv":"lKn7","./FP_state_winners.csv":"ON0T","./fl_biden_sanders.tsv":"Q3IT","./fl_biden_trump.tsv":"i5tU","./fl_sanders_trump.tsv":"wtFs","./ia_biden_sanders.tsv":"j2lO","./ia_biden_trump.tsv":"CkYy","./ia_sanders_trump.tsv":"ebq7","./mi_biden_sanders.tsv":"woXn","./mi_biden_trump.tsv":"NCL4","./mi_sanders_trump.tsv":"FIW2","./oh_biden_sanders.tsv":"xZni","./oh_biden_trump.tsv":"BkHL","./oh_sanders_trump.tsv":"Ucmo","./pa_biden_sanders.tsv":"pak7","./pa_biden_trump.tsv":"TFvM","./pa_sanders_trump.tsv":"DBXT","./wi_biden_sanders.tsv":"yNYL","./wi_biden_trump.tsv":"CYH7","./wi_sanders_trump.tsv":"trNw"}]},{},["Focm"], null)
+//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.6ba89219.js.map
