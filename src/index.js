@@ -128,7 +128,7 @@ var scrollVis = function () {
 	// Define the line
 	var percentline = d3.line()	
 		.x(function(d) { return x(d.date); })
-		.y(function(d) { return y(d.pct); });
+		.y(function(d) { return y(d.percent); });
 	var line = d3.line()
 		.curve(d3.curveCatmullRom.alpha(0.5))
 		.x(function(d) {
