@@ -122,6 +122,7 @@ var scrollVis = function () {
 	var xAxis = d3.axisBottom(x);
 	var yAxis = d3.axisLeft(y);
 	
+	// Define the color scale for the line graph
 	var color = d3.scaleOrdinal(d3.schemeCategory10)
 		.range(['#27AE60', '#7D3C98', '#ff9446']); 
 	
@@ -229,6 +230,7 @@ var scrollVis = function () {
 			.text("Prediction 2020")
 			.style("opacity", 0);
 		
+		// maps
 		d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json").then(function(json) {
 			var counties = topo.feature(json, json.objects.counties);
 			g.append("g")
@@ -293,6 +295,7 @@ var scrollVis = function () {
 			.style("opacity", 0);
 		
 		var i = 0;
+		// line graphs
 		polls.forEach(function(d) {
 			d3.tsv(d).then(function(data) {
 				var classname = classnames[i];
@@ -322,18 +325,12 @@ var scrollVis = function () {
 					return d.date;
 				}));
 				
-				y.domain([ 5
-					// d3.min(candidates, function(c) {
-					// 	return d3.min(c.values, function(v) {
-					// 		return v.percent - 1;
-					// 	});
-					// })
-					,
-					d3.max(candidates, function(c) {
-						return d3.max(c.values, function(v) {
-							return v.percent + 1;
-						});
-					})
+				y.domain([5, 
+						d3.max(candidates, function(c) {
+							return d3.max(c.values, function(v) {
+								return v.percent + 1;
+							});
+						})
 				]);
 				
 				
@@ -389,12 +386,6 @@ var scrollVis = function () {
 					.attr("class", "mouse-over-effects " + classname)
 					.attr("opacity", 0);
 				
-//				mouseG.append("path") // this is the black vertical line to follow mouse
-//					.attr("class", "mouse-line " + classname)
-//					.style("stroke", "black")
-//					.style("stroke-width", "1px")
-//					.style("opacity", "0");
-				
 				var lines = document.getElementsByClassName('line');
 				
 				var mousePerLine = mouseG.selectAll('.mouse-per-line')
@@ -415,12 +406,12 @@ var scrollVis = function () {
 				mousePerLine.append("text")
 					.attr("transform", "translate(10,3)");
 				
-				mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
-					.attr('width', width) // can't catch mouse events on a g element
+				mouseG.append('svg:rect') 
+					.attr('width', width) 
 					.attr('height', height)
 					.attr('fill', 'none')
 					.attr('pointer-events', 'all')
-					.on('mouseout', function() { // on mouse out hide line, circles and text
+					.on('mouseout', function() {
 						d3.select(".mouse-line")
 							.style("opacity", "0");
 						d3.selectAll(".mouse-per-line circle")
@@ -428,7 +419,7 @@ var scrollVis = function () {
 						d3.selectAll(".mouse-per-line text")
 							.style("opacity", "0");
 					})
-					.on('mouseover', function() { // on mouse in show line, circles and text
+					.on('mouseover', function() {
 						d3.select(".mouse-line")
 							.style("opacity", "1");
 						d3.selectAll(".mouse-per-line circle")
@@ -436,7 +427,7 @@ var scrollVis = function () {
 						d3.selectAll(".mouse-per-line text")
 							.style("opacity", "1");
 					})
-					.on('mousemove', function() { // mouse moving over canvas
+					.on('mousemove', function() {
 						var mouse = d3.mouse(this);
 						d3.select(".mouse-line")
 							.attr("d", function() {
@@ -462,7 +453,7 @@ var scrollVis = function () {
 									}
 									if (pos.x > mouse[0])      end = target;
 									else if (pos.x < mouse[0]) beginning = target;
-									else break; //position found
+									else break;
 								}
             
 								d3.select(this).select('text')
@@ -1472,8 +1463,6 @@ var scrollVis = function () {
 
 		active.classed("active", false);
 		active = d3.select(this).classed("active", true);
-//		active.transition()
-//			.duration(500)
 //			.attr("display", "none");
 
 		var bounds = path.bounds(d),
@@ -1491,9 +1480,6 @@ var scrollVis = function () {
 	}
 	
 	function reset() {
-//		active.transition()
-//			.duration(500)
-//			.attr("display", "block");
 		active.classed("active", false);
 		active = d3.select(null);
 
