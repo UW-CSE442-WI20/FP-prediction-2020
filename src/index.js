@@ -123,7 +123,7 @@ var scrollVis = function () {
 	var yAxis = d3.axisLeft(y);
 	
 	var color = d3.scaleOrdinal(d3.schemeCategory10)
-		.range(['#27AE60', '#7D3C98', '#cc0000']); 
+		.range(['#27AE60', '#7D3C98', '#ff9446']); 
 	
 	// Define the line
 	var percentline = d3.line()	
