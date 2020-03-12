@@ -123,7 +123,7 @@ var scrollVis = function () {
 	var yAxis = d3.axisLeft(y);
 	
 	var color = d3.scaleOrdinal(d3.schemeCategory10)
-		.range(['#27AE60', '#7D3C98']); 
+		.range(['#27AE60', '#7D3C98', '#cc0000']); 
 	
 	// Define the line
 	var percentline = d3.line()	
@@ -322,18 +322,20 @@ var scrollVis = function () {
 					return d.date;
 				}));
 				
-				y.domain([
-					d3.min(candidates, function(c) {
-						return d3.min(c.values, function(v) {
-							return v.percent - 1;
-						});
-					}),
+				y.domain([ 5
+					// d3.min(candidates, function(c) {
+					// 	return d3.min(c.values, function(v) {
+					// 		return v.percent - 1;
+					// 	});
+					// })
+					,
 					d3.max(candidates, function(c) {
 						return d3.max(c.values, function(v) {
 							return v.percent + 1;
 						});
 					})
 				]);
+				
 				
 				g.append("g")
 					.attr("class", "x axis " + classname)
