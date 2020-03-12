@@ -31399,39 +31399,39 @@ module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/FP_state_w
 },{}],"Q3IT":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_biden_sanders.dce065c8.tsv";
 },{}],"i5tU":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_biden_trump.7305aaf5.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_biden_trump.222ae7f9.tsv";
 },{}],"wtFs":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_sanders_trump.65715918.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/fl_sanders_trump.d260ad50.tsv";
 },{}],"j2lO":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_biden_sanders.e7e9fa88.tsv";
 },{}],"CkYy":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_biden_trump.74d4323b.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_biden_trump.a162ff57.tsv";
 },{}],"ebq7":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_sanders_trump.079208c6.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/ia_sanders_trump.e27f9a43.tsv";
 },{}],"woXn":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_biden_sanders.670e8351.tsv";
 },{}],"NCL4":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_biden_trump.eed3b083.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_biden_trump.6860a71d.tsv";
 },{}],"FIW2":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_sanders_trump.23f7f9ac.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/mi_sanders_trump.6e9b380f.tsv";
 },{}],"xZni":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_biden_sanders.c035003a.tsv";
 },{}],"BkHL":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_biden_trump.f3adb65d.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_biden_trump.1d502142.tsv";
 },{}],"Ucmo":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_sanders_trump.7f9a6061.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/oh_sanders_trump.6bb3f9af.tsv";
 },{}],"pak7":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_biden_sanders.3ddc3bb3.tsv";
 },{}],"TFvM":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_biden_trump.5f08f688.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_biden_trump.3d589660.tsv";
 },{}],"DBXT":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_sanders_trump.b5dd13b6.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/pa_sanders_trump.14dacc83.tsv";
 },{}],"yNYL":[function(require,module,exports) {
 module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_biden_sanders.d4085672.tsv";
 },{}],"CYH7":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_biden_trump.5de56595.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_biden_trump.b3a662b4.tsv";
 },{}],"trNw":[function(require,module,exports) {
-module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_sanders_trump.fe55b497.tsv";
+module.exports = "https://uw-cse442-wi20.github.io/FP-prediction-2020/wi_sanders_trump.9816db69.tsv";
 },{}],"Focm":[function(require,module,exports) {
 // JavaScript Document
 // Scroller code adapted from https://github.com/vlandham/scroll_demo
@@ -31561,7 +31561,7 @@ var scrollVis = function scrollVis() {
 
   var xAxis = d3.axisBottom(x);
   var yAxis = d3.axisLeft(y);
-  var color = d3.scaleOrdinal(d3.schemeCategory10).range(['#27AE60', '#7D3C98']); // Define the line
+  var color = d3.scaleOrdinal(d3.schemeCategory10).range(['#27AE60', '#7D3C98', '#ff9446']); // Define the line
 
   var percentline = d3.line().x(function (d) {
     return x(d.date);
@@ -31729,11 +31729,12 @@ var scrollVis = function scrollVis() {
         x.domain(d3.extent(data, function (d) {
           return d.date;
         }));
-        y.domain([d3.min(candidates, function (c) {
-          return d3.min(c.values, function (v) {
-            return v.percent - 1;
-          });
-        }), d3.max(candidates, function (c) {
+        y.domain([5 // d3.min(candidates, function(c) {
+        // 	return d3.min(c.values, function(v) {
+        // 		return v.percent - 1;
+        // 	});
+        // })
+        , d3.max(candidates, function (c) {
           return d3.max(c.values, function (v) {
             return v.percent + 1;
           });
@@ -32355,4 +32356,4 @@ function display() {
 
 display();
 },{"d3":"UzF0","topojson":"Ftz0","./FP_county_winners.csv":"lKn7","./FP_state_winners.csv":"ON0T","./fl_biden_sanders.tsv":"Q3IT","./fl_biden_trump.tsv":"i5tU","./fl_sanders_trump.tsv":"wtFs","./ia_biden_sanders.tsv":"j2lO","./ia_biden_trump.tsv":"CkYy","./ia_sanders_trump.tsv":"ebq7","./mi_biden_sanders.tsv":"woXn","./mi_biden_trump.tsv":"NCL4","./mi_sanders_trump.tsv":"FIW2","./oh_biden_sanders.tsv":"xZni","./oh_biden_trump.tsv":"BkHL","./oh_sanders_trump.tsv":"Ucmo","./pa_biden_sanders.tsv":"pak7","./pa_biden_trump.tsv":"TFvM","./pa_sanders_trump.tsv":"DBXT","./wi_biden_sanders.tsv":"yNYL","./wi_biden_trump.tsv":"CYH7","./wi_sanders_trump.tsv":"trNw"}]},{},["Focm"], null)
-//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.0824ce85.js.map
+//# sourceMappingURL=https://uw-cse442-wi20.github.io/FP-prediction-2020/src.d95c85ed.js.map
